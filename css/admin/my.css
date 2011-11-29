@@ -1,0 +1,21 @@
+.deletecol{
+    background: url("../../images/trash_blue.png")   no-repeat right top  ;
+    cursor: pointer;
+    width: 16px;
+    height: 16px;
+    float: right;
+    /*vertical-align: top;*/
+   
+}
+
+.deleterow{
+    background: url("../../images/trash_blue.png")   no-repeat right top  ;
+    cursor: pointer;
+    width: 16px;
+    height: 16px;
+    position: relative;
+    top:-3px;
+    left: -27px;
+    
+    float: left;
+}
