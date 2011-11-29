@@ -3,7 +3,7 @@ Contributors: Shaon
 Donate link: 
 Tags: pricing table, price table, special offer, discount offer, offer, important, page, posts, post, widget, links, image, admin, sidebar, plugins, plugin, comments, must have plugins
 Requires at least: 2.0.2
-Tested up to: 3.2.0
+Tested up to: 3.2.*
 Stable tag: 1.0.5
  
 
