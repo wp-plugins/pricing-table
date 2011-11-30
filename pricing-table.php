@@ -71,12 +71,7 @@ function wppt_table($params){
  
 
 wp_enqueue_script("jquery");
-if(is_admin()){
-  
-    wp_enqueue_script("jquery-form",plugins_url().'/wordpress-perfection/jquery.form.js');    
-   
-    
-}
+
  
 $ahm_plugin->load_scripts(); 
 $ahm_plugin->load_styles(); 
