@@ -4,31 +4,31 @@
  jQuery('.deleterow').live('click', function() {   //alert(val);
     if(confirm("Are you sure you want to delete?")){
             
-            jQuery("."+$(this).attr('rel')).slideUp(function(){$(this).remove();});
+            jQuery("."+jQuery(this).attr('rel')).slideUp(function(){jQuery(this).remove();});
          
     }
  });
  jQuery('.deletecol').live('click', function() {   //alert(val);
     if(confirm("Are you sure you want to delete?")){
             
-            jQuery("."+$(this).attr('rel')).remove();
+            jQuery("."+jQuery(this).attr('rel')).remove();
          
     }
  });
  
  jQuery('.featured-package').live('click', function() {   //alert(val);
-    var fid=$(this).attr("id");
-    $('.featured-package').attr('src','<?php echo plugins_url(); ?>/pricing-table/images/unfeatured.png')
-    $('#'+fid).attr('src',"<?php echo plugins_url(); ?>/pricing-table/images/featured.png");
-    $('#featured').val($('#'+fid).attr("rel"));
+    var fid=jQuery(this).attr("id");
+    jQuery('.featured-package').attr('src','<?php echo plugins_url(); ?>/pricing-table/images/unfeatured.png')
+    jQuery('#'+fid).attr('src',"<?php echo plugins_url(); ?>/pricing-table/images/featured.png");
+    jQuery('#featured').val(jQuery('#'+fid).attr("rel"));
  });
  
  </script>
  <script type="text/javascript">
  /*function featur(r,fid){
      //alert(r+fid);
-        $('.featured-package').attr('src','<?php echo plugins_url(); ?>/pricing-table/images/unfeatured.png')
-        $('#'+fid).attr('src',"<?php echo plugins_url(); ?>/pricing-table/images/featured.png");
+        jQuery('.featured-package').attr('src','<?php echo plugins_url(); ?>/pricing-table/images/unfeatured.png')
+        jQuery('#'+fid).attr('src',"<?php echo plugins_url(); ?>/pricing-table/images/featured.png");
      
  } */
  </script>
@@ -151,21 +151,21 @@
           }
           
           
-           $('#pricetable tbody tr:last').clone(true).insertAfter('#pricetable tbody>tr:last');
-           $('#pricetable tbody tr:last td:first').text(feat);
-            $('#pricetable tbody tr:last td:first').append("<div class='deleterow' title='Delete this row'>&nbsp;</div>");
-           $('#pricetable tbody tr:last td:first').attr("class",feat);
-           $('#pricetable tbody tr:last').attr("class",feat);
-           $('#pricetable tbody tr:last td:first .deleterow').attr("rel",feat);
+           jQuery('#pricetable tbody tr:last').clone(true).insertAfter('#pricetable tbody>tr:last');
+           jQuery('#pricetable tbody tr:last td:first').text(feat);
+            jQuery('#pricetable tbody tr:last td:first').append("<div class='deleterow' title='Delete this row'>&nbsp;</div>");
+           jQuery('#pricetable tbody tr:last td:first').attr("class",feat);
+           jQuery('#pricetable tbody tr:last').attr("class",feat);
+           jQuery('#pricetable tbody tr:last td:first .deleterow').attr("rel",feat);
            
            var ht="";
            
-           $("#pricetable tbody tr:last").find("td").each(function() {
+           jQuery("#pricetable tbody tr:last").find("td").each(function() {
                
                
                var ccl,pos1;
                var nclassname="";
-               ccl=$(this).attr("class");
+               ccl=jQuery(this).attr("class");
                ccl=trim(new String(ccl));
                
                pos1= ccl.indexOf(" ");
@@ -177,29 +177,29 @@
                }
                nclassname += feat;
                
-               $(this).attr("class",nclassname);
-               ht= $(this).find('input').attr('name');
+               jQuery(this).attr("class",nclassname);
+               ht= jQuery(this).find('input').attr('name');
                ht=new String(ht); 
                if(ht != "undefined"){
                    var pos= ht.indexOf("]");
                    var cnam=ht.substr(0,pos+1);
                    var nnam=cnam+"["+feat+"]";
-                   $(this).find('input').attr("name",nnam);
-                   $(this).find('input').attr("id",nnam);
+                   jQuery(this).find('input').attr("name",nnam);
+                   jQuery(this).find('input').attr("id",nnam);
                    
                } 
                
            });
 
-           $('#pricetable tbody tr:last td:first').css("font-weight","bold"); 
+           jQuery('#pricetable tbody tr:last td:first').css("font-weight","bold"); 
            });
      
      
       jQuery('#addcolumn').click(function(){
            var cid = 1;
           //check whether any features exists or not. if no feature then create feature first
-          //alert($('#pricetable tbody tr:last td:first').html());
-          if(trim($('#pricetable tbody tr:last td:first').html())=="Packages/Features"){
+          //alert(jQuery('#pricetable tbody tr:last td:first').html());
+          if(trim(jQuery('#pricetable tbody tr:last td:first').html())=="Packages/Features"){
               alert("Create Features first");
           }else{
               var package=prompt("Enter Package");
@@ -209,27 +209,27 @@
                    package=trim(package);    
               }
                var htm;  
-              $("#pricetable").find("tr").each(function() {
-                  //alert($(this).find('td:first').html());
+              jQuery("#pricetable").find("tr").each(function() {
+                  //alert(jQuery(this).find('td:first').html());
               
                var rw="";
-               rw= trim($(this).find('td:first').text());
+               rw= trim(jQuery(this).find('td:first').text());
                
                htm="features["+package+"]["+rw+"]"; 
-               $(this).find('td:last').after( '<td > &nbsp;</td>' ); 
-               $(this).find('td:last').addClass(package + " "+ rw.replace(" ",""));
-               if(trim($(this).find('td:first').html())!="Packages/Features"){                          
-                    $(this).find('td:last').append('<input id="'+cid+'" name="'+htm+'" type="text" >');                   
+               jQuery(this).find('td:last').after( '<td > &nbsp;</td>' ); 
+               jQuery(this).find('td:last').addClass(package + " "+ rw.replace(" ",""));
+               if(trim(jQuery(this).find('td:first').html())!="Packages/Features"){                          
+                    jQuery(this).find('td:last').append('<input id="'+cid+'" name="'+htm+'" type="text" >');                   
                     
                      cid++;
                }         
                });
                 
-               $('#pricetable tbody tr:first td:last').text(package);
-               $('#pricetable tbody tr:first td:last').append("<div class='deletecol' rel='"+package+"' title='Delete this row'>&nbsp;</div>");
-               $('#pricetable tbody tr:first td:last').append('<img rel="'+package+'" style="cursor:pointer;float:right" id="f" class="featured-package" title="click here to feature" src="<?php echo plugins_url();?>/pricing-table/images/unfeatured.png" >');  
-               $('#pricetable tbody tr:first td:last').css("font-weight","bold");
-               $('#pricetable tbody tr:first td:last').attr("class",package);
+               jQuery('#pricetable tbody tr:first td:last').text(package);
+               jQuery('#pricetable tbody tr:first td:last').append("<div class='deletecol' rel='"+package+"' title='Delete this row'>&nbsp;</div>");
+               jQuery('#pricetable tbody tr:first td:last').append('<img rel="'+package+'" style="cursor:pointer;float:right" id="f" class="featured-package" title="click here to feature" src="<?php echo plugins_url();?>/pricing-table/images/unfeatured.png" >');  
+               jQuery('#pricetable tbody tr:first td:last').css("font-weight","bold");
+               jQuery('#pricetable tbody tr:first td:last').attr("class",package);
           }
     });
       });
