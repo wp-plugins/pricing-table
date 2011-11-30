@@ -7,17 +7,17 @@ Tested up to: 3.2.0
 Stable tag: 1.0.5
  
 
-This plugin will help you to generate pricing table in a easitest and dynamic way
+WordPress Pricing Table plugin will help you to generate pricing table in a easitest and dynamic way
    
 
 == Description ==
 
-This plugin will help the admin to publish pricing table on WordPress page or post content.
-This plugins has full featured but easy to use administration option to create pricing table. 
+WordPress Pricing Table plugin will help the admin to publish pricing table on WordPress page or post content.
+WordPress Pricing Table plugin has full featured but easy to use administration option to create pricing table. 
 Use simple short-code `[ahm-pricing-table id=999]` (999=use any table id here) inside page or post content to embed pricing table
 
 
-= More Details = 
+= More Details about WordPress Pricing Table Plugin = 
 `http://wpeden.com/product/wordpress-pricing-table-plugin/`
 
 == Installation ==
