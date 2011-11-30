@@ -41,8 +41,7 @@ foreach($tables as $mypost){
                 <?php
     $pkeys=array_keys($data);
     $fkeys=array_keys($data[$pkeys[0]]); 
-    //print_r($pkeys);
-     //print_r($fkeys);
+ 
      for($i=0;$i<count($fkeys);$i++){
          if(strtolower($fkeys[$i])!="button url" && strtolower($fkeys[$i])!="button text")    
          echo "<li>".$fkeys[$i]."</li>";
