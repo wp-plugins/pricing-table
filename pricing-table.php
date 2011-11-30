@@ -2,7 +2,7 @@
 /*
 Plugin Name: Pricing table
 Plugin URI: http://shaon.info/pricing-table-builder-plugin-for-wordpress/
-Description: Display important message/notice from site admin to visitor. Use simple short-code <strong>[ahm-pricing-table id=999]</strong> ( <strong>999</strong> = use any table id here) inside page or post content to embed pricing table
+Description: Generate Pricing Table Easily. Use simple short-code <strong>[ahm-pricing-table id=999]</strong> ( <strong>999</strong> = use any table id here) inside page or post content to embed pricing table
 Author: Shaon
 Version: 1.0.1
 Author URI: http://shaon.info/
