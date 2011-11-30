@@ -15,10 +15,7 @@ foreach($tables as $mypost){
 </select>
  </form>
  -->
- <?php  // print_r($tables); 
-    //$pid=  $id;
-    //if($_POST['pricing_tableid'])$pid= $_POST['pricing_tableid'];
-    //$pid=382;  
+ <?php   
     $data = get_post_meta($pid, 'pricing_table_opt',true);
     $featured=  get_post_meta($pid, 'pricing_table_opt_feature',true);  
      /*echo "<pre>";     
