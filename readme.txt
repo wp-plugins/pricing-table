@@ -32,6 +32,9 @@ N/A
 2. Pricing table admin
 
 == Changelog ==
+
+= 1.0.2 =
+* help section added with steps for creating pricing table
 
 = 1.0.0 =
 * initial release

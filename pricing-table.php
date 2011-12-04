@@ -4,7 +4,7 @@ Plugin Name: Pricing table
 Plugin URI: http://shaon.info/pricing-table-builder-plugin-for-wordpress/
 Description: Generate Pricing Table Easily. Use simple short-code <strong>[ahm-pricing-table id=999]</strong> ( <strong>999</strong> = use any table id here) inside page or post content to embed pricing table
 Author: Shaon
-Version: 1.0.1
+Version: 1.0.2
 Author URI: http://shaon.info/
 */
  
@@ -68,7 +68,19 @@ function wppt_table($params){
      return $data;
 }
 
+function wppt_help(){
+    include("tpls/help.php");
+}
+
+function wppt_menu(){
+    add_submenu_page('edit.php?post_type=pricing-table', 'Help', 'Help', 'administrator', 'help', 'wppt_help');    
+    
+}
+
  
+ if(is_admin()){
+     add_action("admin_menu","wppt_menu");
+ } 
 
 wp_enqueue_script("jquery");
 
