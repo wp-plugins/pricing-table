@@ -1,27 +1,7 @@
- <!--
-<form action="" method="post" name="pricf">
-Select Table
-<select name="pricing_tableid" id="pricing_tableid" onchange="document.pricf.submit();">
- <?php
- 
-$tables = get_posts( $args );
-
-foreach($tables as $mypost){
-    
-    if($mypost->ID == $_POST['pricing_tableid']) $select="selected='selected'";else $select="";
-    echo "<option value='".$mypost->ID."' ".$select.">".$mypost->post_title."</option> ";
-}
-?>
-</select>
- </form>
- -->
  <?php   
     $data = get_post_meta($pid, 'pricing_table_opt',true);
     $featured=  get_post_meta($pid, 'pricing_table_opt_feature',true);  
-     /*echo "<pre>";     
-     print_r($data);
-     echo "</pre>";
-     */  
+    
 ?>
 <div style="clear: both;"></div>
 <link rel="stylesheet" type="text/css" href="<?php echo plugins_url(); ?>/pricing-table/tpls/css/reset.css"> 
@@ -79,20 +59,11 @@ foreach($tables as $mypost){
                     echo "<li>".$value1."</li>";
                 }
                 ?>
-               <!-- <li>$49</li>
-                <li>2 for 1 (?)</li> 
-                <li>N/A</li> 
-                <li>Yes</li> 
-                <li>Yes</li> 
-                <li>No</li> 
-                <li>No</li> 
-                <li>Unlimited</li>
-                -->
+               
                 
                 </ul>     
                 <?php
-    if($featured==$key) echo "<span>No risk. Cancel at anytime.
-No hidden fees.(***)</span>";
+ 
 ?>           
                 <a class="signup" href="<?php echo $value['Button URL']?>"><?php echo $value['Button Text']?></a>
                 
@@ -102,75 +73,7 @@ No hidden fees.(***)</span>";
         </div>
         <?php } ?>
         
-       <!-- <div class="col1">
-
-            <div class="selectedpriceTitle">
-            <div class="offer-tag"><a href=""><img src="images/offer-tag.png"></a></div> 
-            <span>Professional</span></div>
-
-                 <div class="selectePrice-content">
-                <ul>
-                <li>$49</li>
-                <li>2 for 1 (?)</li> 
-                <li>N/A</li> 
-                <li>Yes</li> 
-                <li>Yes</li> 
-                <li>No</li> 
-                <li>No</li> 
-                <li>Unlimited</li> 
-                </ul>
-                
-                <span>No risk. Cancel at anytime.
-No hidden fees.(***)</span>
-                
-                <a class="signup" href="">Sign up</a>
-                
-                
-            </div>
-            
-        </div>
-        
-        <div class="col1">
-            <div class="priceTitle"><span>Business</span></div> 
-            <div class="price-content">
-                <ul>
-                <li>$49</li>
-                <li>2 for 1 (?)</li> 
-                <li>N/A</li> 
-                <li>Yes</li> 
-                <li>Yes</li> 
-                <li>No</li> 
-                <li>No</li> 
-                <li>Unlimited</li> 
-                </ul>                
-                <a class="signup" href="">Sign up</a>
-                
-                
-            </div>
-                       
-        </div>
-        <div class="col1">
-            <div class="priceTitle"><span>Unlimited</span></div>
-            
-            <div class="price-content">
-                <ul>
-                <li>$49</li>
-                <li>2 for 1 (?)</li> 
-                <li>N/A</li> 
-                <li>Yes</li> 
-                <li>Yes</li> 
-                <li>No</li> 
-                <li>No</li> 
-                <li>Unlimited</li> 
-                </ul>                
-                <a class="signup" href="">Sign up</a>
-                
-                
-            </div>
-           
-        </div> 
-        -->
-        
+     
     </div>  
         
         

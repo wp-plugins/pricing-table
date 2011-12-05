@@ -33,6 +33,9 @@ N/A
 
 == Changelog ==
 
+= 1.0.3 =
+* issues with table template price_table.php is fixed
+
 = 1.0.2 =
 * help section added with steps for creating pricing table
 
