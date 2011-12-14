@@ -4,7 +4,7 @@ Donate link:
 Tags: pricing table, price table, special offer, discount offer, offer, important, page, posts, post, widget, links, image, admin, sidebar, plugins, plugin, comments, must have plugins
 Requires at least: 2.0.2
 Tested up to: 3.3.0
- 
+License: GPL 
  
 
 WordPress Pricing Table plugin will help you to generate pricing table in a easitest and dynamic way
