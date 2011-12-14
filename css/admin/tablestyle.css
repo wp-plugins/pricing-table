@@ -587,3 +587,14 @@ body
 	color: #339;
 	background: #cdcdee;
 }
+.tDnD_whileDrag td{
+    background: #fff !important;
+}
+
+#pricetable tr:first-child td{
+    cursor: move;
+}
+
+#pricetable tr:first-child td:first-child{
+    cursor: text;
+}

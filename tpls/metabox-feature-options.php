@@ -52,8 +52,8 @@
  <table>
  <tr><td></td><td><a style="float: right;" href="#" class="button" id="addcolumn">Add Package</a> </td></tr>
  <tr><td>
- <table id="pricetable" border="0" width="100%" cellspacing="0" cellpadding="0" >       
-   <tr>
+ <table class="draggable" id="pricetable" border="0" width="100%" cellspacing="0" cellpadding="0" >       
+   <tr class="nodrag nodrop">
       <td >
         Packages/Features
       </td>  
@@ -83,7 +83,9 @@
     if( is_array($fkeys) ){ 
     foreach($fkeys as $index1=> $value1){
         $feature_key = str_replace(" ","",$value1);
-        echo "<tr class='{$value1}'>";
+        if(in_array($value1,array('Price','Detail','Button URL','Button Text'))) $cls = "nodrag nodrop";
+        else $cls = "";
+        echo "<tr class='{$value1} $cls'>";
         $t=0;
         foreach($pkeys as $index=> $value){
             $package_key=str_replace(" ","",$value);
@@ -103,22 +105,22 @@
     }
     }else{
         ?>
-        <tr>
+        <tr class="nodrag nodrop">
       <td class="Price">
         <strong>Price</strong>
       </td>
       </tr>
-      <tr>
+      <tr class="nodrag nodrop">
       <td class="Detail">
         <strong>Detail</strong>
       </td>
       </tr>
-      <tr>
+      <tr class="nodrag nodrop">
       <td class="Button URL ">
          <strong>Button URL</strong>
       </td>
       </tr>
-      <tr>
+      <tr class="nodrag nodrop">
       <td class="Button Text">
          <strong>Button Text </strong>
       </td>
@@ -140,6 +142,9 @@
 
 
     jQuery(function(){
+      
+        jQuery('#pricetable').tableDnD();  
+        
       jQuery('#addrow').click(function(){
           
           var feat;

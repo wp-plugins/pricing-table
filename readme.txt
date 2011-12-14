@@ -3,8 +3,8 @@ Contributors: Shaon
 Donate link: 
 Tags: pricing table, price table, special offer, discount offer, offer, important, page, posts, post, widget, links, image, admin, sidebar, plugins, plugin, comments, must have plugins
 Requires at least: 2.0.2
-Tested up to: 3.2.0
-Stable tag: 1.0.5
+Tested up to: 3.3.0
+ 
  
 
 WordPress Pricing Table plugin will help you to generate pricing table in a easitest and dynamic way
@@ -15,7 +15,8 @@ WordPress Pricing Table plugin will help you to generate pricing table in a easi
 WordPress Pricing Table plugin will help the admin to publish pricing table on WordPress page or post content.
 WordPress Pricing Table plugin has full featured but easy to use administration option to create pricing table. 
 Use simple short-code `[ahm-pricing-table id=999]` (999=use any table id here) inside page or post content to embed pricing table
-
+
+`v1.0.4 comes with drag and drop optoin for table column and row`
 
 == Installation ==
 
@@ -31,7 +32,11 @@ N/A
 1. Pricing Table
 2. Pricing table admin
 
-== Changelog ==
+== Changelog ==
+
+= 1.0.4 =
+* Row drag and drop feature added
+* column grad and drop feature added
 
 = 1.0.3 =
 * issues with table template price_table.php is fixed
