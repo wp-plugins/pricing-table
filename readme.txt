@@ -16,7 +16,7 @@ WordPress Pricing Table plugin will help the admin to publish pricing table on W
 WordPress Pricing Table plugin has full featured but easy to use administration option to create pricing table. 
 Use simple short-code `[ahm-pricing-table id=999]` (999=use any table id here) inside page or post content to embed pricing table
 
-`v1.0.4 comes with drag and drop optoin for table column and row`
+`v1.0.4 comes with drag and drop option for table columns and rows`
 
 == Installation ==
 
