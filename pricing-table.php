@@ -4,7 +4,7 @@ Plugin Name: Pricing table
 Plugin URI: http://shaon.info/pricing-table-builder-plugin-for-wordpress/
 Description: Generate Pricing Table Easily. Use simple short-code <strong>[ahm-pricing-table id=999]</strong> ( <strong>999</strong> = use any table id here) inside page or post content to embed pricing table
 Author: Shaon
-Version: 1.0.4
+Version: 1.0.5
 Author URI: http://shaon.info/
 */
  
@@ -77,6 +77,21 @@ function wppt_menu(){
     
 }
 
+
+function wppt_columns_struct( $columns ) {     
+    $column_shorcode = array( 'shortcode' => 'Embed Code' );    
+    $columns = array_slice( $columns, 0, 2, true ) + $column_shorcode + array_slice( $columns, 2, NULL, true );
+    return $columns;
+}
+
+function wppt_column_obj( $column ) {
+    global $post;
+    switch ( $column ) {       
+        case 'shortcode':
+            echo "<input type=text readonly=readonly value='[ahm-pricing-table id={$post->ID}]' size=25 style='font-weight:bold;text-align:Center;' onclick='this.select()' />";
+            break;
+    }
+}
  
  if(is_admin()){
      add_action("admin_menu","wppt_menu");
@@ -91,6 +106,6 @@ $ahm_plugin->load_modules();
 
  
 add_action('init', 'wppt_custom_init'); 
-
-
 add_shortcode("ahm-pricing-table",'wppt_table');
+add_filter( 'manage_edit-pricing-table_columns', 'wppt_columns_struct', 10, 1 );
+add_action( 'manage_posts_custom_column', 'wppt_column_obj', 10, 1 );
