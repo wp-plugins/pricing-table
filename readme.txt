@@ -17,6 +17,13 @@ Use simple short-code `[ahm-pricing-table id=999 template=template_name]` (999=u
 
 `v1.0.6 comes new table template`
 
+= Features =
+* Drag and drop package(column) re-ordering
+* Drag and drop feature(row)  re-ordering
+* Unlimited package(column) support
+* Featured Column option highlight best price package
+* 2 diff table template "green" and "gray"
+
 
 == Installation ==
 
