@@ -16,6 +16,8 @@ Follow the steps to create wordpress pricing table:
     <li>Click on publish button and you just finished creating a pricing table.</li>
     <li>Now use the shortcode <strong>[</strong>ahm-pricing-table id=table_id_you_just_create template=template_name<strong>]</strong> inside page or post content to show your pricing table and it will look like this:
 <a href="<?php echo plugins_url('/pricing-table'); ?>/images/pricing-table-preview.png"><img class="alignnone size-full wp-image-128" title="WordPress Pricing Table Preview" src="<?php echo plugins_url('/pricing-table'); ?>/images/pricing-table-preview.png" alt="WordPress Pricing Table Preview" width="970" height="577" /></a></li>
+<li>2 template available here: (1) <code>green</code> (2) <code>gray</code></li>
+    
 </ol>
  
 Also a similar plugin with 9 different theme available <strong><a title="WordPress Pricing Table Plugin Pro" href="http://wpeden.com/product/wordpress-pricing-table-plugin-pro/">here</a></strong>.
