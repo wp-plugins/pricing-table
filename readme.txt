@@ -15,7 +15,7 @@ WordPress Pricing Table plugin has full featured but easy to use administration 
 Use simple short-code `[ahm-pricing-table id=999 template=template_name]` (999=use any table id here and replace template with valid template name "green" or "gray" ) inside page or post content to embed pricing table
 
 
-`v1.0.6 comes new table template`
+`v1.0.6 comes with new table template`
 
 = Features =
 * Drag and drop package(column) re-ordering
