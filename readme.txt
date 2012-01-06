@@ -24,6 +24,8 @@ Use simple short-code `[ahm-pricing-table id=999 template=template_name]` (999=u
 * Featured Column option highlight best price package
 * 2 diff table template "green" and "gray"
 
+= Support =
+`http://wpeden.com/forums/forum/general-questions/`
 
 == Installation ==
 
