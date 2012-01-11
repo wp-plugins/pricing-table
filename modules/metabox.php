@@ -12,7 +12,17 @@
 /* Adds a box to the main column on the Post and Page edit screens */
 function wppt_add_custom_box() {
     add_meta_box( 'pricing-table-feature-options', __( 'Packages/Features ( <a target="_blank" href="http://wpeden.com/product/wordpress-pricing-table-plugin/">Get pro for more templates &#187;</a> )', 'wppt' ), 'wppt_individual_features', 'pricing-table', 'normal','core' );
+    add_meta_box( 'pricing-table-op', __( 'My Other Plugins', 'wppt' ), 'wppt_plugins', 'pricing-table', 'side','core' );
    
+}
+
+function wppt_plugins( $post ) {
+    ?>
+    <a href="http://wpeden.com/" style="width:97%;overflow:hidden;margin:5px;background: #fafafa;border: 1px solid #ccc;display: block;float: left;text-align: center;-webkit-border-radius: 6px;-moz-border-radius: 6px;border-radius: 6px;" ><h3 style="margin: 0px;background: #ccc;-webkit-border-top-left-radius: 5px;-webkit-border-top-right-radius: 5px;-moz-border-radius-topleft: 5px;-moz-border-radius-topright: 5px;border-top-left-radius: 5px;border-top-right-radius: 5px;padding:5px;text-decoration: none;color:#333">WordPress Themes & Plugins Collection</h3><img src="http://wpeden.com/wp-content/themes/wp-eden/img/logo.png" /></a>
+   <a href="http://www.wpdownloadmanager.com/" style="width:97%;overflow:hidden;margin:5px;background: #fafafa;border: 1px solid #ccc;display: block;float: left;text-align: center;-webkit-border-radius: 6px;-moz-border-radius: 6px;border-radius: 6px;" ><h3 style="margin: 0px;background: #ccc;-webkit-border-top-left-radius: 5px;-webkit-border-top-right-radius: 5px;-moz-border-radius-topleft: 5px;-moz-border-radius-topright: 5px;border-top-left-radius: 5px;border-top-right-radius: 5px;padding:5px;text-decoration: none;color:#333">WordPress Download Manager Pro</h3><img src="http://www.wpdownloadmanager.com/wp-content/themes/wpdm/images/icon.png" /></a>
+   <a href="http://www.wpmarketplaceplugin.com/" style="width:97%;overflow:hidden;margin:5px;background: #fafafa;border: 1px solid #ccc;display: block;float: left;text-align: center;-webkit-border-radius: 6px;-moz-border-radius: 6px;border-radius: 6px;" ><h3 style="margin: 0px;background: #ccc;-webkit-border-top-left-radius: 5px;-webkit-border-top-right-radius: 5px;-moz-border-radius-topleft: 5px;-moz-border-radius-topright: 5px;border-top-left-radius: 5px;border-top-right-radius: 5px;padding:5px;text-decoration: none;color:#333">WordPress Marketplace Plugin</h3><img vspace="12" src="http://wpmarketplaceplugin.com/wp-content/uploads/2011/06/logo2.png" /></a>
+   <div style="clear: both;"></div>
+    <?php
 }
 
 function wppt_individual_features( $post ) {
