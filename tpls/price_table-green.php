@@ -4,14 +4,13 @@
     
 ?>
 <div style="clear: both;"></div>
-<link rel="stylesheet" type="text/css" href="<?php echo plugins_url(); ?>/pricing-table/tpls/css/reset.css"> 
 <link rel="stylesheet" type="text/css" href="<?php echo plugins_url(); ?>/pricing-table/tpls/css/style.css">
-<link rel="stylesheet" type="text/css" href="<?php echo plugins_url(); ?>/pricing-table/tpls/css/960.css"> 
-
-<div class="container_12" style="display: block;margin-bottom: 80px;">
   
-    <div class="grid_12">
-    <div class="pricing-table">
+
+ 
+  
+    
+    <div class="pricing-table"  style="margin-bottom: 80px;" >
         <div class="col1">
             <div class="featureTitle">
             <span>FEATURE</span></div>
@@ -41,7 +40,7 @@
         <div class="col1">
             <?php if($featured==$key){?>
             <div class="selectedpriceTitle">
-            <div class="offer-tag"><a href=""><img src="<?php echo plugins_url(); ?>/pricing-table/tpls/images/offer-tag.png"></a></div>
+            <div class="offer-tag"><img src="<?php echo plugins_url(); ?>/pricing-table/tpls/images/offer-tag.png"></div>
             <span><?php echo $key;?></span></div>
             <div class="selectePrice-content"> 
              <?php }else{
@@ -73,15 +72,26 @@
         </div>
         <?php } ?>
         
-     
+        
+  <div style="clear: both;"></div>   
     </div>  
         
+     
+ 
+  
+  
+   <!-- end pt -->
+ 
+
+  <script language="JavaScript">
+  <!--
+ 
+        var v = jQuery('.col1').length;
+       
+        var cw = (95/v);
         
-    </div>
+        jQuery('.col1').css('width',cw+'%');
+        
   
-  
-  </div>
-   <div style="clear: both;"></div> 
-  </div>
-  
-  <div style="clear: both;"></div> 
+  //-->
+  </script>

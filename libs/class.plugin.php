@@ -4,7 +4,9 @@ class ahm_plugin{
     public $plugin_dir;
     public $plugin_url;
     protected $header_tabs;
+    public $plugin;
     function __construct($plugin){
+             $this->plugin = $plugin; 
              $this->plugin_dir = WP_PLUGIN_DIR.'/'.$plugin;
              $this->plugin_url = plugins_url().'/'.$plugin;
     }
@@ -30,6 +32,9 @@ class ahm_plugin{
     }
     
     function load_scripts(){
+        if($this->plugin=='pricing-table')
+        return;
+        global $wp_query;        
         wp_enqueue_script('jquery');
         $dir = is_admin()?'admin':'site';
         $jsdir = $this->plugin_dir.'/js/'.$dir.'/';

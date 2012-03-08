@@ -1,3 +1,5 @@
+<script language="JavaScript" src="<?php echo plugins_url(); ?>/pricing-table/js/admin/dragtable.js"></script>
+<script language="JavaScript" src="<?php echo plugins_url(); ?>/pricing-table/js/admin/jquery.tablednd_0_5.js"></script>
 <link rel="stylesheet" type="text/css" href="<?php echo plugins_url(); ?>/pricing-table/css/admin/tablestyle.css"> 
 <link rel="stylesheet" type="text/css" href="<?php echo plugins_url(); ?>/pricing-table/css/admin/my.css"> 
  <script>

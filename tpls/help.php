@@ -1,6 +1,6 @@
 <div class="wrap">
 <div class="icon32 icon32-posts-post" id="icon-edit"><br></div>
-<h2 class="nav-tab-wrapper">How to use Pricing Table <a style="color: #008000;" class="nav-tab" href="http://wpeden.com/product/wordpress-pricing-table-plugin-pro/">Get pro version with 9 diff templates</a></h2>
+<h2 class="nav-tab-wrapper">How to use Pricing Table <a style="color: #008000;" class="nav-tab" href="http://wpeden.com/product/wordpress-pricing-table-plugin-pro/">Get pro version with 15 diff templates</a></h2>
 
 <Br/>
 
@@ -20,6 +20,6 @@ Follow the steps to create wordpress pricing table:
     
 </ol>
  
-Also a similar plugin with 9 different theme available <strong><a title="WordPress Pricing Table Plugin Pro" href="http://wpeden.com/product/wordpress-pricing-table-plugin-pro/">here</a></strong>.
+Also a similar plugin with <strong>15</strong> different theme available <strong><a title="WordPress Pricing Table Plugin Pro" href="http://wpeden.com/product/wordpress-pricing-table-plugin-pro/">here</a></strong>.
 
 </div>

@@ -3,12 +3,11 @@
     $featured=  get_post_meta($pid, 'pricing_table_opt_feature',true);  
     
 ?>
-<div style="clear: both;"></div>
-<link rel="stylesheet" type="text/css" href="<?php echo plugins_url(); ?>/pricing-table/tpls/css/reset.css"> 
+<div style="clear: both;"></div> 
 <link rel="stylesheet" type="text/css" href="<?php echo plugins_url(); ?>/pricing-table/tpls/css/style.css">
 <link rel="stylesheet" type="text/css" href="<?php echo plugins_url(); ?>/pricing-table/tpls/css/960.css"> 
 
-<div class="container_12" style="display: block;margin-bottom: 80px;">
+<div class="container_12" style="margin-bottom: 80px;">
   
     <div class="grid_12">
     <div class="pricing-table">
