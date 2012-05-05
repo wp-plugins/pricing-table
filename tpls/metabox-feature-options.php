@@ -20,9 +20,12 @@
  
  jQuery('.featured-package').live('click', function() {   //alert(val);
     var fid=jQuery(this).attr("id");
+    var iv = jQuery(this).attr('src'); //,"<?php echo plugins_url(); ?>/pricing-table/images/featured.png");
     jQuery('.featured-package').attr('src','<?php echo plugins_url(); ?>/pricing-table/images/unfeatured.png')
-    jQuery('#'+fid).attr('src',"<?php echo plugins_url(); ?>/pricing-table/images/featured.png");
-    jQuery('#featured').val(jQuery('#'+fid).attr("rel"));
+    if(iv=='<?php echo plugins_url(); ?>/pricing-table/images/unfeatured.png') {
+    jQuery(this).attr('src',"<?php echo plugins_url(); ?>/pricing-table/images/featured.png");
+    jQuery('#featured').val(jQuery(this).attr("rel"));
+    }
  });
  
  </script>
@@ -52,12 +55,12 @@
         <br>
         <span style="padding: 5px 0 5px 0;">&nbsp;</span>
  <table>
- <tr><td></td><td><a style="float: right;" href="#" class="button" id="addcolumn">Add Package</a> </td></tr>
+ <tr><td></td><td><a style="float: right;" href="#" class="button" id="addcolumn"><?php echo __('Add Package','pricing-table'); ?></a> </td></tr>
  <tr><td>
  <table class="draggable" id="pricetable" border="0" width="100%" cellspacing="0" cellpadding="0" >       
    <tr class="nodrag nodrop">
       <td >
-        Packages/Features
+        <?php echo __('Packages/Features','pricing-table'); ?>
       </td>  
       <input type="hidden" id="featured" name="featured" value="<?php echo $featured;?>">   
       <?php  
@@ -109,22 +112,22 @@
         ?>
         <tr class="nodrag nodrop">
       <td class="Price">
-        <strong>Price</strong>
+        <strong><?php echo __('Price','pricing-table'); ?></strong>
       </td>
       </tr>
       <tr class="nodrag nodrop">
       <td class="Detail">
-        <strong>Detail</strong>
+        <strong><?php echo __('Detail','pricing-table'); ?></strong>
       </td>
       </tr>
       <tr class="nodrag nodrop">
       <td class="Button URL ">
-         <strong>Button URL</strong>
+         <strong><?php echo __('Button URL','pricing-table'); ?></strong>
       </td>
       </tr>
       <tr class="nodrag nodrop">
       <td class="Button Text">
-         <strong>Button Text </strong>
+         <strong><?php echo __('Button Text','pricing-table'); ?></strong>
       </td>
       </tr>
         <?php
@@ -133,7 +136,7 @@
 ?>
    
 </table></td><td></td></tr>
- <tr><td><a href="#" class="button" id="addrow">Add Feature</a>  </td><td></td></tr>
+ <tr><td><a href="#" class="button" id="addrow"><?php echo __('Add Feature','pricing-table'); ?></a>  </td><td></td></tr>
  </table>       
 
 

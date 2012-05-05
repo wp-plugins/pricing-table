@@ -9,11 +9,11 @@
 
 <div class="container_12" style="margin-bottom: 80px;">
   
-    <div class="grid_12">
+    <div class="grid_12" id="shaon-pricing-table">
     <div class="pricing-table">
         <div class="col1">
             <div class="featureTitle">
-            <span>FEATURE</span></div>
+            <span><?php echo __('FEATURE','pricing-table'); ?></span></div>
             
             <div class="feature-content">
                 <ul>

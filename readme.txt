@@ -1,9 +1,9 @@
 === Pricing Table ===
 Contributors: Shaon
-Donate link: 
+Donate link: http://shaon.info 
 Tags: pricing table, price table, special offer, discount offer, offer, page, posts, post, widget, plugins, plugin
 Requires at least: 2.0.2
-Tested up to: 3.3.0
+Tested up to: 3.3.2
 License: GPL 
 
 WordPress Pricing Table plugin will help you to generate pricing table in a easitest and dynamic way
@@ -21,6 +21,7 @@ Use simple short-code `[ahm-pricing-table id=999 template=template_name]` (999=u
 * Unlimited package(column) support
 * Featured Column option highlight best price package
 * 2 diff table template "green" and "gray"
+* Translation ready
 
  
 
@@ -45,6 +46,11 @@ N/A
 
 
 == Changelog ==
+
+= 1.1.1 =
+* added multilanguage support
+* fixed css issue
+* optimized css for green template
 
 = 1.1.0 =
 * fixed reset.css issue

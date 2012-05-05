@@ -1,6 +1,6 @@
 <div class="wrap">
 <div class="icon32 icon32-posts-post" id="icon-edit"><br></div>
-<h2 class="nav-tab-wrapper">How to use Pricing Table <a style="color: #008000;" class="nav-tab" href="http://wpeden.com/product/wordpress-pricing-table-plugin-pro/">Get pro version with 15 diff templates</a></h2>
+<h2 class="nav-tab-wrapper">How to use Pricing Table <a style="color: #008000;" class="nav-tab" href="http://wpeden.com/product/wordpress-pricing-table-plugin-pro/">Get pro version with 19 diff templates</a></h2>
 
 <Br/>
 

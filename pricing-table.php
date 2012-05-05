@@ -4,7 +4,7 @@ Plugin Name: Pricing table
 Plugin URI: http://wpeden.com
 Description: Generate Pricing Table Easily. Use simple short-code <strong>[ahm-pricing-table id=999]</strong> ( <strong>999</strong> = use any table id here) inside page or post content to embed pricing table
 Author: Shaon
-Version: 1.1.0
+Version: 1.1.1
 Author URI: http://shaon.info
 */
  
@@ -20,21 +20,23 @@ define('PLUGINDIR',$plugindir);
 
  
 
-
 function wppt_custom_init() 
 {
+  
+  load_plugin_textdomain( 'pricing-table', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' ); 
+    
   $labels = array(
-    'name' => _x('Pricing Tables', 'post type general name'),
-    'singular_name' => _x('Pricing Table', 'post type singular name'),
-    'add_new' => _x('Add New', 'pricing-table'),
-    'add_new_item' => __('Add New Pricing Table'),
-    'edit_item' => __('Edit Pricing Table'),
-    'new_item' => __('New Pricing Table'),
-    'all_items' => __('All Pricing Tables'),
-    'view_item' => __('View Pricing Table'),
-    'search_items' => __('Search Pricing Tables'),
-    'not_found' =>  __('No Pricing Table found'),
-    'not_found_in_trash' => __('No Pricing Tables found in Trash'), 
+    'name' => _x('Pricing Tables', 'pricing-table'),
+    'singular_name' => _x('Pricing Table', 'pricing-table'),
+    'add_new' => _x('Add New', 'pricing-table','pricing-table'),
+    'add_new_item' => __('Add New Pricing Table','pricing-table'),
+    'edit_item' => __('Edit Pricing Table','pricing-table'),
+    'new_item' => __('New Pricing Table','pricing-table'),
+    'all_items' => __('All Pricing Tables','pricing-table'),
+    'view_item' => __('View Pricing Table','pricing-table'),
+    'search_items' => __('Search Pricing Tables','pricing-table'),
+    'not_found' =>  __('No Pricing Table found','pricing-table'),
+    'not_found_in_trash' => __('No Pricing Tables found in Trash','pricing-table'), 
     'parent_item_colon' => '',
     'menu_name' => 'Pricing Table'
 
@@ -80,7 +82,7 @@ function wppt_menu(){
 
 
 function wppt_columns_struct( $columns ) {     
-    $column_shorcode = array( 'shortcode' => 'Embed Code' );    
+    $column_shorcode = array( 'shortcode' => __('Embed Code','pricing-table') );    
     $columns = array_slice( $columns, 0, 2, true ) + $column_shorcode + array_slice( $columns, 2, NULL, true );
     return $columns;
 }
@@ -89,7 +91,8 @@ function wppt_column_obj( $column ) {
     global $post;
     switch ( $column ) {       
         case 'shortcode':
-            echo "<input type=text readonly=readonly value='[ahm-pricing-table id={$post->ID}]' size=25 style='font-weight:bold;text-align:Center;' onclick='this.select()' />";
+            echo "<input type=text readonly=readonly value='[ahm-pricing-table id={$post->ID} template=gray]' size=35 style='font-weight:bold;text-align:Center;' onclick='this.select()' />";
+            echo "<input type=text readonly=readonly value='[ahm-pricing-table id={$post->ID} template=green]' size=35 style='font-weight:bold;text-align:Center;' onclick='this.select()' />";
             break;
     }
 }

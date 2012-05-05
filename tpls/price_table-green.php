@@ -10,6 +10,7 @@
  
   
     
+    <div id="shaon-pricing-table">
     <div class="pricing-table"  style="margin-bottom: 80px;" >
         <div class="col1">
             <div class="featureTitle">
@@ -74,6 +75,8 @@
         
         
   <div style="clear: both;"></div>   
+    </div>  
+     <div style="clear: both;"></div>   
     </div>  
         
      

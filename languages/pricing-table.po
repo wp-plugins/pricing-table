@@ -1,0 +1,92 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Pricing Table v1.2.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-04-05 14:09+0600\n"
+"PO-Revision-Date: 2012-04-05 14:09+0600\n"
+"Last-Translator: \n"
+"Language-Team: Shaon <proshaon@yahoo.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-Language: English\n"
+"X-Poedit-SearchPath-0: E:\\xampp\\htdocs\\wpdm\\wp-content\\plugins\\pricing-table\n"
+
+#: E:\xampp\htdocs\wpdm\wp-content\plugins\pricing-table/pricing-table.php:32
+msgid "Add New Pricing Table"
+msgstr ""
+
+#: E:\xampp\htdocs\wpdm\wp-content\plugins\pricing-table/pricing-table.php:33
+msgid "Edit Pricing Table"
+msgstr ""
+
+#: E:\xampp\htdocs\wpdm\wp-content\plugins\pricing-table/pricing-table.php:34
+msgid "New Pricing Table"
+msgstr ""
+
+#: E:\xampp\htdocs\wpdm\wp-content\plugins\pricing-table/pricing-table.php:35
+msgid "All Pricing Tables"
+msgstr ""
+
+#: E:\xampp\htdocs\wpdm\wp-content\plugins\pricing-table/pricing-table.php:36
+msgid "View Pricing Table"
+msgstr ""
+
+#: E:\xampp\htdocs\wpdm\wp-content\plugins\pricing-table/pricing-table.php:37
+msgid "Search Pricing Tables"
+msgstr ""
+
+#: E:\xampp\htdocs\wpdm\wp-content\plugins\pricing-table/pricing-table.php:38
+msgid "No Pricing Table found"
+msgstr ""
+
+#: E:\xampp\htdocs\wpdm\wp-content\plugins\pricing-table/pricing-table.php:39
+msgid "No Pricing Tables found in Trash"
+msgstr ""
+
+#: E:\xampp\htdocs\wpdm\wp-content\plugins\pricing-table/pricing-table.php:85
+msgid "Embed Code"
+msgstr ""
+
+#: E:\xampp\htdocs\wpdm\wp-content\plugins\pricing-table/modules/metabox.php:14
+msgid "Packages/Features ( <a target=\"_blank\" href=\"http://wpeden.com/product/wordpress-pricing-table-plugin/\">Get pro for more templates &#187;</a> )"
+msgstr ""
+
+#: E:\xampp\htdocs\wpdm\wp-content\plugins\pricing-table/modules/metabox.php:15
+msgid "My Other Plugins"
+msgstr ""
+
+#: E:\xampp\htdocs\wpdm\wp-content\plugins\pricing-table/tpls/metabox-feature-options.php:58
+msgid "Add Package"
+msgstr ""
+
+#: E:\xampp\htdocs\wpdm\wp-content\plugins\pricing-table/tpls/metabox-feature-options.php:63
+msgid "Packages/Features"
+msgstr ""
+
+#: E:\xampp\htdocs\wpdm\wp-content\plugins\pricing-table/tpls/metabox-feature-options.php:115
+msgid "Price"
+msgstr ""
+
+#: E:\xampp\htdocs\wpdm\wp-content\plugins\pricing-table/tpls/metabox-feature-options.php:120
+msgid "Detail"
+msgstr ""
+
+#: E:\xampp\htdocs\wpdm\wp-content\plugins\pricing-table/tpls/metabox-feature-options.php:125
+msgid "Button URL"
+msgstr ""
+
+#: E:\xampp\htdocs\wpdm\wp-content\plugins\pricing-table/tpls/metabox-feature-options.php:130
+msgid "Button Text"
+msgstr ""
+
+#: E:\xampp\htdocs\wpdm\wp-content\plugins\pricing-table/tpls/metabox-feature-options.php:139
+msgid "Add Feature"
+msgstr ""
+
+#: E:\xampp\htdocs\wpdm\wp-content\plugins\pricing-table/tpls/price_table.php:16
+msgid "FEATURE"
+msgstr ""
+
