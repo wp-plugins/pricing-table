@@ -6,13 +6,13 @@ Requires at least: 2.0.2
 Tested up to: 3.3.2
 License: GPL 
 
-WordPress Pricing Table plugin will help you to generate pricing table in a easitest and dynamic way
+WordPress Pricing Table plugin will help you to generate pricing table in the easitest and dynamic way
 
 == Description ==
 
 WordPress Pricing Table plugin will help the admin to publish pricing table on WordPress page or post content.
-WordPress Pricing Table plugin has full featured but easy to use administration option to create pricing table. 
-Use simple short-code `[ahm-pricing-table id=999 template=template_name]` (999=use any table id here and replace template with valid template name "green" or "gray" ) inside page or post content to embed pricing table
+WordPress Pricing Table plugin packed with all features you will ever need to build a pricing or features table for your products or services in the easiest way. 
+Use simple short-code `[ahm-pricing-table id=999 template=template_name]` (999=use any table id here and replace template with valid template name "green" or "gray" ) inside page or post content to embed pricing table.
  
 
 = Features =
@@ -46,6 +46,9 @@ N/A
 
 
 == Changelog ==
+
+= 1.1.2 =
+* fixed wp 3.4 compatibility issue
 
 = 1.1.1 =
 * added multilanguage support

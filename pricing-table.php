@@ -4,7 +4,7 @@ Plugin Name: Pricing table
 Plugin URI: http://wpeden.com
 Description: Generate Pricing Table Easily. Use simple short-code <strong>[ahm-pricing-table id=999]</strong> ( <strong>999</strong> = use any table id here) inside page or post content to embed pricing table
 Author: Shaon
-Version: 1.1.1
+Version: 1.1.2
 Author URI: http://shaon.info
 */
  
@@ -101,19 +101,20 @@ function wppt_column_obj( $column ) {
      add_action("admin_menu","wppt_menu");
  } 
 
-wp_enqueue_script("jquery");
+
 
 function pricingtable_enqueue_scripts(){    
 global $pricingtable_plugin;
 //$pricingtable_plugin->load_scripts(); 
 //$pricingtable_plugin->load_styles(); 
+wp_enqueue_script("jquery");
 }
 
 $pricingtable_plugin->load_modules(); 
 
  
-//add_action('wp_enqueue_scripts', 'pricingtable_enqueue_scripts');  
-//add_action('admin_enqueue_scripts', 'pricingtable_enqueue_scripts'); 
+add_action('wp_enqueue_scripts', 'pricingtable_enqueue_scripts');  
+add_action('admin_enqueue_scripts', 'pricingtable_enqueue_scripts'); 
 add_action('init', 'wppt_custom_init'); 
 add_shortcode("ahm-pricing-table",'wppt_table');
 add_filter( 'manage_edit-pricing-table_columns', 'wppt_columns_struct', 10, 1 );
