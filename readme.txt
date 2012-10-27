@@ -47,6 +47,9 @@ N/A
 
 == Changelog ==
 
+= 1.1.3 =
+* fixed css with with table template
+
 = 1.1.2 =
 * fixed wp 3.4 compatibility issue
 

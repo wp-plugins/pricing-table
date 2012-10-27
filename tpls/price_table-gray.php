@@ -4,9 +4,6 @@
     
 ?>
     <style> 
-   
-  
-        
     #pricing-table {
         margin: 100px auto 50px auto;
         text-align: center;
@@ -198,7 +195,9 @@
         <ul>
             
             <?php foreach($value as $key1=>$value1){
-                    if( strtolower($key1)!="button url" && strtolower($key1)!="button text" && strtolower($key1)!="price")
+                    if(strtolower($key1)=='detail')
+                    echo "<li><b>".$value1."</b></li>";
+                    else if( strtolower($key1)!="button url" && strtolower($key1)!="button text" && strtolower($key1)!="price")
                     echo "<li><b>".$value1."</b> $key1</li>";
                 }
             ?>

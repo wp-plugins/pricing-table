@@ -87,8 +87,7 @@
  
 
   <script language="JavaScript">
-  <!--
- 
+   
         var v = jQuery('.col1').length;
        
         var cw = (95/v);
@@ -96,5 +95,5 @@
         jQuery('.col1').css('width',cw+'%');
         
   
-  //-->
+ 
   </script>

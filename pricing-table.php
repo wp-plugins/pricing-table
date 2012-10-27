@@ -4,8 +4,8 @@ Plugin Name: Pricing table
 Plugin URI: http://wpeden.com
 Description: Generate Pricing Table Easily. Use simple short-code <strong>[ahm-pricing-table id=999]</strong> ( <strong>999</strong> = use any table id here) inside page or post content to embed pricing table
 Author: Shaon
-Version: 1.1.2
-Author URI: http://shaon.info
+Version: 1.1.3
+Author URI: http://wordpresspricingtable.com
 */
  
 include("libs/class.plugin.php");
@@ -68,6 +68,7 @@ function wppt_table($params){
      include("tpls/price_table-$template.php"); 
      $data = ob_get_contents();     
      ob_clean();
+     $data = str_replace(array("\n","\r"),"",$data);
      return $data;
 }
 

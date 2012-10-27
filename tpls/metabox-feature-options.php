@@ -102,7 +102,7 @@
                 echo "<strong>".$value1."</strong></td>";
             }
             echo  '<td class="'.$package_key.' '.$feature_key.'"><input type="text"  id="features['.$value.']['.$value1.']" name="features['.$value.']['.$value1.'] " value="'
-            .$data[$value][$value1].'" >
+            .htmlspecialchars($data[$value][$value1]).'" >
             
           </td>';
         }
