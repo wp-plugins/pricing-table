@@ -47,6 +47,9 @@ N/A
 
 == Changelog ==
 
+= 1.1.4 =
+* fixed author uri issue
+
 = 1.1.3 =
 * fixed css with with table template
 
