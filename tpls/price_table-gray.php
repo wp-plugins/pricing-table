@@ -3,8 +3,6 @@
     $featured=  get_post_meta($pid, 'pricing_table_opt_feature',true);  
     
 ?>
-<script language="JavaScript" src="<?php echo plugins_url(); ?>/pricing-table/js/site/jquery.tipTip.minified.js"></script>
-<link rel="stylesheet" type="text/css" href="<?php echo plugins_url(); ?>/pricing-table/css/site/tipTip.css">
 
     <style> 
     #pricing-table {
@@ -217,13 +215,7 @@
    
 
 </div>
-<script language="JavaScript">
- 
-  jQuery(function(){
-                jQuery(".wppttip").tipTip({defaultPosition:'right'});
-            });
- 
-</script>
+
 
 <!-- price table designed by red-team-design.com -->
 

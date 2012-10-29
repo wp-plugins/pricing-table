@@ -4,8 +4,7 @@
     
 ?>
 <div style="clear: both;"></div>
-<script language="JavaScript" src="<?php echo plugins_url(); ?>/pricing-table/js/site/jquery.tipTip.minified.js"></script>
-<link rel="stylesheet" type="text/css" href="<?php echo plugins_url(); ?>/pricing-table/css/site/tipTip.css">
+ 
 <link rel="stylesheet" type="text/css" href="<?php echo plugins_url(); ?>/pricing-table/tpls/css/style.css">
   
 
@@ -101,8 +100,5 @@
         
         jQuery('.col1').css('width',cw+'%');
         
-  
-        jQuery(function(){
-                jQuery(".wppttip").tipTip({defaultPosition:'right'});
-            });
+           
   </script>
