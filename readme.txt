@@ -20,6 +20,7 @@ Use simple short-code `[ahm-pricing-table id=999 template=template_name]` (999=u
 * Drag and drop feature(row)  re-ordering
 * Unlimited package(column) support
 * Featured Column option highlight best price package
+* Tooltip support
 * 2 diff table template "green" and "gray"
 * Translation ready
 
@@ -46,6 +47,10 @@ N/A
 
 
 == Changelog ==
+
+= 1.1.5 =
+* Fixed missing metabox issue
+* Added tooltip support
 
 = 1.1.4 =
 * fixed author uri issue

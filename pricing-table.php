@@ -9,7 +9,10 @@ Author URI: http://shaon.info
 */
  
 include("libs/class.plugin.php");
-global $pricingtable_plugin;
+global $pricingtable_plugin, $enque;
+
+$enque = 0;
+
 $pricingtable_plugin = new ahm_plugin('pricing-table');
 
 
@@ -104,18 +107,54 @@ function wppt_column_obj( $column ) {
 
 
 
-function pricingtable_enqueue_scripts(){    
-global $pricingtable_plugin;
-//$pricingtable_plugin->load_scripts(); 
-//$pricingtable_plugin->load_styles(); 
-wp_enqueue_script("jquery");
+function wppt_admin_enqueue_scripts(){    
+    wp_enqueue_script("jquery");
 }
 
-$pricingtable_plugin->load_modules(); 
+function wppt_enqueue_scripts(){   
+    global $enque; 
+    wp_enqueue_script("jquery");    
+    if($enque==1){        
+        wp_enqueue_script("tiptipjs", plugins_url()."/pricing-table/js/site/jquery.tipTip.minified.js",array('jquery'));
+        wp_enqueue_style("tiptipcss", plugins_url()."/pricing-table/css/site/tipTip.css");
+    }
+}
+
+function wppt_tiptip_init(){
+    global $enque; 
+     
+    if($enque==1){        
+    ?>
+        <script language="JavaScript"> 
+          jQuery(function(){
+                        jQuery(".wppttip").tipTip({defaultPosition:'right'});
+                    });
+         
+        </script>
+    <?php
+    }
+}
 
  
-add_action('wp_enqueue_scripts', 'pricingtable_enqueue_scripts');  
-add_action('admin_enqueue_scripts', 'pricingtable_enqueue_scripts'); 
+function wppt_detect_shortcode()
+{
+    global $post, $enque;
+    $pattern = get_shortcode_regex();
+
+    if (   preg_match_all( '/'. $pattern .'/s', $post->post_content, $matches )
+        && array_key_exists( 2, $matches )
+        && in_array( 'ahm-pricing-table', $matches[2] ) )
+    {        
+        $enque = 1;
+    }
+}
+
+$pricingtable_plugin->load_modules();
+
+add_action( 'wp', 'wppt_detect_shortcode' ); 
+add_action('wp_enqueue_scripts', 'wppt_enqueue_scripts');  
+add_action('admin_enqueue_scripts', 'wppt_admin_enqueue_scripts'); 
+add_action('wp_footer', 'wppt_tiptip_init'); 
 add_action('init', 'wppt_custom_init'); 
 add_shortcode("ahm-pricing-table",'wppt_table');
 add_filter( 'manage_edit-pricing-table_columns', 'wppt_columns_struct', 10, 1 );
