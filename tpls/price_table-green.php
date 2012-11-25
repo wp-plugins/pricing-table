@@ -21,8 +21,16 @@
                 <ul>
                 <?php
     $pkeys=array_keys($data);
+    foreach($pkeys as $pk){
+           $tp .= $data[$pk]['Price'];
+           $td .= $data[$pk]['Detail'];
+    }
+    
+    if(trim($tp)==''){ foreach($pkeys as $pk){ unset($data[$pk]['Price']); } }
+    if(trim($td)==''){ foreach($pkeys as $pk){ unset($data[$pk]['Detail']); } }
+    
     $fkeys=array_keys($data[$pkeys[0]]); 
- 
+     
      for($i=0;$i<count($fkeys);$i++){
          if(strtolower($fkeys[$i])!="button url" && strtolower($fkeys[$i])!="button text")    
          echo "<li>".$fkeys[$i]."</li>";

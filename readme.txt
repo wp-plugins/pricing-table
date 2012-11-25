@@ -48,6 +48,10 @@ N/A
 
 == Changelog ==
 
+= 1.1.6 =
+* New option added Hide "Detail" and "Price" row
+* Explained how to add toop tip text
+
 = 1.1.5 =
 * Fixed missing metabox issue
 * Added tooltip support

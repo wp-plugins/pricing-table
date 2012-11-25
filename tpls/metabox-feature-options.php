@@ -246,7 +246,16 @@
     
     </script>
     <br clear="all"> 
-    <br clear="all">    
+    <br clear="all">
+    <b>Tip for using tooltip:</b><br/>
+    When you adding feature value, if you want to add tooltip text, just separate it using vertical bar (|) as you seeing in following image:<br/>
+    <img alt="" src="<?php echo plugins_url('pricing-table/images/tooltip.png'); ?>" />        
+    <br/>    
+    <b>Hiding "Price" and "Detail" from front-end:</b><br/>
+    Simply don't add any value for price and detail:<br/>
+    <img alt="" src="<?php echo plugins_url('pricing-table/images/hide-price-detail.png'); ?>" />     
+    <br clear="all">              
+    <br clear="all">             
     </div>
     
     <br clear="all">
