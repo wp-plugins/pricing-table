@@ -191,7 +191,7 @@
     ?>
     <div class="plan" <?php if($featured==$key){?> id="most-popular"<?php } ?> >
    
-        <h3><?php echo $key;?><span>$<?php echo $value['Price']; ?></span></h3>
+        <h3><?php echo $key;?><span><?php echo $currency.$value['Price']; ?></span></h3>
         <a class="signup" href="<?php echo $value['Button URL']?>"><?php echo $value['Button Text']?></a>         
         <ul>
             

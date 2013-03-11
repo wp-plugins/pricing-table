@@ -4,7 +4,7 @@ Plugin Name: Pricing table
 Plugin URI: http://wpeden.com
 Description: Generate Pricing Table Easily. Use simple short-code <strong>[ahm-pricing-table id=999]</strong> ( <strong>999</strong> = use any table id here) inside page or post content to embed pricing table
 Author: Shaon
-Version: 1.1.6
+Version: 1.1.7
 Author URI: http://shaon.info
 */
  
@@ -66,7 +66,8 @@ function wppt_custom_init()
 function wppt_table($params){
      $pid = $params['id'];
      $template = $params['template'];
-     $template = $template?$template:'green';     
+     $template = $template?$template:'green';  
+     $currency = isset($params['currency'])&&$params['currency']!=''?$params['currency']:'$';   
      ob_start();
      include("tpls/price_table-$template.php"); 
      $data = ob_get_contents();     
@@ -95,8 +96,9 @@ function wppt_column_obj( $column ) {
     global $post;
     switch ( $column ) {       
         case 'shortcode':
-            echo "<input type=text readonly=readonly value='[ahm-pricing-table id={$post->ID} template=gray]' size=35 style='font-weight:bold;text-align:Center;' onclick='this.select()' />";
-            echo "<input type=text readonly=readonly value='[ahm-pricing-table id={$post->ID} template=green]' size=35 style='font-weight:bold;text-align:Center;' onclick='this.select()' />";
+            echo "<input type=text readonly=readonly value='[ahm-pricing-table id={$post->ID} template=\"gray\" currency=\"\$\"]' size=35 style='font-weight:bold;text-align:Center;' onclick='this.select()' />";
+            echo "<input type=text readonly=readonly value='[ahm-pricing-table id={$post->ID} template=\"green\" currency=\"\$\"]' size=35 style='font-weight:bold;text-align:Center;' onclick='this.select()' />";
+            echo "<input type=text readonly=readonly value='[ahm-pricing-table id={$post->ID} template=\"smooth\" currency=\"\$\"]' size=35 style='font-weight:bold;text-align:Center;' onclick='this.select()' />";
             break;
     }
 }
@@ -105,7 +107,13 @@ function wppt_column_obj( $column ) {
      add_action("admin_menu","wppt_menu");
  } 
 
-
+function wppt_live_preview($content){
+    global $post, $enque;
+    $enque = 1;
+    wppt_enqueue_scripts();
+    if(get_post_type()!='pricing-table') return $content;
+    echo do_shortcode("[ahm-pricing-table id={$post->ID}]");
+}
 
 function wppt_admin_enqueue_scripts(){    
     wp_enqueue_script("jquery");
@@ -158,4 +166,5 @@ add_action('wp_footer', 'wppt_tiptip_init');
 add_action('init', 'wppt_custom_init'); 
 add_shortcode("ahm-pricing-table",'wppt_table');
 add_filter( 'manage_edit-pricing-table_columns', 'wppt_columns_struct', 10, 1 );
+add_filter( 'the_content', 'wppt_live_preview');
 add_action( 'manage_posts_custom_column', 'wppt_column_obj', 10, 1 );

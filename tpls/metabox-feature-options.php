@@ -1,6 +1,5 @@
 <script language="JavaScript" src="<?php echo plugins_url(); ?>/pricing-table/js/admin/dragtable.js"></script>
-<script language="JavaScript" src="<?php echo plugins_url(); ?>/pricing-table/js/admin/jquery.tablednd_0_5.js"></script>
-<link rel="stylesheet" type="text/css" href="<?php echo plugins_url(); ?>/pricing-table/css/admin/tablestyle.css"> 
+<!--<script language="JavaScript" src="<?php echo plugins_url(); ?>/pricing-table/js/admin/jquery.tablednd_0_5.js"></script>-->
 <link rel="stylesheet" type="text/css" href="<?php echo plugins_url(); ?>/pricing-table/css/admin/my.css"> 
  <script>
  jQuery('.deleterow').live('click', function() {   //alert(val);
@@ -48,7 +47,27 @@
 ?>
 
 <div style="width: 100%;float:left;margin-right: 25px;">
-    
+<style type="text/css">
+#pricetable tr:first-child td img{
+    margin-top: 5px;
+}
+#pricetable tr:first-child td{
+    line-height: 30px;
+    cursor: move;
+    vertical-align: middle;
+}
+#pricetable td{
+    border-left:1px solid #ffffff;
+    border-right:1px solid #dddddd;
+}
+.dndr *{
+    color: #fff;
+}
+.dndr{
+    background: #444444;
+    color: #fff;
+}
+</style>    
         
         <br>
           
@@ -57,7 +76,7 @@
  <table>
  <tr><td></td><td><a style="float: right;" href="#" class="button" id="addcolumn"><?php echo __('Add Package','pricing-table'); ?></a> </td></tr>
  <tr><td>
- <table class="draggable" id="pricetable" border="0" width="100%" cellspacing="0" cellpadding="0" >       
+ <table class="draggable widefat" id="pricetable" border="0" width="100%" cellspacing="0" cellpadding="0" >       
    <tr class="nodrag nodrop">
       <td >
         <?php echo __('Packages/Features','pricing-table'); ?>
@@ -97,8 +116,11 @@
             $t++;
             if($t==1){
                 echo "<td  class='".$feature_key."'>";
-                if($value1 != "Price" && $value1!="Detail" && $value1!="Button URL" && $value1!="Button Text" )
+                if($value1 != "Price" && $value1!="Detail" && $value1!="Button URL" && $value1!="Button Text" ){
                     echo "<div class='deleterow' rel='{$feature_key}' title='Delete this row'>&nbsp;</div>";
+                    echo "<div class='moverow' rel='{$feature_key}'>&nbsp;</div>"; }
+                else   
+                    echo "<div class='lockedrow' rel='{$feature_key}'>&nbsp;</div>"; 
                 echo "<strong>".$value1."</strong></td>";
             }
             echo  '<td class="'.$package_key.' '.$feature_key.'"><input type="text"  id="features['.$value.']['.$value1.']" name="features['.$value.']['.$value1.'] " value="'
@@ -148,7 +170,9 @@
 
     jQuery(function(){
       
-        jQuery('#pricetable').tableDnD();  
+        //jQuery('#pricetable').tableDnD({onDragClass: "dndr",dragHandle: ".moverow"});  
+        jQuery('#pricetable tbody').sortable({items: "tr:not(.nodrop)"});  
+        
         
       jQuery('#addrow').click(function(){
           
@@ -163,7 +187,7 @@
           
            jQuery('#pricetable tbody tr:last').clone(true).insertAfter('#pricetable tbody>tr:last');
            jQuery('#pricetable tbody tr:last td:first').text(feat);
-            jQuery('#pricetable tbody tr:last td:first').append("<div class='deleterow' title='Delete this row'>&nbsp;</div>");
+            jQuery('#pricetable tbody tr:last td:first').append("<div class='deleterow' title='Delete this row'>&nbsp;</div><div class='moverow' title='Delete this row'>&nbsp;</div>");
            jQuery('#pricetable tbody tr:last td:first').attr("class",feat);
            jQuery('#pricetable tbody tr:last').attr("class",feat);
            jQuery('#pricetable tbody tr:last td:first .deleterow').attr("rel",feat);

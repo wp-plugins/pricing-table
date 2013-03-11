@@ -4,6 +4,8 @@
     width: 16px;
     height: 16px;
     float: right;
+    margin-top:5px;
+    margin-left:5px;
     /*vertical-align: top;*/
    
 }
@@ -14,8 +16,24 @@
     width: 16px;
     height: 16px;
     position: relative;
-    top:-3px;
-    left: -27px;
-    
     float: left;
+    margin-right: 10px;
+}
+.moverow{
+    background: url("../../images/move.gif")   no-repeat right top  ;
+    cursor: pointer;
+    width: 16px;
+    height: 16px;
+    position: relative;
+    float: left;
+    margin-right: 10px;
+}
+.lockedrow{
+    background: url("../../images/lock.gif")   no-repeat right top  ;
+    cursor: pointer;
+    width: 16px;
+    height: 16px;
+    position: relative;
+    float: left;
+    margin-right: 10px;
 }

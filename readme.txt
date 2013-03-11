@@ -43,10 +43,16 @@ N/A
 2. Pricing table admin
 3. Pricing table embed code
 4. Pricing Table Template 2 (thanks to red-team-design.com)
+5. Pricing Table Template 3
 
 
 
 == Changelog ==
+
+= 1.1.7 =
+* New table template added
+* Upgraded admin interface
+* Upgrade new parameter for currency
 
 = 1.1.6 =
 * New option added Hide "Detail" and "Price" row
