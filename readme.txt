@@ -21,8 +21,9 @@ Use simple short-code `[ahm-pricing-table id=999 template=template_name]` (999=u
 * Unlimited package(column) support
 * Featured Column option highlight best price package
 * Tooltip support
-* 2 diff table template "green" and "gray"
+* 3 diff table template "smooth", "green" and "gray"
 * Translation ready
+
 
  
 
