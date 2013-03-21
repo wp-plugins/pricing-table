@@ -23,6 +23,7 @@ Use simple short-code `[ahm-pricing-table id=999 template=template_name]` (999=u
 * Tooltip support
 * 3 diff table template "smooth", "green" and "gray"
 * Translation ready
+* use [y] for tick icon and [n] for cross icon
 
 
  
@@ -49,6 +50,9 @@ N/A
 
 
 == Changelog ==
+
+= 1.1.8 =
+* added support for [y] and [n] icons
 
 = 1.1.7 =
 * New table template added
