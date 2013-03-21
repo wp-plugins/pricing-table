@@ -33,7 +33,7 @@ a {text-decoration: none}
     list-style: none;
 }
 
-.minimal {width: 888px; margin: 200px auto 0; }
+.minimal {width: 888px; margin: 20px auto 0; }
 .minimal .plan {width:205px; float: left; margin-left: 20px}
 .minimal .plan:first-child {margin-left: 0}
 
