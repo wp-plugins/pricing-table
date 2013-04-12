@@ -51,6 +51,11 @@ N/A
 
 == Changelog ==
 
+
+= 1.1.9 =
+
+* upgraded css for better theme compatibility
+
 = 1.1.8 =
 * added support for [y] and [n] icons
 

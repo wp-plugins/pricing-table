@@ -118,3 +118,20 @@
 		border-top-color: rgba(20,20,20,0.92);
 	}
 }
+
+#shaon-pricing-table img{
+    border:0px !important;
+    box-shadow:none !important;
+    border-radius:0px !important;
+    background: transparent !important;
+}
+
+ 
+#shaon-pricing-table ul{
+    padding: 0px !important;
+    margin: 0px !important;
+}
+
+#shaon-pricing-table li{
+    margin: 0px !important;
+}
