@@ -52,6 +52,10 @@ N/A
 == Changelog ==
 
 
+= 1.2.0 =
+
+* Minor css update
+
 = 1.1.9 =
 
 * upgraded css for better theme compatibility

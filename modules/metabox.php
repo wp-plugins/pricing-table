@@ -11,7 +11,7 @@
 
 /* Adds a box to the main column on the Post and Page edit screens */
 function wppt_add_custom_box() {
-    add_meta_box( 'pricing-table-feature-options', __( 'Packages/Features ( <a target="_blank" href="http://wpeden.com/product/wordpress-pricing-table-plugin/">Get pro for more templates &#187;</a> )', 'wppt' ), 'wppt_individual_features', 'pricing-table', 'normal','core' );
+    add_meta_box( 'pricing-table-feature-options', __( 'Packages/Features ( <a target="_blank" href="http://wpeden.com/product/wordpress-pricing-table-plugin/">Get pro for <b>50+</b> templates &#187;</a> )', 'wppt' ), 'wppt_individual_features', 'pricing-table', 'normal','core' );
     add_meta_box( 'pricing-table-op', __( 'My Other Plugins', 'wppt' ), 'wppt_plugins', 'pricing-table', 'side','core' );
    
 }
