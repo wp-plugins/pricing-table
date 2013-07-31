@@ -51,6 +51,10 @@ N/A
 
 == Changelog ==
 
+= 1.2.1 =
+
+* Regular maintenance update
+* Updated some js code
 
 = 1.2.0 =
 

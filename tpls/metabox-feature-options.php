@@ -1,5 +1,3 @@
-<script language="JavaScript" src="<?php echo plugins_url(); ?>/pricing-table/js/admin/dragtable.js"></script>
-<!--<script language="JavaScript" src="<?php echo plugins_url(); ?>/pricing-table/js/admin/jquery.tablednd_0_5.js"></script>-->
 <link rel="stylesheet" type="text/css" href="<?php echo plugins_url(); ?>/pricing-table/css/admin/my.css"> 
  <script>
  jQuery('.deleterow').live('click', function() {   //alert(val);
@@ -28,21 +26,11 @@
  });
  
  </script>
- <script type="text/javascript">
- /*function featur(r,fid){
-     //alert(r+fid);
-        jQuery('.featured-package').attr('src','<?php echo plugins_url(); ?>/pricing-table/images/unfeatured.png')
-        jQuery('#'+fid).attr('src',"<?php echo plugins_url(); ?>/pricing-table/images/featured.png");
-     
- } */
- </script>
+ 
 <?php
     $data = get_post_meta($post->ID, 'pricing_table_opt',true);  
     $featured=  get_post_meta($post->ID, 'pricing_table_opt_feature',true);  
-    /* echo "<pre>";     
-     print_r($data);
-     echo "</pre>";
-     */
+     
      
 ?>
 
