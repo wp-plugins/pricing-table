@@ -1,9 +1,9 @@
 === Pricing Table ===
-Contributors: Shaon
+Contributors: codename065, shahriar0822
 Donate link: http://shaon.info 
 Tags: pricing table, price table, special offer, discount offer, offer, page, posts, post, widget, plugins, plugin
 Requires at least: 3.4
-Tested up to: 3.6
+Tested up to: 3.7
 License: GPL 
 
 WordPress Pricing Table plugin will help you to generate pricing table in the easitest and dynamic way
@@ -50,6 +50,10 @@ N/A
 
 
 == Changelog ==
+
+= 1.2.2 =
+
+* regular maintenance and compatibility release for wp 3.7
 
 = 1.2.1 =
 
