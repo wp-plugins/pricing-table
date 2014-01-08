@@ -1,13 +1,13 @@
 <link rel="stylesheet" type="text/css" href="<?php echo plugins_url(); ?>/pricing-table/css/admin/my.css"> 
  <script>
- jQuery('.deleterow').live('click', function() {   //alert(val);
+ jQuery('body').on('click', '.deleterow', function() {   //alert(val);
     if(confirm("Are you sure you want to delete?")){
             
             jQuery("."+jQuery(this).attr('rel')).slideUp(function(){jQuery(this).remove();});
          
     }
  });
- jQuery('.deletecol').live('click', function() {   //alert(val);
+ jQuery('body').on('click', '.deletecol', function() {   //alert(val);
     if(confirm("Are you sure you want to delete?")){
             
             jQuery("."+jQuery(this).attr('rel')).remove();
@@ -15,7 +15,7 @@
     }
  });
  
- jQuery('.featured-package').live('click', function() {   //alert(val);
+ jQuery('body').on('click', '.featured-package', function() {   //alert(val);
     var fid=jQuery(this).attr("id");
     var iv = jQuery(this).attr('src'); //,"<?php echo plugins_url(); ?>/pricing-table/images/featured.png");
     jQuery('.featured-package').attr('src','<?php echo plugins_url(); ?>/pricing-table/images/unfeatured.png')
