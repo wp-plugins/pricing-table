@@ -4,7 +4,7 @@ Plugin Name: Pricing table
 Plugin URI: http://wpeden.com
 Description: Generate Pricing Table Easily. Use simple short-code <strong>[ahm-pricing-table id=999]</strong> ( <strong>999</strong> = use any table id here) inside page or post content to embed pricing table
 Author: Shaon
-Version: 1.2.3
+Version: 1.2.4
 Author URI: http://shaon.info
 */
  
@@ -70,8 +70,7 @@ function wppt_table($params){
      $currency = isset($params['currency'])&&$params['currency']!=''?$params['currency']:'$';   
      ob_start();
      include("tpls/price_table-$template.php"); 
-     $data = ob_get_contents();     
-     ob_clean();
+     $data = ob_get_clean();             
      $data = str_replace(array("\n","\r","[y]","[n]"),array("","","<img src='".plugins_url('/pricing-table/images/tick.png')."' />","<img src='".plugins_url('/pricing-table/images/cross.png')."' />"),$data);
      return $data;
 }

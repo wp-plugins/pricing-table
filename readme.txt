@@ -51,6 +51,10 @@ N/A
 
 == Changelog ==
 
+= 1.2.4 =
+* Updated output buffering fn
+* Updated table css
+
 = 1.2.3 =
 
 * regular maintenance and compatibility release for wp 3.8
