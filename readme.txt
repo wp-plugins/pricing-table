@@ -21,7 +21,7 @@ Use simple short-code `[ahm-pricing-table id=999 template=template_name]` (999=u
 * Unlimited package(column) support
 * Featured Column option highlight best price package
 * Tooltip support
-* 3 diff table template "smooth", "green" and "gray"
+* 3 diff table template "smooth" (responsive), "green" and "gray"
 * Translation ready
 * use [y] for tick icon and [n] for cross icon
 
@@ -50,6 +50,9 @@ N/A
 
 
 == Changelog ==
+
+= 1.2.5 =
+* Upgrade smooth template to responsive
 
 = 1.2.4 =
 * Updated output buffering fn

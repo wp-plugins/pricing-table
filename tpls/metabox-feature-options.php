@@ -271,3 +271,6 @@
     </div>
     
     <br clear="all">
+    <div style="border:3px solid #008000;padding:10px;font-weight: 900;text-align: center">
+        <a href="http://wordpress.org/support/view/plugin-reviews/pricing-table?rate=5#postform" style="text-decoration: none !important;">A 5* rating will encourage me a lot. Please consider it, if you get some free secs :)</a>
+    </div>
