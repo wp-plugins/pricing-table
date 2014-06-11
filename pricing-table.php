@@ -1,172 +1,304 @@
-<?php 
+<?php
 /*
-Plugin Name: Pricing table
-Plugin URI: http://wpeden.com
-Description: Generate Pricing Table Easily. Use simple short-code <strong>[ahm-pricing-table id=999]</strong> ( <strong>999</strong> = use any table id here) inside page or post content to embed pricing table
+Plugin Name: Pricing Table
+Plugin URI: http://wpeden.com/product/wordpress-pricing-table-plugin/
+Description: WordPress Plugin to creating colorful pricing tables
 Author: Shaon
-Version: 1.2.5
-Author URI: http://shaon.info
+Version: 1.3.0
+Author URI: http://wpeden.com/
 */
- 
-include("libs/class.plugin.php");
-global $pricingtable_plugin, $enque;
 
-$enque = 0;
 
-$pricingtable_plugin = new ahm_plugin('pricing-table');
 
+include(dirname(__FILE__)."/libs/class.plugin.php");
+
+global $enque, $pt_plugin;
+
+$pt_plugin = new ahm_plugin('pricing-table');
+
+$enque = 1;
 
 $plugindir = str_replace('\\','/',dirname(__FILE__));
- 
 
-define('PLUGINDIR',$plugindir);  
 
- 
+define('WPPT_PLUGINDIR',$plugindir);
 
-function wppt_custom_init() 
+
+function wppt_custom_init()
 {
-  
-  load_plugin_textdomain( 'pricing-table', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' ); 
-    
-  $labels = array(
-    'name' => _x('Pricing Tables', 'pricing-table'),
-    'singular_name' => _x('Pricing Table', 'pricing-table'),
-    'add_new' => _x('Add New', 'pricing-table','pricing-table'),
-    'add_new_item' => __('Add New Pricing Table','pricing-table'),
-    'edit_item' => __('Edit Pricing Table','pricing-table'),
-    'new_item' => __('New Pricing Table','pricing-table'),
-    'all_items' => __('All Pricing Tables','pricing-table'),
-    'view_item' => __('View Pricing Table','pricing-table'),
-    'search_items' => __('Search Pricing Tables','pricing-table'),
-    'not_found' =>  __('No Pricing Table found','pricing-table'),
-    'not_found_in_trash' => __('No Pricing Tables found in Trash','pricing-table'), 
-    'parent_item_colon' => '',
-    'menu_name' => 'Pricing Table'
+    $labels = array(
+        'name' => _x('Pricing Tables', 'post type general name'),
+        'singular_name' => _x('Pricing Table', 'post type singular name'),
+        'add_new' => _x('Add New', 'pricing-table'),
+        'add_new_item' => __('Add New Pricing Table'),
+        'edit_item' => __('Edit Pricing Table'),
+        'new_item' => __('New Pricing Table'),
+        'all_items' => __('All Pricing Tables'),
+        'view_item' => __('View Pricing Table'),
+        'search_items' => __('Search Pricing Tables'),
+        'not_found' =>  __('No Pricing Table found'),
+        'not_found_in_trash' => __('No Pricing Tables found in Trash'),
+        'parent_item_colon' => '',
+        'menu_name' => 'Pricing Table'
 
-  );
-  $args = array(
-    'labels' => $labels,
-    'public' => true,
-    'publicly_queryable' => true,
-    'show_ui' => true, 
-    'show_in_menu' => true, 
-    'query_var' => true,
-    'rewrite' => true,
-    'capability_type' => 'post',
-    'has_archive' => true, 
-    'hierarchical' => false,
-    'menu_position' => null,
-    'supports' => array('title'),
-    'menu_icon' => plugins_url().'/pricing-table/images/table.gif'
-  ); 
-  register_post_type('pricing-table',$args);
+    );
+    $args = array(
+        'labels' => $labels,
+        'public' => true,
+        'publicly_queryable' => true,
+        'show_ui' => true,
+        'show_in_menu' => true,
+        'query_var' => true,
+        'rewrite' => true,
+        'capability_type' => 'post',
+        'has_archive' => true,
+        'hierarchical' => false,
+        'menu_position' => null,
+        'supports' => array('title'),
+        'menu_icon' => plugins_url().'/pricing-table/images/table.gif'
+    );
+    register_post_type('pricing-table',$args);
 }
 
+
+function wppt_preview_table($content){
+    global $wp_query;
+    if(get_post_type()!='pricing-table') return $content;
+    $pid = get_the_ID();
+    $template = isset($_REQUEST['template'])?$_REQUEST['template']:'rock';
+    $responsive = isset($params['responsive'])?'responsive':'';
+    $styles = array('epic'=>9,'mega'=>9,'lucid'=>10,'override'=>9);
+
+    ob_start();
+    ?>
+    <form action="">
+        <input type="hidden" name="pricing-table" value="<?php echo $wp_query->query_vars['pricing-table']; ?>">
+        <b>Select Template</b><br/>
+        <select name="template" class="button input" id="ptt">
+            <option value="">Select Template</option>
+            <?php
+            $directory = ABSPATH."/wp-content/plugins/pricing-table/table-templates";
+            $directory_list = opendir($directory);
+            while (FALSE !== ($file = readdir($directory_list))){
+                // if the filepointer is not the current directory
+                // or the parent directory
+                if($file != '.' && $file != '..'){
+                    $sel = $_GET['template']==$file?'selected=selected':'';
+                    $path = $directory.'/'.$file;
+                    if(is_dir($path)){
+                        echo "<option $sel value='".$file."'>".strtoupper($file)."</option>";
+                    }
+                }
+            }
+            ?>
+
+        </select> 
+        <input type="submit" value="Preview"><br/>
+        <?php if(isset($styles[$template]) && $styles[$template]>0){ ?>
+            <b>Select Style</b><br/>
+            <select onchange="jQuery('#ptts').attr('href','<?php echo plugins_url('pricing-table/table-templates/'.$template.'/style');?>'+this.value+'.css')">
+                <option value="">Select Style</option>
+                <?php for($dx = 1; $dx <= $styles[$template]; $dx++){ ?>
+                    <option value="<?php echo $dx; ?>">Style <?php echo $dx; ?></option>
+
+                <?php } ?>
+            </select>
+        <?php } ?>
+
+    </form>
+
+    <?php
+    include("table-templates/{$template}/price_table.php");
+    $data = ob_get_contents();
+    ob_clean();
+    $code[] = "[y]";
+    $icons[] = "<img src='".plugins_url("pricing-table/images/yes.png")."' />";
+    $code[] = "[n]";
+    $icons[] = "<img src='".plugins_url("pricing-table/images/no.png")."' />";
+    $code[] = "[na]";
+    $icons[] = "<img src='".plugins_url("pricing-table/images/na.png")."' />";
+    $data = str_replace($code, $icons, $data);
+    return $content.$data;
+}
 
 function wppt_table($params){
-     $pid = $params['id'];
-     $template = $params['template'];
-     $template = $template?$template:'green';  
-     $currency = isset($params['currency'])&&$params['currency']!=''?$params['currency']:'$';   
-     ob_start();
-     include("tpls/price_table-$template.php"); 
-     $data = ob_get_clean();             
-     $data = str_replace(array("\n","\r","[y]","[n]"),array("","","<img src='".plugins_url('/pricing-table/images/tick.png')."' />","<img src='".plugins_url('/pricing-table/images/cross.png')."' />"),$data);
-     return $data;
+    $pid = $params['id'];
+    $style = $params['style'];
+    extract($params);
+    $template = $params['template']?$params['template']:'glossy';
+    $responsive = isset($params['responsive'])?'responsive':'';
+    ob_start();
+    include("table-templates/{$template}/price_table.php");
+    $data = ob_get_contents();
+    ob_clean();
+    $shortcode = get_option("_wppt_shortcode",array());
+    if(is_array($shortcode)){
+        foreach($shortcode as $c){
+            if(in_array(strtolower(end(explode('.',$c))),array('png','jpg','gif','jpeg')))
+                $icons[] = "<img src='$c' />";
+            else
+                $icons[] = $c;
+        }}
+
+    $code=get_option("_wppt_code");
+    $code = @array_values($code);
+    $code[] = "[y]";
+    $icons[] = "<img src='".plugins_url("pricing-table/images/yes.png")."' />";
+    $code[] = "[n]";
+    $icons[] = "<img src='".plugins_url("pricing-table/images/no.png")."' />";
+    $code[] = "[na]";
+    $icons[] = "<img src='".plugins_url("pricing-table/images/na.png")."' />";
+    $data = str_replace($code, $icons,$data);
+    return $data;
 }
 
-function wppt_help(){
-    include("tpls/help.php");
-}
 
-function wppt_menu(){
-    add_submenu_page('edit.php?post_type=pricing-table', 'Help', 'Help', 'administrator', 'help', 'wppt_help');    
-    
-}
-
-
-function wppt_columns_struct( $columns ) {     
-    $column_shorcode = array( 'shortcode' => __('Embed Code','pricing-table') );    
+function wppt_columns_struct( $columns ) {
+    $column_shorcode = array( 'shortcode' => 'Embed Code' );
     $columns = array_slice( $columns, 0, 2, true ) + $column_shorcode + array_slice( $columns, 2, NULL, true );
     return $columns;
 }
 
 function wppt_column_obj( $column ) {
     global $post;
-    switch ( $column ) {       
+    switch ( $column ) {
         case 'shortcode':
-            echo "<input type=text readonly=readonly value='[ahm-pricing-table id={$post->ID} template=\"gray\" currency=\"\$\"]' size=35 style='font-weight:bold;text-align:Center;' onclick='this.select()' />";
-            echo "<input type=text readonly=readonly value='[ahm-pricing-table id={$post->ID} template=\"green\" currency=\"\$\"]' size=35 style='font-weight:bold;text-align:Center;' onclick='this.select()' />";
-            echo "<input type=text readonly=readonly value='[ahm-pricing-table id={$post->ID} template=\"smooth\" currency=\"\$\"]' size=35 style='font-weight:bold;text-align:Center;' onclick='this.select()' />";
+            echo "<input type=text readonly=readonly value='[ahm-pricing-table id={$post->ID}]' size=25 style='font-weight:bold;text-align:Center;' onclick='this.select()' />";
             break;
     }
 }
- 
- if(is_admin()){
-     add_action("admin_menu","wppt_menu");
- } 
 
-function wppt_live_preview($content){
-    global $post, $enque;
-    $enque = 1;
-    wppt_enqueue_scripts();
-    if(get_post_type()!='pricing-table') return $content;
-    echo do_shortcode("[ahm-pricing-table id={$post->ID}]");
+
+
+function wppt_help(){
+    include(dirname(__FILE__)."/tpls/help.php");
 }
 
-function wppt_admin_enqueue_scripts(){    
+function wppt_shortcodes(){
+    include(dirname(__FILE__)."/tpls/short-codes.php");
+}
+function wppt_save_shortcode(){
+    update_option('_wppt_shortcode', $_POST['shortcode']);
+    update_option('_wppt_code', $_POST['code']);
+}
+
+function wppt_menu(){
+    add_submenu_page('edit.php?post_type=pricing-table', 'Short Codes', 'Short Codes', 'administrator', 'short-codes', 'wppt_shortcodes');
+    add_submenu_page('edit.php?post_type=pricing-table', 'Help', 'Help', 'administrator', 'help', 'wppt_help');
+
+}
+
+
+if(is_admin()){
+    add_action("admin_menu","wppt_menu");
+}
+
+function wppt_admin_enqueue_scripts(){
+    global $pt_plugin;
     wp_enqueue_script("jquery");
-    if(get_post_type()=='pricing-table')
-    wp_enqueue_script("jquery-dragtable",plugins_url('/pricing-table/js/admin/dragtable.js'),array('jquery'));
-    
+    wp_enqueue_script("jquery-form");
+    $pt_plugin->load_scripts();
+    $pt_plugin->load_styles();
 }
 
-function wppt_enqueue_scripts(){   
-    global $enque; 
-    wp_enqueue_script("jquery");    
-    if($enque==1){        
+function wppt_enqueue_scripts(){
+    global $pt_plugin, $enque;
+    if($enque==1){
+        wp_enqueue_script("jquery");
+        $pt_plugin->load_scripts();
+        $pt_plugin->load_styles();
         wp_enqueue_script("tiptipjs", plugins_url()."/pricing-table/js/site/jquery.tipTip.minified.js",array('jquery'));
         wp_enqueue_style("tiptipcss", plugins_url()."/pricing-table/css/site/tipTip.css");
     }
 }
 
+
 function wppt_tiptip_init(){
-    global $enque; 
-     
-    if($enque==1){        
-    ?>
-        <script language="JavaScript"> 
-          jQuery(function(){
-                        jQuery(".wppttip").tipTip({defaultPosition:'right'});
-                    });
-         
+    global $enque;
+
+    if($enque==1){
+        ?>
+        <script language="JavaScript">
+            jQuery(function(){
+                jQuery(".wppttip").tipTip({defaultPosition:'bottom'});
+            });
+
         </script>
     <?php
     }
 }
 
- 
+$pt_plugin->load_modules();
+
+
+function wppt_baseurl(){
+    global $enque;
+
+    if($enque==1){
+        ?>
+        <script language="JavaScript">
+            var wppt_url = "<?php echo plugins_url('/pricing-table/'); ?>";
+        </script>
+    <?php
+    }
+}
+
+
 function wppt_detect_shortcode()
 {
     global $post, $enque;
     $pattern = get_shortcode_regex();
-
+    if(!is_object($post) || is_admin()) return;
     if (   preg_match_all( '/'. $pattern .'/s', $post->post_content, $matches )
         && array_key_exists( 2, $matches )
         && in_array( 'ahm-pricing-table', $matches[2] ) )
-    {        
+    {
         $enque = 1;
     }
 }
 
-$pricingtable_plugin->load_modules();
+function wppt_post_row_actions($actions, $post){
+    if($post->post_type=='pricing-table')
+        $actions['clone'] = "<a style='color:#2D873F' href='".admin_url()."?task=wpptclone&clone={$post->ID}'>Clone</a>";
+    return $actions;
+}
 
-add_action( 'wp', 'wppt_detect_shortcode' ); 
-add_action('wp_enqueue_scripts', 'wppt_enqueue_scripts');  
-add_action('admin_enqueue_scripts', 'wppt_admin_enqueue_scripts'); 
-add_action('wp_footer', 'wppt_tiptip_init'); 
-add_action('init', 'wppt_custom_init'); 
+function wppt_clone(){
+    if(!isset($_GET['task']) || $_GET['task']!='wpptclone'||!is_admin()) return false;
+    $pid = $_GET['clone'];
+    $data = get_post_meta($pid, 'pricing_table_opt',true);
+    $featured=  get_post_meta($pid, 'pricing_table_opt_feature',true);
+    $feature_description =  get_post_meta($pid, 'pricing_table_opt_feature_description',true);
+    $data_des = get_post_meta($pid, 'pricing_table_opt_description',true);
+    $feature_name=  get_post_meta($pid, 'pricing_table_opt_feature_name',true);
+    $package_name=  get_post_meta($pid, 'pricing_table_opt_package_name',true);
+    $npid = wp_insert_post(array("post_title"=>'New Pricing Table','post_status'=>'draft','post_type'=>'pricing-table'));
+
+    update_post_meta($npid,'pricing_table_for_post',$featured);
+    update_post_meta($npid,'pricing_table_opt',$data);
+    update_post_meta($npid,'pricing_table_opt_description',$data_des);
+    update_post_meta($npid,'pricing_table_opt_feature',$featured);
+    update_post_meta($npid,'pricing_table_opt_feature_name',$feature_name);
+    update_post_meta($npid,'pricing_table_opt_feature_description',$feature_description);
+    update_post_meta($npid,'pricing_table_opt_package_name',$package_name);
+    header("location: post.php?post={$npid}&action=edit");
+    die();
+
+}
+
+add_action( 'wp', 'wppt_detect_shortcode' );
+
+register_activation_hook(__FILE__,'wppt_install');
+
+add_filter('post_row_actions', 'wppt_post_row_actions',10, 2);
+add_action('wp_head', 'wppt_baseurl');
+add_action('wp_footer', 'wppt_tiptip_init');
+add_action('init', 'wppt_clone');
+add_action('init', 'wppt_custom_init');
 add_shortcode("ahm-pricing-table",'wppt_table');
+add_filter("the_content",'wppt_preview_table');
 add_filter( 'manage_edit-pricing-table_columns', 'wppt_columns_struct', 10, 1 );
-add_filter( 'the_content', 'wppt_live_preview');
 add_action( 'manage_posts_custom_column', 'wppt_column_obj', 10, 1 );
+add_action('wp_ajax_wppt_save_shortcode', 'wppt_save_shortcode');
+add_action('wp_enqueue_scripts', 'wppt_enqueue_scripts');
+add_action('admin_enqueue_scripts', 'wppt_admin_enqueue_scripts');   

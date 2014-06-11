@@ -1,10 +1,28 @@
 /* TipTip CSS - Version 1.2 */
+@import url(http://fonts.googleapis.com/css?family=Pathway+Gothic+One|Roboto+Slab);
 
+#shaon-pricing-table h1,
+#shaon-pricing-table h2,
+#shaon-pricing-table h3,
+#shaon-pricing-table ul,
+#shaon-pricing-table li{
+    padding:0px;
+    margin:0px;
+    line-height: normal;
+    
+}
+
+
+#shaon-pricing-table1 img,
 #shaon-pricing-table img{
-    border:0px !important;
-    box-shadow: none !important;
-    border-radius:0px !important;
     background: transparent !important;
+    border: none !important;
+    box-shadow:none !important;
+    margin-top:0px;
+}
+#shaon-pricing-table1 a,
+#shaon-pricing-table a{
+   text-decoration: none !important; 
 }
 
 #tiptip_holder {
@@ -46,6 +64,8 @@
 	box-shadow: 0 0 3px #555;
 	-webkit-box-shadow: 0 0 3px #555;
 	-moz-box-shadow: 0 0 3px #555;
+	line-height: normal !important;
+	padding: 10px;
 }
 
 #tiptip_arrow, #tiptip_arrow_inner {
@@ -119,19 +139,88 @@
 	}
 }
 
-#shaon-pricing-table img{
-    border:0px !important;
-    box-shadow:none !important;
-    border-radius:0px !important;
-    background: transparent !important;
-}
-
- 
-#shaon-pricing-table ul{
-    padding: 0px !important;
-    margin: 0px !important;
-}
-
 #shaon-pricing-table li{
-    margin: 0px !important;
+    background: none;
+}
+
+.w3eden ul,
+.w3eden ul li:after,
+.w3eden ul li:before{
+    content: "" !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.w3eden ul li.title-row,
+.w3eden ul li
+{
+    list-style: none !important;
+    margin: 0 !important;
+
+
+}
+
+.w3eden .btn-free,.btn-large{
+    max-width: 90%;
+}
+
+.w3eden ul li{
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+/* to hide details row */
+/*#shaon-pricing-table .price-content ul li:nth-child(2){
+    display: none;
+}*/
+
+.pricing-table h5{
+    font-family: 'Pathway Gothic One', sans-serif !important;
+}
+.pricing-table h1{
+    font-family: 'Roboto Slab', sans-serif !important;
+    font-style: normal;
+    font-size: 16pt !important;
+    font-weight: 400 !important;
+}
+
+
+/* Small devices (tablets, 768px and up) */
+@media (max-width: 768px) {
+    .pricing-table.pricer{
+        max-width: 100% !important;
+    }
+    .pricing-table .col,
+    .pricing-table .responsive{
+        width: 45% !important;
+
+    }
+    .pricer .col:before{
+        width: 100% !important;
+    }
+    .pricer .col .header{
+        width: 80% !important;
+    }
+    .pricer .col .header .label{
+        width: 100% !important;
+    }
+    .pricer .selected .details{
+        margin-top: 20px !important;
+    }
+    .pricer .col .signup a{
+        width: 80% !important;
+    }
+}
+
+@media (max-width: 500px){
+    .pricing-table .col,
+    .pricing-table .responsive{
+        width: 100% !important;
+
+    }
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (max-width: 992px) {
+
 }

@@ -1,0 +1,217 @@
+
+
+#shaon-pricing-table .offer-tag{
+    position: absolute;
+    right: -1px;
+    top: 0;
+    width: 53px;
+    height: 40px;
+    z-index: 11;
+}
+
+#shaon-pricing-table .pricing-table{
+    width: 100%;
+    margin: 20px;    
+}
+
+#shaon-pricing-table .col1, #shaon-pricing-table .col2, #shaon-pricing-table .col3{position: relative; float: left;}
+
+#shaon-pricing-table .pricing-table .col1{
+    width: 20%;
+}
+
+#shaon-pricing-table .pricing-table .col2{
+    width: 30%;
+}
+
+#shaon-pricing-table .pricing-table .col3{
+    width: 40%;
+}
+
+#shaon-pricing-table .pricing-table ul{
+    margin: 0;
+    padding: 10px;
+    
+}
+
+#shaon-pricing-table .pricing-table li{
+    margin: 0 5px;
+    padding: 5px 0;
+    line-height: 25px;
+    display: block;
+    border-bottom: 1px solid #ccc;
+    border-top: 1px solid #f9f9f9;
+    text-align: center;
+    font-weight: bold;
+    font-size: 13px;
+    text-transform: uppercase;
+    color: #333;
+    text-shadow: 0px 1px #fff;
+}
+
+#shaon-pricing-table .pricing-table li:first-child{
+    border-top: none;
+}
+
+ 
+
+#shaon-pricing-table .feature-content, #shaon-pricing-table .price-content, #shaon-pricing-table .selectePrice-content{
+    width: 100%;    
+    border: 1px solid #ccc;
+       
+    text-align: center; 
+}
+#shaon-pricing-table .feature-content  {background: #f1f1f1; } 
+#shaon-pricing-table .price-content{ background: #e5e5e5;   }
+#shaon-pricing-table .selectePrice-content  {background: #f9f9f9;position: absolute; z-index: 10;
+-moz-box-shadow: 0 0 5px #9CAC4A;
+-webkit-box-shadow: 0 0 5px #9CAC4A;
+box-shadow: 0 0 5px #9CAC4A;
+border: 1px solid #6E7F0F !important; 
+border-top: 0px solid #6E7F0F !important; 
+}
+
+                          
+#shaon-pricing-table a.signup{
+   margin: 20px auto;
+    text-align: center;
+    font-weight: bold;
+    font-size: 10pt; 
+    line-height: 30px;
+    height: 30px;
+    font-family: Verdana;
+    text-transform: uppercase;
+    width: 110px;
+    display: block;
+    -moz-border-radius:5px;
+    -webkit-border-radius:5px;
+    border-radius:5px;
+    border:3px solid #8EA035;
+    text-decoration: none;
+    color: #fff;
+    background: #45484d;
+background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIyMCUiIHN0b3AtY29sb3I9IiM0NTQ4NGQiIHN0b3Atb3BhY2l0eT0iMSIvPgogICAgPHN0b3Agb2Zmc2V0PSI1OSUiIHN0b3AtY29sb3I9IiM3MDZjNmMiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+background: -moz-linear-gradient(top,  #45484d 20%, #706c6c 59%);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(20%,#45484d), color-stop(59%,#706c6c));
+background: -webkit-linear-gradient(top,  #45484d 20%,#706c6c 59%);
+background: -o-linear-gradient(top,  #45484d 20%,#706c6c 59%);
+background: -ms-linear-gradient(top,  #45484d 20%,#706c6c 59%);
+background: linear-gradient(top,  #45484d 20%,#706c6c 59%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#45484d', endColorstr='#706c6c',GradientType=0 );
+
+}
+
+
+#shaon-pricing-table a:hover.signup{    
+    
+    text-shadow: 0px 1px #fff; 
+   background: rgb(255,255,255);
+background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjUwJSIgc3RvcC1jb2xvcj0iI2YxZjFmMSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjUxJSIgc3RvcC1jb2xvcj0iI2UxZTFlMSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmNmY2ZjYiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(241,241,241,1) 50%, rgba(225,225,225,1) 51%, rgba(246,246,246,1) 100%);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(50%,rgba(241,241,241,1)), color-stop(51%,rgba(225,225,225,1)), color-stop(100%,rgba(246,246,246,1)));
+background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(241,241,241,1) 50%,rgba(225,225,225,1) 51%,rgba(246,246,246,1) 100%);
+background: -o-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(241,241,241,1) 50%,rgba(225,225,225,1) 51%,rgba(246,246,246,1) 100%);
+background: -ms-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(241,241,241,1) 50%,rgba(225,225,225,1) 51%,rgba(246,246,246,1) 100%);
+background: linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(241,241,241,1) 50%,rgba(225,225,225,1) 51%,rgba(246,246,246,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f6f6f6',GradientType=0 );
+color: #000;   
+
+}
+
+
+#shaon-pricing-table .featureTitle, #shaon-pricing-table .priceTitle, #shaon-pricing-table .selectedpriceTitle{
+    height: 80px;
+    text-align: center;
+    position: relative;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: arial;
+}
+
+#shaon-pricing-table .featureTitle span{
+    border: 1px solid #ccc;
+    color:#4e4e4e;
+    text-shadow: 0px 1px #fff;
+    position: absolute;
+    z-index: 1;
+    width:100%;
+    margin-top: 40px;
+    bottom: 0px;
+    line-height: 40px;
+    height: 40px;
+    display: block;
+background: rgb(228,239,192);
+background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2U0ZWZjMCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNhYmJkNzMiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+background: -moz-linear-gradient(top,  rgba(228,239,192,1) 0%, rgba(171,189,115,1) 100%);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(228,239,192,1)), color-stop(100%,rgba(171,189,115,1)));
+background: -webkit-linear-gradient(top,  rgba(228,239,192,1) 0%,rgba(171,189,115,1) 100%);
+background: -o-linear-gradient(top,  rgba(228,239,192,1) 0%,rgba(171,189,115,1) 100%);
+background: -ms-linear-gradient(top,  rgba(228,239,192,1) 0%,rgba(171,189,115,1) 100%);
+background: linear-gradient(top,  rgba(228,239,192,1) 0%,rgba(171,189,115,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e4efc0', endColorstr='#abbd73',GradientType=0 );
+
+}
+
+#shaon-pricing-table .priceTitle span{
+    color: #01193d;
+    text-shadow:0px 1px #fff;
+    border: 1px solid #6e9359;
+    position: absolute;
+    z-index: 2;
+    width:100%;
+    height: 60px;
+    margin-top: 18px;
+    line-height: 60px;
+    display: block;
+background: rgb(229,230,150);
+background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2U1ZTY5NiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNkMWQzNjAiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+background: -moz-linear-gradient(top,  rgba(229,230,150,1) 0%, rgba(209,211,96,1) 100%);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(229,230,150,1)), color-stop(100%,rgba(209,211,96,1)));
+background: -webkit-linear-gradient(top,  rgba(229,230,150,1) 0%,rgba(209,211,96,1) 100%);
+background: -o-linear-gradient(top,  rgba(229,230,150,1) 0%,rgba(209,211,96,1) 100%);
+background: -ms-linear-gradient(top,  rgba(229,230,150,1) 0%,rgba(209,211,96,1) 100%);
+background: linear-gradient(top,  rgba(229,230,150,1) 0%,rgba(209,211,96,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e5e696', endColorstr='#d1d360',GradientType=0 );
+
+}
+
+
+#shaon-pricing-table .selectedpriceTitle span{
+    color: #fff;
+    text-shadow:0px 1px #106f92;
+    border: 1px solid #266a01;
+    position: absolute;
+    z-index: 3;
+    width:100%;
+    height: 80px;
+    margin-top: 0px;
+    line-height: 80px;
+    display: block;
+background: rgb(164,179,87);
+background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2E0YjM1NyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM3NTg5MGMiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+background: -moz-linear-gradient(top,  rgba(164,179,87,1) 0%, rgba(117,137,12,1) 100%);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(164,179,87,1)), color-stop(100%,rgba(117,137,12,1)));
+background: -webkit-linear-gradient(top,  rgba(164,179,87,1) 0%,rgba(117,137,12,1) 100%);
+background: -o-linear-gradient(top,  rgba(164,179,87,1) 0%,rgba(117,137,12,1) 100%);
+background: -ms-linear-gradient(top,  rgba(164,179,87,1) 0%,rgba(117,137,12,1) 100%);
+background: linear-gradient(top,  rgba(164,179,87,1) 0%,rgba(117,137,12,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a4b357', endColorstr='#75890c',GradientType=0 );
+ 
+border: 1px solid #6E7F0F !important; 
+border-bottom: 0px solid #6E7F0F !important; 
+-moz-box-shadow: 0 0 5px #9CAC4A;
+-webkit-box-shadow: 0 0 5px #9CAC4A;
+box-shadow: 0 0 5px #9CAC4A;
+ 
+}
+
+.pricing-table li:last-child{
+    border-bottom: 0px !important;
+}
+#shaon-pricing-table img{
+    background: transparent !important;
+    border: 0px !important;
+    padding: 0px !important;
+    margin: 0px !important;
+}

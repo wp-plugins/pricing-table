@@ -1,0 +1,555 @@
+.pricing-table {
+	font: 13px "Open Sans", "Helvetica Neue", arial, sans-serif;
+	-webkit-border-radius: 5px;
+	   -moz-border-radius: 5px;
+	        border-radius: 5px;
+    margin: 50px auto;
+}
+
+.pricing-table ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.wppt-package-name {
+	text-align: center;
+	height: 40px;
+	padding: 3px 0 0;
+	-webkit-border-radius: 4px 4px 0 0;
+	   -moz-border-radius: 4px 4px 0 0;
+	        border-radius: 4px 4px 0 0;
+	-webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, .3);
+	   -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, .3);
+	        box-shadow: inset 0 1px 0 rgba(255, 255, 255, .3);
+}
+
+.wppt-package-info {
+	text-align: center;
+	height: 50px;
+	margin-top: -1px;
+	padding: 10px 0 0;
+	border-bottom: none;	
+	-webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, .3);
+	   -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, .3);
+	        box-shadow: inset 0 1px 0 rgba(255, 255, 255, .3);
+}
+
+.package-title h2 {
+	color: #f9f9f9;
+	margin: 0;
+	font-size: 24px;
+	line-height: 40px;
+	text-shadow: -1px -1px 0 rgba(0, 0, 0, .3), 1px 1px 0 rgba(255, 255, 255, .2);
+}
+
+.package-price h1 {
+	color: #f9f9f9;
+	margin: 0;
+	font-size: 44px;
+	line-height: 40px;
+	text-shadow: -1px -1px 0 rgba(0, 0, 0, .3), 1px 1px 0 rgba(255, 255, 255, .2);
+}
+
+.cents {
+	font-size: 16px;
+	position: relative;
+	top: -20px;
+}
+.w3eden #shaon-pricing-table ul li.feature{
+	min-height: 35px !important;
+	padding: 12px 15px !important;
+}
+.w3eden #shaon-pricing-table ul li.pricing-content-row-odd {
+	font-size: 14px;
+	background-color: #f3f3f3;
+	padding: 10px 15px !important;
+	border-left: 1px solid #aaaaaa;
+	border-right: 1px solid #aaaaaa;
+}
+
+.w3eden #shaon-pricing-table ul  li.pricing-content-row-even {
+	font-size: 14px;
+	background-color: #fcfcfc;
+	padding: 10px 15px !important;
+	border-left: 1px solid #aaaaaa;
+	border-right: 1px solid #aaaaaa;
+}
+
+.acc-inner {
+	display: block;
+	padding: 10px 15px;
+	border-left: 1px solid #aaaaaa;
+	border-right: 1px solid #aaaaaa;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .2), inset 0 -1px 1px rgba(0, 0, 0, .2);
+	   -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .2), inset 0 -1px 1px rgba(0, 0, 0, .2);
+	        box-shadow: inset 0 1px 1px rgba(0, 0, 0, .2), inset 0 -1px 1px rgba(0, 0, 0, .2);
+}
+
+.pricing-footer {
+	text-align: center;
+	height: 50px;
+	padding: 8px 20px !important;
+	-webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, .3);
+	   -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, .3);
+	        box-shadow: inset 0 1px 0 rgba(255, 255, 255, .3);
+	-webkit-border-radius: 0 0 4px 4px;
+	   -moz-border-radius: 0 0 4px 4px;
+	        border-radius: 0 0 4px 4px;
+}
+
+.animate, .animate .pricing-content-row-odd, .pricing-content-row-even, .acc-inner {
+	-webkit-transition: all .3s ease-in-out;
+	   -moz-transition: all .3s ease-in-out;
+	     -o-transition: all .3s ease-in-out;
+	    -ms-transition: all .3s ease-in-out;
+	        transition: all .3s ease-in-out;
+}
+
+.animate.change-bg ul:hover .pricing-footer {
+	border-top-color: #a62122;
+	-webkit-box-shadow: inset 0 0 0 rgba(255, 255, 255, 0);
+	   -moz-box-shadow: inset 0 0 0 rgba(255, 255, 255, 0);
+	        box-shadow: inset 0 0 0 rgba(255, 255, 255, 0);
+}
+
+.animate.go-up {
+	-webkit-transform: translate(0px, 0px);
+	   -moz-transform: translate(0px, 0px);
+	     -o-transform: translate(0px, 0px);
+	    -ms-transform: translate(0px, 0px);
+	        transform: translate(0px, 0px);
+}
+
+.animate.go-up:hover {
+	-webkit-transform: translate(0,-10px);
+	   -moz-transform: translate(0,-10px);
+	     -o-transform: translate(0,-10px);
+	    -ms-transform: translate(0,-10px);
+	        transform: translate(0,-10px);
+}
+
+.animate.add-shadow:hover {
+	-webkit-box-shadow: 0 0 15px rgba(0, 0, 255, .6);
+	   -moz-box-shadow: 0 0 15px rgba(0, 0, 255, .6);
+	        box-shadow: 0 0 15px rgba(0, 0, 255, .6);
+}
+.pricing-table .btn {
+	font: 13px "Open Sans", "Helvetica Neue", arial, sans-serif;
+}
+
+.pricing-table .btn {
+
+	line-height: 18px;
+	padding: 10px 20px;
+	text-shadow: none;
+	*zoom: 1;
+	-webkit-box-shadow: inset 0 0 1px rgba(255, 255, 255, .5), 0 0 1px rgba(0, 0, 0, .8);
+	   -moz-box-shadow: inset 0 0 1px rgba(255, 255, 255, .5), 0 0 1px rgba(0, 0, 0, .8);
+	        box-shadow: inset 0 0 1px rgba(255, 255, 255, .5), 0 0 1px rgba(0, 0, 0, .8);
+}
+
+.acc {
+	cursor: pointer;
+}
+
+.no-bold {
+	font-weight: normal;
+}
+
+#shaon-pricing-table .wppt-package-name, #shaon-pricing-table .wppt-package-info {
+	/*background-color: #4581b3 !important;
+	background-image: -moz-linear-gradient(top, #549dd9, #4581b3) !important;
+	background-image: -ms-linear-gradient(top, #549dd9, #4581b3) !important;
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#549dd9), to(#4581b3)) !important;
+	background-image: -webkit-linear-gradient(top, #549dd9, #4581b3) !important;
+	background-image: -o-linear-gradient(top, #549dd9, #4581b3) !important;
+	background-image: linear-gradient(top, #549dd9, #4581b3) !important;*/
+	background-color: #4C66A4;
+	background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAABUCAMAAACfvxb8AAAAeFBMVEVOaaJMZ6FIZJ89W5lBXps8WplDYJxNaKFKZqBGYp5HY54/XJpCX5xFYZ07WZg+XJpLZqBAXZtJZZ9EYZ1NaKI8Wpg9WplMaKFNaaJJZJ9LZ6FEYJ1FYp1DX5xAXptJZaBAXZo+W5k+W5pKZaBGY55LZ6A8WZg/XZpJqQD4AAAAVklEQVR4Xk3CBQoDABADwU3d3d37/x8WAqEHI/jboZV1Y2sqDuiNZtaLJ7qihe1RoxjEC/XjhMaxtCPqxBmNolVc0Nxu6IuGMbUHuqNmsbF2rO2DJhg/RwEE6AR0V3kAAAAASUVORK5CYII=") left center !important;	
+	background-repeat: repeat-x;
+ 
+	/*border: 1px solid #407EAD !important;*/
+	border: 1px solid #3B578E !important;
+}
+#shaon-pricing-table .wppt-package-name *, #shaon-pricing-table .wppt-package-info *{ color: #ffffff; }
+
+#shaon-pricing-table .wppt-package-info{
+	min-height: 80px;padding:10px 0; 
+	/*border-top: 1px solid #2F658C !important;*/
+	border-top: 1px solid #3B578E !important;
+}
+
+
+
+#shaon-pricing-table .pricing-footer {
+	/*background-color: #4581b3 !important;
+	background-image: -moz-linear-gradient(top, #4581b3, #325c80) !important;
+	background-image: -ms-linear-gradient(top, #4581b3, #325c80);
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#4581b3), to(#325c80)) !important;
+	background-image: -webkit-linear-gradient(top, #4581b3, #325c80) !important;
+	background-image: -o-linear-gradient(top, #4581b3, #325c80) !important;
+	background-image: linear-gradient(top, #4581b3, #325c80) !important;
+	*/
+	background-color: #4C66A4;
+	background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAABUCAMAAACfvxb8AAAAeFBMVEVOaaJMZ6FIZJ89W5lBXps8WplDYJxNaKFKZqBGYp5HY54/XJpCX5xFYZ07WZg+XJpLZqBAXZtJZZ9EYZ1NaKI8Wpg9WplMaKFNaaJJZJ9LZ6FEYJ1FYp1DX5xAXptJZaBAXZo+W5k+W5pKZaBGY55LZ6A8WZg/XZpJqQD4AAAAVklEQVR4Xk3CBQoDABADwU3d3d37/x8WAqEHI/jboZV1Y2sqDuiNZtaLJ7qihe1RoxjEC/XjhMaxtCPqxBmNolVc0Nxu6IuGMbUHuqNmsbF2rO2DJhg/RwEE6AR0V3kAAAAASUVORK5CYII=") left center !important;
+	background-repeat: repeat-x;	 
+	/*border: 1px solid #2b4f6e !important;*/
+	border: 1px solid #3B578E !important;
+	color: #ffffff !important;
+}
+
+/* blue */
+#shaon-pricing-table.skin-blue .wppt-package-name, #shaon-pricing-table.skin-blue .wppt-package-info, #shaon-pricing-table.skin-blue .pricing-footer
+{
+  background-color: #3498db;
+  background-image: -webkit-linear-gradient(top, #3498db, #2980b9) !important;
+  background-image: -moz-linear-gradient(top, #3498db, #2980b9) !important;
+  background-image: -ms-linear-gradient(top, #3498db, #2980b9) !important;
+  background-image: -o-linear-gradient(top, #3498db, #2980b9) !important;
+  background-image: linear-gradient(to bottom, #3498db, #2980b9) !important;
+  border-color: #1f72a6 !important;
+}
+
+/* green */
+#shaon-pricing-table.skin-green .wppt-package-name, #shaon-pricing-table.skin-green .wppt-package-info, #shaon-pricing-table.skin-green .pricing-footer
+{
+	moz-box-shadow:inset 0px 1px 0px 0px #9acc85 !important;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #9acc85 !important;
+	box-shadow:inset 0px 1px 0px 0px #9acc85;
+    background: #68a54b;
+	background-image:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #74ad5a), color-stop(1, #68a54b)) !important;
+	background-image:-moz-linear-gradient(top, #74ad5a 5%, #68a54b 100%) !important;
+	background-image:-webkit-linear-gradient(top, #74ad5a 5%, #68a54b 100%) !important;
+	background-image:-o-linear-gradient(top, #74ad5a 5%, #68a54b 100%) !important;
+	background-image:-ms-linear-gradient(top, #74ad5a 5%, #68a54b 100%) !important;
+	background-image:linear-gradient(to bottom, #74ad5a 5%, #68a54b 100%) !important;
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#74ad5a', endColorstr='#68a54b',GradientType=0) !important;
+	background-color:#74ad5a !important;
+	border:1px solid #3b6e22 !important;
+}
+
+/* coffee */
+#shaon-pricing-table.skin-coffee .wppt-package-name, #shaon-pricing-table.skin-coffee .wppt-package-info, #shaon-pricing-table.skin-coffee .pricing-footer
+{
+	-moz-box-shadow:inset 0px 1px 0px 0px #a6827e !important;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #a6827e !important;
+	box-shadow:inset 0px 1px 0px 0px #a6827e !important;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #7d5d3b), color-stop(1, #634b30)) !important;
+	background:-moz-linear-gradient(top, #7d5d3b 5%, #634b30 100%) !important;
+	background:-webkit-linear-gradient(top, #7d5d3b 5%, #634b30 100%) !important;
+	background:-o-linear-gradient(top, #7d5d3b 5%, #634b30 100%) !important;
+	background:-ms-linear-gradient(top, #7d5d3b 5%, #634b30 100%) !important;
+	background:linear-gradient(to bottom, #7d5d3b 5%, #634b30 100%) !important;
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#7d5d3b', endColorstr='#634b30',GradientType=0) !important;
+	background-color:#7d5d3b !important;
+	border-color: #543E25 !important;
+}
+
+/* dark blue */
+#shaon-pricing-table.skin-dark-blue .wppt-package-name, #shaon-pricing-table.skin-dark-blue .wppt-package-info, #shaon-pricing-table.skin-dark-blue .pricing-footer
+{
+	-moz-box-shadow:inset 0px 1px 0px 0px #8cafd1 !important;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #8cafd1 !important;
+	box-shadow:inset 0px 1px 0px 0px #8cafd1;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #6192b8), color-stop(1, #40627c)) !important;
+	background:-moz-linear-gradient(top, #6192b8 5%, #40627c 100%) !important;
+	background:-webkit-linear-gradient(top, #6192b8 5%, #40627c 100%) !important;
+	background:-o-linear-gradient(top, #6192b8 5%, #40627c 100%) !important;
+	background:-ms-linear-gradient(top, #6192b8 5%, #40627c 100%) !important;
+	background:linear-gradient(to bottom, #6192b8 5%, #40627c 100%) !important;
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#6192b8', endColorstr='#40627c',GradientType=0) !important;
+	background-color:#6192b8 !important;
+	border-color: #40627c !important;
+}
+
+#shaon-pricing-table .wppt-package-info,
+#shaon-pricing-table.skin-blue .wppt-package-info,
+#shaon-pricing-table.skin-coffee .wppt-package-info,
+#shaon-pricing-table.skin-green .wppt-package-info{
+border-top:0 !important;
+}
+
+#shaon-pricing-table .pricing-footer .btn-pricing
+{
+    -moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
+	box-shadow:inset 0px 1px 0px 0px #ffffff;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ffffff), color-stop(1, #f6f6f6));
+	background:-moz-linear-gradient(top, #ffffff 5%, #f6f6f6 100%);
+	background:-webkit-linear-gradient(top, #ffffff 5%, #f6f6f6 100%);
+	background:-o-linear-gradient(top, #ffffff 5%, #f6f6f6 100%);
+	background:-ms-linear-gradient(top, #ffffff 5%, #f6f6f6 100%);
+	background:linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#f6f6f6',GradientType=0);
+	background-color:#ffffff;
+	color:  #555 !important;
+	font-weight: 700 !important;
+	border-radius: 2px !important;
+	border: 0 !important;
+    padding: 7px !important;
+
+}
+
+#shaon-pricing-table .pricing-footer a.btn-pricing{
+    margin-top: 6px;
+}
+
+#shaon-pricing-table .wppt-package-name h5{
+	 font-size: 21px;
+    line-height: 33px;
+    margin: 0;
+}
+
+#shaon-pricing-table .pricing-footer{
+	min-height: 60px;
+}
+.animate.change-bg ul:hover .pricing-content-row-odd, .animate.change-bg ul:hover .pricing-content-row-even{
+	color: #fff;
+	background: #4581b3;
+	border-left: 1px solid #2b4f6e;
+	border-right: 1px solid #2b4f6e;
+}
+
+.animate.change-bg ul:hover .acc-inner {
+	color: #fff;
+	background: #4078a6;
+	border-left: 1px solid #2b4f6e;
+	border-right: 1px solid #2b4f6e;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .2), inset 0 -1px 2px rgba(0, 0, 0, .2), inset 0 -1px 0 rgba(255, 255, 255, .4);
+	   -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .2), inset 0 -1px 2px rgba(0, 0, 0, .2), inset 0 -1px 0 rgba(255, 255, 255, .4);
+	        box-shadow: inset 0 1px 1px rgba(0, 0, 0, .2), inset 0 -1px 2px rgba(0, 0, 0, .2), inset 0 -1px 0 rgba(255, 255, 255, .4);
+}
+
+.animate.change-bg ul:hover .pricing-footer {
+	border-top-color: #4581b3;
+	-webkit-box-shadow: inset 0 0 0 #4581b3;
+	   -moz-box-shadow: inset 0 0 0 #4581b3;
+	        box-shadow: inset 0 0 0 #4581b3;
+}
+
+.btn-pricing {	 
+	border-color: #4581b3 #4581b3 #325c80;
+	border-color: rgba(0, 0, 0, .1) rgba(0, 0, 0, .1) rgba(0, 0, 0, .25);
+	padding: 5px 22px !important;
+}
+
+.btn-pricing:hover,
+.btn-pricing:active,
+.btn-pricing.active,
+.btn-pricing.disabled,
+.btn-pricing[disabled] {
+	color: #d3dce5;
+	background-color: #325c80;
+	*background-color: #325c80;
+}
+
+.btn-pricing:active,
+.btn-pricing.active {
+	color: #d3dce5;
+	background-color: #325c80 \9;
+}
+
+#shaon-pricing-table.style-2 .wppt-package-info{
+	min-height: 140px !important;
+}
+#shaon-pricing-table.style-2 .wppt-package-info .wppt-info-circle{
+	width:100px;height:100px;margin:10px auto;border-radius:50%;background:rgba(0,0,0,0.2);padding-top:28px; text-align: center;
+}
+#shaon-pricing-table.style-2 .wppt-package-info .wppt-info-circle p{
+	font-size: 10pt !important;
+}
+
+#shaon-pricing-table.style-3 .wppt-package-info{ background-color: #eeeeee !important;background-image: none !important; border-left-color: #aaaaaa !important; border-right-color: #aaaaaa !important;  }
+#shaon-pricing-table.style-3 .wppt-package-info *{ color: #333333 !important; }
+
+
+#shaon-pricing-table.style-2.style-3 .wppt-info-circle *{ color: #ffffff !important; }
+#shaon-pricing-table.style-2.style-3 .wppt-info-circle { background: #4C66A4 !important; }
+#shaon-pricing-table.style-2.style-3.skin-coffee .wppt-info-circle { background: #7d5d3b !important; }
+#shaon-pricing-table.style-2.style-3.skin-dark-blue .wppt-info-circle { background: #6192b8 !important; }
+#shaon-pricing-table.style-2.style-3.skin-blue .wppt-info-circle { background: #2F8CCA !important; }
+#shaon-pricing-table.style-2.style-3.skin-green .wppt-info-circle { background: #74ad5a !important; }
+
+
+#shaon-pricing-table .label{
+    padding: 0.3em 0.6em 0.3em !important;
+}
+
+#shaon-pricing-table.skin-smooth li{
+    border: 0 !important;
+    box-shadow: none !important;
+    background-image: none !important;
+}
+
+#shaon-pricing-table.skin-smooth ul li.feature{
+    padding: 15px !important;
+    min-height: 50px !important;
+}
+
+#shaon-pricing-table.singular-head div.pricing-table:not(.active) li.wppt-package-name{
+    background: rgb(229,229,229) !important;
+    background: -moz-linear-gradient(top,  rgba(229,229,229,1) 0%, rgba(244,244,244,1) 73%) !important;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(229,229,229,1)), color-stop(73%,rgba(244,244,244,1))) !important;
+    background: -webkit-linear-gradient(top,  rgba(229,229,229,1) 0%,rgba(244,244,244,1) 73%) !important;
+    background: -o-linear-gradient(top,  rgba(229,229,229,1) 0%,rgba(244,244,244,1) 73%) !important;
+    background: -ms-linear-gradient(top,  rgba(229,229,229,1) 0%,rgba(244,244,244,1) 73%) !important;
+    background: linear-gradient(to bottom,  rgba(229,229,229,1) 0%,rgba(244,244,244,1) 73%) !important;
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e5e5e5', endColorstr='#f4f4f4',GradientType=0 ) !important;
+    border-color: #aaaaaa !important;
+    box-shadow: none !important;
+
+}
+#shaon-pricing-table.singular-head.skin-smooth div.pricing-table:not(.active) li.wppt-package-name{
+    background: #555555 !important;
+}
+
+#shaon-pricing-table.singular-head div.pricing-table:not(.active) .wppt-package-name *{
+    color: #333333 !important;
+}
+
+#shaon-pricing-table.singular-head.skin-smooth div.pricing-table:not(.active) li.wppt-package-name *{
+    color: #ffffff !important;
+}
+
+#shaon-pricing-table.long-shadow div.pricing-table {
+    box-shadow: 1px 1px rgb(227, 227, 227), 2px 2px rgb(228, 228, 228), 3px 3px rgb(229, 229, 229), 4px 4px rgb(230, 230, 230), 5px 5px rgb(231, 231, 231), 6px 6px rgb(232, 232, 232), 7px 7px rgb(233, 233, 233), 8px 8px rgb(234, 234, 234), 9px 9px rgb(235, 235, 235), 10px 10px rgb(236, 236, 236), 11px 11px rgb(237, 237, 237), 12px 12px rgb(238, 238, 238), 13px 13px rgb(239, 239, 239), 14px 14px rgb(240, 240, 240), 15px 15px rgb(241, 241, 241), 16px 16px rgb(241, 241, 241), 17px 17px rgb(242, 242, 242), 18px 18px rgb(243, 243, 243), 19px 19px rgb(244, 244, 244), 20px 20px rgb(245, 245, 245), 21px 21px rgb(246, 246, 246), 22px 22px rgb(247, 247, 247), 23px 23px rgb(248, 248, 248), 24px 24px rgb(249, 249, 249), 25px 25px rgb(250, 250, 250), 26px 26px rgb(251, 251, 251), 27px 27px rgb(252, 252, 252), 28px 28px rgb(253, 253, 253), 29px 29px rgb(254, 254, 254), 30px 30px rgb(255, 255, 255) !important;
+}
+#shaon-pricing-table.long-shadow div.pricing-table.active{
+    box-shadow: 1px 1px rgb(192, 192, 192), 2px 2px rgb(194, 194, 194), 3px 3px rgb(196, 196, 196), 4px 4px rgb(198, 198, 198), 5px 5px rgb(200, 200, 200), 6px 6px rgb(202, 202, 202), 7px 7px rgb(204, 204, 204), 8px 8px rgb(206, 206, 206), 9px 9px rgb(207, 207, 207), 10px 10px rgb(209, 209, 209), 11px 11px rgb(211, 211, 211), 12px 12px rgb(213, 213, 213), 13px 13px rgb(215, 215, 215), 14px 14px rgb(217, 217, 217), 15px 15px rgb(219, 219, 219), 16px 16px rgb(221, 221, 221), 17px 17px rgb(223, 223, 223), 18px 18px rgb(224, 224, 224), 19px 19px rgb(226, 226, 226), 20px 20px rgb(228, 228, 228), 21px 21px rgb(230, 230, 230), 22px 22px rgb(232, 232, 232), 23px 23px rgb(234, 234, 234), 24px 24px rgb(236, 236, 236), 25px 25px rgb(238, 238, 238), 26px 26px rgb(239, 239, 239), 27px 27px rgb(241, 241, 241), 28px 28px rgb(243, 243, 243), 29px 29px rgb(245, 245, 245), 30px 30px rgb(247, 247, 247), 31px 31px rgb(249, 249, 249), 32px 32px rgb(251, 251, 251), 33px 33px rgb(253, 253, 253), 34px 34px rgb(255, 255, 255) !important;
+    transform: scale(1.08);
+}
+
+
+#shaon-pricing-table.hover-effect div.pricing-table{
+    transition: all 800ms ease-in;
+}
+#shaon-pricing-table.hover-effect div.pricing-table:hover{
+    transform: scale(1.04) !important;
+    transition: all 300ms ease-in;
+}
+
+#shaon-pricing-table.hover-effect div.pricing-table.active:hover{
+    transform: scale(1.11) !important;
+    transition: all 0.5s ease-in-out;
+}
+
+
+#shaon-pricing-table.arrowed .wppt-package-info
+{
+    position: relative;
+    border-bottom: 0 !important;
+
+}
+
+#shaon-pricing-table.arrowed .wppt-package-info:after
+{
+    content: '';
+    position: absolute;
+    border-style: solid;
+    border-width: 25px 106px 0;
+    border-color: #4C66A4 transparent;
+    display: block;
+    width: 0;
+    z-index: 1;
+    margin-left: -106px !important;
+    bottom: -25px;
+    left: 50%;
+}
+#shaon-pricing-table.arrowed div.pricing-table.active .wppt-package-info:after{
+    bottom: -24px !important;
+}
+
+#shaon-pricing-table.arrowed div.pricing-table li.first-feature{
+    height: 70px !important;
+    min-height: 70px !important;
+    padding-top: 40px !important;
+}
+
+#shaon-pricing-table.arrowed .col-md-4 .wppt-package-info:after
+{
+    border-width: 32px 146px 0;
+    margin-left: -146px !important;
+    bottom: -32px;
+}
+
+
+#shaon-pricing-table.arrowed.skin-dark-blue .wppt-package-info:after{
+    border-color: #41637D transparent;
+}
+
+#shaon-pricing-table.flat.arrowed.skin-dark-blue:not(.style-3) .wppt-package-info:after{
+    border-color: #6192B8 transparent;
+}
+
+#shaon-pricing-table.arrowed.skin-coffee .wppt-package-info:after{
+    border-color: #644C30 transparent;
+}
+/*
+#shaon-pricing-table.flat.arrowed.skin-coffee:not(.style-3) .wppt-package-info:after{
+    border-color: #644C30 transparent;
+}
+*/
+#shaon-pricing-table.flat.arrowed.skin-coffee:not(.style-3) .wppt-package-info:after{
+    border-color: #7D5D3B transparent;
+}
+
+#shaon-pricing-table.arrowed.skin-green .wppt-package-info:after{
+    border-color: #68A54C transparent;
+}
+
+#shaon-pricing-table.flat.arrowed.skin-green:not(.style-3) .wppt-package-info:after{
+    border-color: #74AD5A transparent;
+}
+
+#shaon-pricing-table.arrowed.skin-blue .wppt-package-info:after{
+    border-color: #2981BA transparent;
+}
+#shaon-pricing-table.flat.arrowed.skin-blue:not(.style-3) .wppt-package-info:after{
+    border-color: #3498DB transparent;
+}
+
+#shaon-pricing-table.style-3.arrowed .wppt-package-info{
+    background: #E0E0E0 !important;
+}
+#shaon-pricing-table.style-3.arrowed .wppt-package-info:after{
+    border-color: #E0E0E0 transparent;
+}
+
+#shaon-pricing-table.metro *{
+    border-radius: 0 !important;
+    box-shadow: 0 !important;
+}
+
+#shaon-pricing-table.flat .wppt-package-name, #shaon-pricing-table.flat .wppt-package-info, #shaon-pricing-table.flat .pricing-footer{
+    background-image: none !important;
+    border: 0 !important;
+    box-shadow: none !important;
+}
+
+#shaon-pricing-table.flat div:not(.style-3).pricing-table.active .wppt-package-name{
+    border-bottom: 1px solid rgba(255,255,255,0.2) !important;
+    overflow: hidden;
+}
+#shaon-pricing-table.flat:not(.style-3) div.pricing-table.active .wppt-package-name h5{
+    border-bottom: 1px solid rgba(0,0,0,0.2) !important;
+    background: rgba(0,0,0,0.15) !important;
+
+}
+#shaon-pricing-table.flat .pricing-footer .btn{
+    background: rgba(255,255,255,0.9) !important;
+}
+
+#shaon-pricing-table.flat div.pricing-table:hover .pricing-footer .btn{
+    background: rgba(255,255,255,1) !important;
+}
+
+
+#shaon-pricing-table .pricing-footer {
+    padding: 8px 20px !important;
+}
+
+#shaon-pricing-table .wppt-package-name h5{
+    height: 40px;
+    line-height: 38px;
+}

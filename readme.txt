@@ -12,7 +12,7 @@ WordPress Pricing Table plugin will help you to generate pricing table in the ea
 
 WordPress Pricing Table plugin will help the admin to publish pricing table on WordPress page or post content.
 WordPress Pricing Table plugin packed with all features you will ever need to build a pricing or features table for your products or services in the easiest way. 
-Use simple short-code `[ahm-pricing-table id=999 template=template_name]` (999=use any table id here and replace template with valid template name "green" or "gray" ) inside page or post content to embed pricing table.
+Use simple short-code `[ahm-pricing-table id=999 template=template_name]` (999=use any table id here and replace template with valid template name "rock" or "gray" ) inside page or post content to embed pricing table.
  
 
 = Features =
@@ -21,9 +21,11 @@ Use simple short-code `[ahm-pricing-table id=999 template=template_name]` (999=u
 * Unlimited package(column) support
 * Featured Column option highlight best price package
 * Tooltip support
-* 3 diff table template "smooth" (responsive), "green" and "gray"
+* 4 different table templates
+* Responsive Tables
 * Translation ready
 * use [y] for tick icon and [n] for cross icon
+* Easy tinymce edit button to choose template and generate short-code
 
 
  
@@ -41,15 +43,20 @@ N/A
 
 == Screenshots ==
 
-1. Pricing Table
+1. Pricing Table ( Responsive )
 2. Pricing table admin
 3. Pricing table embed code
 4. Pricing Table Template 2 (thanks to red-team-design.com)
-5. Pricing Table Template 3
+5. Pricing Table Template 3 ( Responsive )
+6. Pricing Table Template 4 ( Responsive )
 
 
 
 == Changelog ==
+
+= 1.3.0 =
+* Upgraded total code
+* Added new responsive table templates
 
 = 1.2.5 =
 * Upgrade smooth template to responsive

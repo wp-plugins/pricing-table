@@ -1,0 +1,648 @@
+
+/***** Ribbon hanging from top *****/
+
+.hang-ribbon {
+	margin: 20px auto;
+	position: relative;
+	z-index: 0;
+	text-align: center;
+	color: #fff;
+	-moz-box-shadow:    0 2px 2px rgba(0, 0, 0, 0.5);
+	-webkit-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
+	box-shadow:         0 2px 2px rgba(0, 0, 0, 0.5);
+	-moz-border-radius:    3px 3px 0 0;
+	-webkit-border-radius: 3px 3px 0 0;
+	border-radius:         3px 3px 0 0;
+	behavior: url(PIE.htc);
+}
+
+.ie8 .hang-ribbon {
+	box-shadow: none;
+}
+
+.hang-ribbon > span {
+	display: block;
+	position: relative;
+	-moz-border-radius:    3px 3px 0 0;
+	-webkit-border-radius: 3px 3px 0 0;
+	border-radius:         3px 3px 0 0;
+	behavior: url(PIE.htc);
+	-pie-watch-ancestors: 1;
+}
+
+.hang-ribbon.small > span {
+	width: 50px;
+	height: 82px;
+	line-height: 82px;
+}
+
+.hang-ribbon.medium > span {
+	width: 80px;
+	height: 124px;
+	line-height: 124px;
+}
+
+.hang-ribbon.large > span {
+	width: 120px;
+	height: 166px;
+	line-height: 166px;
+}
+
+.hang-ribbon > span:before, .ie8 .hang-ribbon .fork {
+	content: '';
+	position: absolute;
+	z-index: -1;
+	top: 100%;
+	left: 0;
+	border-style: solid;
+}
+
+.ie8 .hang-ribbon > span:before {
+	display: none;
+}
+
+.small > span:before, .ie8 .small .fork {
+	border-width: 25px;
+	margin-top: -25px;
+}
+
+.medium > span:before, .ie8 .medium .fork {
+	border-width: 40px;
+	margin-top: -40px;
+}
+
+.large > span:before, .ie8 .large .fork {
+	border-width: 60px;
+	margin-top: -60px;
+}
+
+.hang-ribbon:before {
+	content: '';
+	position: absolute;
+	z-index: -2;
+	left: 1px;
+	background: #666;
+	-moz-transform-origin:    0 0; -moz-transform:    skew(-20deg, -38deg) rotate(-20deg);
+	-webkit-transform-origin: 0 0; -webkit-transform: skew(-20deg, -38deg) rotate(-20deg);
+	-o-transform-origin:      0 0; -o-transform:      skew(-20deg, -38deg) rotate(-20deg);
+	-ms-transform-origin:     0 0; -ms-transform:     skew(-20deg, -38deg) rotate(-20deg);
+	transform-origin:         0 0; transform:         skew(-20deg, -38deg) rotate(-20deg);
+	-moz-box-shadow:    0 6px 2px rgba(0, 0, 0, 0.5), -1px -1px 2px rgba(0, 0, 0, 0.5);
+	-webkit-box-shadow: 0 6px 2px rgba(0, 0, 0, 0.5), -1px -1px 2px rgba(0, 0, 0, 0.5);
+	box-shadow:         0 6px 2px rgba(0, 0, 0, 0.5), -1px -1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.hang-ribbon:after {
+	content: '';
+	position: absolute;
+	z-index: -2;
+	right: 1px;
+	background: #666;
+	-moz-transform-origin:    right 0; -moz-transform:    skew(20deg, 38deg) rotate(20deg);
+	-webkit-transform-origin: right 0; -webkit-transform: skew(20deg, 38deg) rotate(20deg);
+	-o-transform-origin:      right 0; -o-transform:      skew(20deg, 38deg) rotate(20deg);
+	-ms-transform-origin:     right 0; -ms-transform:     skew(20deg, 38deg) rotate(20deg);
+	transform-origin:         right 0; transform:         skew(20deg, 38deg) rotate(20deg);
+	-moz-box-shadow:    0 7px 2px rgba(0, 0, 0, 0.5), 1px -1px 2px rgba(0, 0, 0, 0.5);
+	-webkit-box-shadow: 0 7px 2px rgba(0, 0, 0, 0.5), 1px -1px 2px rgba(0, 0, 0, 0.5);
+	box-shadow:         0 7px 2px rgba(0, 0, 0, 0.5), 1px -1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.ie8 .hang-ribbon:before, .ie8 .hang-ribbon:after {
+	display: none;
+}
+
+.hang-ribbon.small:before, .hang-ribbon.small:after {
+	width: 25px;
+	height: 35px;
+	bottom: -35px;
+}
+
+.hang-ribbon.medium:before, .hang-ribbon.medium:after {
+	width: 40px;
+	height: 55px;
+	bottom: -55px;
+}
+
+.hang-ribbon.large:before, .hang-ribbon.large:after {
+	width: 60px;
+	height: 85px;
+	bottom: -85px;
+}
+
+.hang-ribbon.small:before {
+	-moz-box-shadow:    0 3px 2px rgba(0, 0, 0, 0.5), -1px -1px 2px rgba(0, 0, 0, 0.5);
+	-webkit-box-shadow: 0 3px 2px rgba(0, 0, 0, 0.5), -1px -1px 2px rgba(0, 0, 0, 0.5);
+	box-shadow:         0 3px 2px rgba(0, 0, 0, 0.5), -1px -1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.hang-ribbon.small:after {
+	-moz-box-shadow:    0 5px 2px rgba(0, 0, 0, 0.5), 1px -1px 2px rgba(0, 0, 0, 0.5);
+	-webkit-box-shadow: 0 5px 2px rgba(0, 0, 0, 0.5), 1px -1px 2px rgba(0, 0, 0, 0.5);
+	box-shadow:         0 5px 2px rgba(0, 0, 0, 0.5), 1px -1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.ie8 .hang-ribbon.small {
+	box-shadow: none;
+}
+
+
+
+
+
+/********** Hanging Ribbon Styles **********/
+
+/****** Left Curl ******/
+
+.small.left-curl > span:before {
+	-moz-border-radius:    0 0 0 5px / 0 0 0 40px;
+	-webkit-border-radius: 0 0 0 5px / 0 0 0 40px;
+	border-radius:         0 0 0 5px / 0 0 0 25px;
+}
+
+.medium.left-curl > span:before {
+	-moz-border-radius:    0 0 0 15px / 0 0 0 50px;
+	-webkit-border-radius: 0 0 0 15px / 0 0 0 50px;
+	border-radius:         0 0 0 15px / 0 0 0 40px;
+}
+
+.large.left-curl > span:before {
+	-moz-border-radius:    0 0 0 20px / 0 0 0 50px;
+	-webkit-border-radius: 0 0 0 20px / 0 0 0 50px;
+	border-radius:         0 0 0 20px / 0 0 0 50px;
+}
+
+.left-curl > span:after {
+	content: '';
+	position: absolute;
+	left: 0;
+	-moz-transform-origin:    0 0;
+	-webkit-transform-origin: 0 0;
+	-o-transform-origin:      0 0;
+	-ms-transform-origin:     0 0;
+	transform-origin:         0 0;
+	background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0%, rgba(255, 255, 255, 0.3)), color-stop(20%, rgba(255, 255, 255, 0.1)), color-stop(60%, rgba(0, 0, 0, 0))); /* Saf4+, Chrome */
+	background-image: -webkit-linear-gradient(20deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.1) 40%, rgba(255, 255, 255, 0) 60%); /* Chrome 10+, Saf5.1+, iOS 5+ */
+	background-image:    -moz-linear-gradient(20deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.1) 40%, rgba(255, 255, 255, 0) 60%); /* FF3.6 */
+	background-image:     -ms-linear-gradient(20deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.1) 40%, rgba(255, 255, 255, 0) 60%); /* IE10 */
+	background-image:      -o-linear-gradient(20deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.1) 40%, rgba(255, 255, 255, 0) 60%); /* Opera 11.10+ */
+	background-image:         linear-gradient(70deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.1) 40%, rgba(255, 255, 255, 0) 60%);  /* In new spec 0deg points to the top instead of left. So what was 20deg now becomes 70deg */
+}
+
+.small.left-curl > span:after {
+	bottom: -41px;
+	width: 20px;
+	height: 48px;
+	-moz-border-radius:    0 0 0 8px / 0 0 0 100px;
+	-webkit-border-radius: 0 0 0 8px / 0 0 0 100px;
+	border-radius:         0 0 0 8px / 0 0 0 100px;
+	-moz-transform:    skew(-20deg, -38deg) rotate(-20deg);
+	-webkit-transform: skew(-20deg, -38deg) rotate(-20deg);
+	-o-transform:      skew(-20deg, -38deg) rotate(-20deg);
+	-ms-transform:     skew(-20deg, -38deg) rotate(-20deg);
+	transform:         skew(-20deg, -38deg) rotate(-20deg);
+}
+
+.medium.left-curl > span:after {
+	bottom: -60px;
+	width: 25px;
+	height: 60px;
+	-moz-border-radius:    0 0 0 20px / 0 0 0 200px;
+	-webkit-border-radius: 0 0 0 20px / 0 0 0 200px;
+	border-radius:         0 0 0 20px / 0 0 0 200px;
+	-moz-transform:    skew(-20deg, -38deg) rotate(-22deg);
+	-webkit-transform: skew(-20deg, -38deg) rotate(-22deg);
+	-o-transform:      skew(-20deg, -38deg) rotate(-22deg);
+	-ms-transform:     skew(-20deg, -38deg) rotate(-22deg);
+	transform:         skew(-20deg, -38deg) rotate(-22deg);
+}
+
+.large.left-curl > span:after {
+	bottom: -84px;
+	width: 30px;
+	height: 72px;
+	-moz-border-radius:    0 0 0 22px / 0 0 0 230px;
+	-webkit-border-radius: 0 0 0 22px / 0 0 0 230px;
+	border-radius:         0 0 0 22px / 0 0 0 230px;
+	-moz-transform:    skew(-20deg, -38deg) rotate(-22deg);
+	-webkit-transform: skew(-20deg, -38deg) rotate(-22deg);
+	-o-transform:      skew(-20deg, -38deg) rotate(-22deg);
+	-ms-transform:     skew(-20deg, -38deg) rotate(-22deg);
+	transform:         skew(-20deg, -38deg) rotate(-22deg);
+}
+
+.hang-ribbon.left-curl:before {
+	left: 15px;
+	-moz-transform:    rotate(-12deg) skew(-18deg, -28deg);
+	-webkit-transform: rotate(-12deg) skew(-18deg, -28deg);
+	-o-transform:      rotate(-12deg) skew(-18deg, -28deg);
+	-ms-transform:     rotate(-12deg) skew(-18deg, -28deg);
+	transform:         rotate(-12deg) skew(-18deg, -28deg);
+}
+
+.small.left-curl:before {
+	bottom: 8px;
+	height: 19px;
+	-moz-box-shadow:    -16px 15px 4px rgba(0, 0, 0, 0.5);
+	-webkit-box-shadow: -16px 15px 4px rgba(0, 0, 0, 0.5);
+	box-shadow:         -16px 15px 4px rgba(0, 0, 0, 0.5);
+}
+
+.medium.left-curl:before {
+	bottom: -5px;
+	height: 35px;
+	-moz-box-shadow:    -15px 15px 4px rgba(0, 0, 0, 0.5);
+	-webkit-box-shadow: -15px 15px 4px rgba(0, 0, 0, 0.5);
+	box-shadow:         -15px 15px 4px rgba(0, 0, 0, 0.5);
+}
+
+.large.left-curl:before {
+	bottom: -25px;
+	height: 80px;
+	-moz-box-shadow:    -14px 15px 4px rgba(0, 0, 0, 0.5);
+	-webkit-box-shadow: -14px 15px 4px rgba(0, 0, 0, 0.5);
+	box-shadow:         -14px 15px 4px rgba(0, 0, 0, 0.5);
+}
+
+
+
+
+/****** Right Curl ******/
+
+.small.right-curl > span:before {
+	-moz-border-radius:    0 0 5px 0 / 0 0 40px 0;
+	-webkit-border-radius: 0 0 5px 0 / 0 0 40px 0;
+	border-radius:         0 0 5px 0 / 0 0 25px 0;
+}
+
+.medium.right-curl > span:before {
+	-moz-border-radius:    0 0 15px 0 / 0 0 50px 0;
+	-webkit-border-radius: 0 0 15px 0 / 0 0 50px 0;
+	border-radius:         0 0 15px 0 / 0 0 40px 0;
+}
+
+.large.right-curl > span:before {
+	-moz-border-radius:    0 0 20px 0 / 0 0 50px 0;
+	-webkit-border-radius: 0 0 20px 0 / 0 0 50px 0;
+	border-radius:         0 0 20px 0 / 0 0 50px 0;
+}
+
+.right-curl > span:after {
+	content: '';
+	position: absolute;
+	right: 0;
+	-moz-transform-origin:    right 0;
+	-webkit-transform-origin: right 0;
+	-o-transform-origin:      right 0;
+	-ms-transform-origin:     right 0;
+	transform-origin:         right 0;
+	background-image: -webkit-gradient(linear, right bottom, right top, color-stop(0%, rgba(255, 255, 255, 0.3)), color-stop(20%, rgba(255, 255, 255, 0.1)), color-stop(60%, rgba(0, 0, 0, 0))); /* Saf4+, Chrome */
+	background-image: -webkit-linear-gradient(160deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.1) 40%, rgba(255, 255, 255, 0) 60%); /* Chrome 10+, Saf5.1+, iOS 5+ */
+	background-image:    -moz-linear-gradient(160deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.1) 40%, rgba(255, 255, 255, 0) 60%); /* FF3.6 */
+	background-image:     -ms-linear-gradient(160deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.1) 40%, rgba(255, 255, 255, 0) 60%); /* IE10 */
+	background-image:      -o-linear-gradient(160deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.1) 40%, rgba(255, 255, 255, 0) 60%); /* Opera 11.10+ */
+	background-image:         linear-gradient(-70deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.1) 40%, rgba(255, 255, 255, 0) 60%);
+}
+
+.small.right-curl > span:after {
+	bottom: -41px;
+	width: 20px;
+	height: 48px;
+	-moz-border-radius:    0 0 8px 0 / 0 0 100px 0;
+	-webkit-border-radius: 0 0 8px 0 / 0 0 100px 0;
+	border-radius:         0 0 8px 0 / 0 0 100px 0;
+	-moz-transform:    skew(20deg, 38deg) rotate(20deg);
+	-webkit-transform: skew(20deg, 38deg) rotate(20deg);
+	-o-transform:      skew(20deg, 38deg) rotate(20deg);
+	-ms-transform:     skew(20deg, 38deg) rotate(20deg);
+	transform:         skew(20deg, 38deg) rotate(20deg);
+}
+
+.medium.right-curl > span:after {
+	bottom: -60px;
+	width: 25px;
+	height: 60px;
+	-moz-border-radius:    0 0 20px 0 / 0 0 200px 0;
+	-webkit-border-radius: 0 0 20px 0 / 0 0 200px 0;
+	border-radius:         0 0 20px 0 / 0 0 200px 0;
+	-moz-transform:    skew(20deg, 38deg) rotate(22deg);
+	-webkit-transform: skew(20deg, 38deg) rotate(22deg);
+	-o-transform:      skew(20deg, 38deg) rotate(22deg);
+	-ms-transform:     skew(20deg, 38deg) rotate(22deg);
+	transform:         skew(20deg, 38deg) rotate(22deg);
+}
+
+.large.right-curl > span:after {
+	bottom: -84px;
+	right: 1px;
+	width: 30px;
+	height: 72px;
+	-moz-border-radius:    0 0 22px 0 / 0 0 230px 0;
+	-webkit-border-radius: 0 0 22px 0 / 0 0 230px 0;
+	border-radius:         0 0 22px 0 / 0 0 230px 0;
+	-moz-transform:    skew(20deg, 38deg) rotate(22deg);
+	-webkit-transform: skew(20deg, 38deg) rotate(22deg);
+	-o-transform:      skew(20deg, 38deg) rotate(22deg);
+	-ms-transform:     skew(20deg, 38deg) rotate(22deg);
+	transform:         skew(20deg, 38deg) rotate(22deg);
+}
+
+.hang-ribbon.right-curl:after {
+	right: 15px;
+	-moz-transform:    rotate(12deg) skew(18deg, 28deg);
+	-webkit-transform: rotate(12deg) skew(18deg, 28deg);
+	-o-transform:      rotate(12deg) skew(18deg, 28deg);
+	-ms-transform:     rotate(12deg) skew(18deg, 28deg);
+	transform:         rotate(12deg) skew(18deg, 28deg);
+}
+
+.small.right-curl:after {
+	bottom: 8px;
+	height: 19px;
+	-moz-box-shadow:    16px 15px 4px rgba(0, 0, 0, 0.5);
+	-webkit-box-shadow: 16px 15px 4px rgba(0, 0, 0, 0.5);
+	box-shadow:         16px 15px 4px rgba(0, 0, 0, 0.5);
+}
+
+.medium.right-curl:after {
+	bottom: -5px;
+	height: 35px;
+	-moz-box-shadow:    15px 15px 4px rgba(0, 0, 0, 0.5);
+	-webkit-box-shadow: 15px 15px 4px rgba(0, 0, 0, 0.5);
+	box-shadow:         15px 15px 4px rgba(0, 0, 0, 0.5);
+}
+
+.large.right-curl:after {
+	bottom: -25px;
+	height: 80px;
+	-moz-box-shadow:    14px 15px 4px rgba(0, 0, 0, 0.5);
+	-webkit-box-shadow: 14px 15px 4px rgba(0, 0, 0, 0.5);
+	box-shadow:         14px 15px 4px rgba(0, 0, 0, 0.5);
+}
+
+
+
+
+/****** Stitched effect ******/
+
+.stitch > span:after {
+	content: '';
+	position: absolute;
+	top: 4px;
+	bottom: 4px;
+	left: 4px;
+	right: 4px;
+	background-image: -webkit-linear-gradient( top, rgba(255, 255, 255, 0.5) 0, rgba(255, 255, 255, 0.5) 6px, transparent 6px, transparent 12px),
+	                  -webkit-linear-gradient( top, rgba(0, 0, 0, 0.3) 0, rgba(0, 0, 0, 0.3) 6px, transparent 6px, transparent 12px),
+	                  -webkit-linear-gradient( top, rgba(255, 255, 255, 0.5) 0, rgba(255, 255, 255, 0.5) 6px, transparent 6px, transparent 12px),
+	                  -webkit-linear-gradient( top, rgba(0, 0, 0, 0.3) 0, rgba(0, 0, 0, 0.3) 6px, transparent 6px, transparent 12px); /* Chrome 10+, Saf5.1+, iOS 5+ */
+
+	background-image: -moz-linear-gradient( top, rgba(255, 255, 255, 0.5) 0, rgba(255, 255, 255, 0.5) 6px, transparent 6px, transparent 12px),
+	                  -moz-linear-gradient( top, rgba(0, 0, 0, 0.3) 0, rgba(0, 0, 0, 0.3) 6px, transparent 6px, transparent 12px),
+	                  -moz-linear-gradient( top, rgba(255, 255, 255, 0.5) 0, rgba(255, 255, 255, 0.5) 6px, transparent 6px, transparent 12px),
+	                  -moz-linear-gradient( top, rgba(0, 0, 0, 0.3) 0, rgba(0, 0, 0, 0.3) 6px, transparent 6px, transparent 12px); /* FF3.6 */
+
+	background-image: -ms-linear-gradient( top, rgba(255, 255, 255, 0.5) 0, rgba(255, 255, 255, 0.5) 6px, transparent 6px, transparent 12px),
+	                  -ms-linear-gradient( top, rgba(0, 0, 0, 0.3) 0, rgba(0, 0, 0, 0.3) 6px, transparent 6px, transparent 12px),
+	                  -ms-linear-gradient( top, rgba(255, 255, 255, 0.5) 0, rgba(255, 255, 255, 0.5) 6px, transparent 6px, transparent 12px),
+	                  -ms-linear-gradient( top, rgba(0, 0, 0, 0.3) 0, rgba(0, 0, 0, 0.3) 6px, transparent 6px, transparent 12px); /* IE10 */
+
+	background-image: -o-linear-gradient( top, rgba(255, 255, 255, 0.5) 0, rgba(255, 255, 255, 0.5) 6px, transparent 6px, transparent 12px),
+	                  -o-linear-gradient( top, rgba(0, 0, 0, 0.3) 0, rgba(0, 0, 0, 0.3) 6px, transparent 6px, transparent 12px),
+	                  -o-linear-gradient( top, rgba(255, 255, 255, 0.5) 0, rgba(255, 255, 255, 0.5) 6px, transparent 6px, transparent 12px),
+	                  -o-linear-gradient( top, rgba(0, 0, 0, 0.3) 0, rgba(0, 0, 0, 0.3) 6px, transparent 6px, transparent 12px); /* Opera 11.10+ */
+
+	background-image: linear-gradient( to bottom, rgba(255, 255, 255, 0.5) 0, rgba(255, 255, 255, 0.5) 6px, transparent 6px, transparent 12px),
+	                  linear-gradient( to bottom, rgba(0, 0, 0, 0.3) 0, rgba(0, 0, 0, 0.3) 6px, transparent 6px, transparent 12px),
+	                  linear-gradient( to bottom, rgba(255, 255, 255, 0.5) 0, rgba(255, 255, 255, 0.5) 6px, transparent 6px, transparent 12px),
+	                  linear-gradient( to bottom, rgba(0, 0, 0, 0.3) 0, rgba(0, 0, 0, 0.3) 6px, transparent 6px, transparent 12px);
+
+	-webkit-background-size: 1px 12px, 1px 12px, 1px 12px, 1px 12px; /* Saf3-4 */
+    -moz-background-size:    1px 12px, 1px 12px, 1px 12px, 1px 12px; /* FF3.6 */
+    background-size:         1px 12px, 1px 12px, 1px 12px, 1px 12px; /* Opera, IE9, Saf5, Chrome, FF4 */
+	background-repeat: repeat-y, repeat-y, repeat-y, repeat-y;
+}
+
+.small.stitch > span:after {
+	background-position: 0 0, 1px 0, 40px 0, right 0;
+	bottom: -17px;
+}
+
+.medium.stitch > span:after {
+	background-position: 0 0, 1px 0, 70px 0, right 0;
+	bottom: -32px;
+}
+
+.large.stitch > span:after {
+	background-position: 0 0, 1px 0, 110px 0, right 0;
+	bottom: -52px;
+}
+
+
+
+
+/****** Ribbon with pointed end ******/
+
+.hang-ribbon.point {
+	-moz-box-shadow:    0 2px 2px rgba(0, 0, 0, 0.5);
+	-webkit-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
+	box-shadow:         0 2px 2px rgba(0, 0, 0, 0.5);
+}
+
+.ie8 .hang-ribbon.point {
+	box-shadow: none;
+}
+
+.ie8 .hang-ribbon.point > span:before {
+	display: block;
+}
+
+.small.point > span:before {
+	border-width: 11px 25px 25px 25px;
+	margin-top: 0;
+}
+
+.medium.point > span:before {
+	border-width: 20px 40px 40px 40px;
+	margin-top: 0;
+}
+
+.large.point > span:before {
+	border-width: 30px 60px 60px 60px;
+	margin-top: 0;
+}
+
+.hang-ribbon.point:after {
+	display: none;
+}
+
+.hang-ribbon.point:before {
+	-moz-transform-origin:    center center; -moz-transform:    rotate(-45deg) skew(18deg, 18deg);
+	-webkit-transform-origin: center center; -webkit-transform: rotate(-45deg) skew(18deg, 18deg);
+	-o-transform-origin:      center center; -o-transform:      rotate(-45deg) skew(18deg, 18deg);
+	-ms-transform-origin:     center center; -ms-transform:     rotate(-45deg) skew(18deg, 18deg);
+	transform-origin:         center center; transform:         rotate(-45deg) skew(18deg, 18deg);
+}
+
+.ie8 .hang-ribbon.point:before {
+	display: none;
+}
+
+.small.point:before {
+	width: 25px;
+	height: 25px;
+	bottom: -9px;
+	left: 50%;
+	margin-left: -12px;
+	-moz-box-shadow:    -1px 1px 2px rgba(0, 0, 0, 0.5);
+	-webkit-box-shadow: -1px 1px 2px rgba(0, 0, 0, 0.5);
+	box-shadow:         -4px 4px 2px rgba(0, 0, 0, 0.5);
+}
+
+.medium.point:before {
+	width: 42px;
+	height: 42px;
+	bottom: -18px;
+	left: 50%;
+	margin-left: -21px;
+	-moz-box-shadow:    -1px 1px 2px rgba(0, 0, 0, 0.5);
+	-webkit-box-shadow: -1px 1px 2px rgba(0, 0, 0, 0.5);
+	box-shadow:         -4px 4px 2px rgba(0, 0, 0, 0.5);
+}
+
+.large.point:before {
+	width: 64px;
+	height: 64px;
+	bottom: -29px;
+	left: 50%;
+	margin-left: -32px;
+	-moz-box-shadow:    -2px 2px 2px rgba(0, 0, 0, 0.5);
+	-webkit-box-shadow: -2px 2px 2px rgba(0, 0, 0, 0.5);
+	box-shadow:         -5px 5px 2px rgba(0, 0, 0, 0.5);
+}
+
+
+
+
+
+/****** Ribbon with pointed end and stitched effect ******/
+
+.point.stitch > span:after {
+	bottom: 0;
+}
+
+
+
+
+
+
+/********** Colour Styles **********/
+
+/****** Light Blue ******/
+
+.lblue {
+	background: #42a5d4;
+}
+
+.lblue > span {
+	background-color: #42a5d4;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#42a5d4), to(#24769d)); /* Saf4+, Chrome */
+	background-image: -webkit-linear-gradient(top, #42a5d4, #24769d); /* Chrome 10+, Saf5.1+, iOS 5+ */
+	background-image:    -moz-linear-gradient(top, #42a5d4, #24769d); /* FF3.6 */
+	background-image:     -ms-linear-gradient(top, #42a5d4, #24769d); /* IE10 */
+	background-image:      -o-linear-gradient(top, #42a5d4, #24769d); /* Opera 11.10+ */
+	background-image:         linear-gradient(to bottom, #42a5d4, #24769d);
+	-pie-background:          linear-gradient(top, #42a5d4, #24769d); /* IE6-IE9 */
+}
+
+.lblue > span:before, .ie8 .lblue .fork {
+	border-color: #24769d #24769d transparent #24769d;
+}
+
+.point.lblue > span:before {
+	border-color: #24769d transparent transparent transparent;
+}
+
+
+
+
+/****** Light Red ******/
+
+.lred {
+	background: #f80000;
+}
+
+.lred > span {
+	background-color: #f80000;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#f80000), to(#a30000)); /* Saf4+, Chrome */
+	background-image: -webkit-linear-gradient(top, #f80000, #a30000); /* Chrome 10+, Saf5.1+, iOS 5+ */
+	background-image:    -moz-linear-gradient(top, #f80000, #a30000); /* FF3.6 */
+	background-image:     -ms-linear-gradient(top, #f80000, #a30000); /* IE10 */
+	background-image:      -o-linear-gradient(top, #f80000, #a30000); /* Opera 11.10+ */
+	background-image:         linear-gradient(to bottom, #f80000, #a30000);
+	-pie-background:          linear-gradient(top, #f80000, #a30000); /* IE6-IE9 */
+}
+
+.lred > span:before, .ie8 .lred .fork {
+	border-color: #a30000 #a30000 transparent #a30000;
+}
+
+.point.lred > span:before {
+	border-color: #a30000 transparent transparent transparent;
+}
+
+
+
+
+/****** Light Green ******/
+
+.lgreen {
+	background: #80b73d;
+}
+
+.lgreen > span {
+	background-color: #80b73d;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#80b73d), to(#547728)); /* Saf4+, Chrome */
+	background-image: -webkit-linear-gradient(top, #80b73d, #547728); /* Chrome 10+, Saf5.1+, iOS 5+ */
+	background-image:    -moz-linear-gradient(top, #80b73d, #547728); /* FF3.6 */
+	background-image:     -ms-linear-gradient(top, #80b73d, #547728); /* IE10 */
+	background-image:      -o-linear-gradient(top, #80b73d, #547728); /* Opera 11.10+ */
+	background-image:         linear-gradient(to bottom, #80b73d, #547728);
+	-pie-background:          linear-gradient(top, #80b73d, #547728); /* IE6-IE9 */
+}
+
+.lgreen > span:before, .ie8 .lgreen .fork {
+	border-color: #547728 #547728 transparent #547728;
+}
+
+.point.lgreen > span:before {
+	border-color: #547728 transparent transparent transparent;
+}
+
+
+
+
+/****** Light Yellow ******/
+
+.lyellow {
+	background: #ffc037;
+}
+
+.lyellow > span {
+	background-color: #ffc037;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#ffc037), to(#e19a00)); /* Saf4+, Chrome */
+	background-image: -webkit-linear-gradient(top, #ffc037, #e19a00); /* Chrome 10+, Saf5.1+, iOS 5+ */
+	background-image:    -moz-linear-gradient(top, #ffc037, #e19a00); /* FF3.6 */
+	background-image:     -ms-linear-gradient(top, #ffc037, #e19a00); /* IE10 */
+	background-image:      -o-linear-gradient(top, #ffc037, #e19a00); /* Opera 11.10+ */
+	background-image:         linear-gradient(to bottom, #ffc037, #e19a00);
+	-pie-background:          linear-gradient(top, #ffc037, #e19a00); /* IE6-IE9 */
+}
+
+.lyellow > span:before, .ie8 .lyellow .fork {
+	border-color: #e19a00 #e19a00 transparent #e19a00;
+}
+
+.point.lyellow > span:before {
+	border-color: #e19a00 transparent transparent transparent;
+}

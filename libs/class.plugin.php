@@ -4,9 +4,7 @@ class ahm_plugin{
     public $plugin_dir;
     public $plugin_url;
     protected $header_tabs;
-    public $plugin;
     function __construct($plugin){
-             $this->plugin = $plugin; 
              $this->plugin_dir = WP_PLUGIN_DIR.'/'.$plugin;
              $this->plugin_url = plugins_url().'/'.$plugin;
     }
@@ -26,22 +24,21 @@ class ahm_plugin{
         $cssurl = $this->plugin_url.'/css/'.$dir.'/';
         $files = scandir($cssdir);
         foreach($files as $file){
-            if(!is_dir($file)&&end(explode(".",$file))=='css')
+            $tt = explode(".",$file);
+            if(!is_dir($file)&&end($tt)=='css')
             wp_enqueue_style(uniqid(),$cssurl.$file);
         }
     }
     
     function load_scripts(){
-        if($this->plugin=='pricing-table')
-        return;
-        global $wp_query;        
         wp_enqueue_script('jquery');
         $dir = is_admin()?'admin':'site';
         $jsdir = $this->plugin_dir.'/js/'.$dir.'/';
         $jsurl = $this->plugin_url.'/js/'.$dir.'/';
         $files = scandir($jsdir);
         foreach($files as $file){
-            if(!is_dir($file)&&end(explode(".",$file))=='js')
+            $tt = explode(".",$file);
+            if(!is_dir($file)&&end($tt)=='js')
             wp_enqueue_script(uniqid(),$jsurl.$file);
         }
     }
@@ -51,7 +48,8 @@ class ahm_plugin{
         
         $files = scandir($mdir);
         foreach($files as $file){
-            if(!is_dir($file)&&end(explode(".",$file))=='php')
+            $tt = explode(".",$file);
+            if(!is_dir($file)&&end($tt)=='php')
             include($mdir.$file);
         }
     }

@@ -11,39 +11,42 @@
 
 /* Adds a box to the main column on the Post and Page edit screens */
 function wppt_add_custom_box() {
-    add_meta_box( 'pricing-table-feature-options', __( 'Packages/Features ( <a target="_blank" href="http://wpeden.com/product/wordpress-pricing-table-plugin/">Get pro for <b>50+</b> templates &#187;</a> )', 'wppt' ), 'wppt_individual_features', 'pricing-table', 'normal','core' );
-    add_meta_box( 'pricing-table-op', __( 'My Other Plugins', 'wppt' ), 'wppt_plugins', 'pricing-table', 'side','core' );
+    add_meta_box( 'pricing-table-feature-options', __( 'Packages/Features', 'wppt' ).' <div style="margin:5px 0;background: #eeeeee;padding:5px 10px;border-radius:2px"><a target="_blank" href="http://wpeden.com/product/wordpress-pricing-table-plugin/" style="text-decoration:none;font-size:12pt;font-weight:300" title="Link will open in new window">Get Pro for Unlimited Table Tamplates and More Options</a> <a target="_blank" href="http://wordpress.org/support/view/plugin-reviews/pricing-table?rate=5#postform" title="Link will open in new window" style="text-decoration:none;font-size:12pt;font-weight:300;float:right">A 5* rating at wp.org will be very inspiring :)</a></div>', 'wppt_individual_features', 'pricing-table', 'normal','core' );
    
 }
 
-function wppt_plugins( $post ) {
-    ?>
-   <a href="http://wpeden.com/minimax-wordpress-page-layout-builder-plugin/?ref=pricing-table" style="width:97%;overflow:hidden;margin:5px;background: #fafafa;border: 1px solid #ccc;display: block;float: left;text-align: center;-webkit-border-radius: 6px;-moz-border-radius: 6px;border-radius: 6px;" ><h3 style="margin: 0px;background: #ccc;-webkit-border-top-left-radius: 5px;-webkit-border-top-right-radius: 5px;-moz-border-radius-topleft: 5px;-moz-border-radius-topright: 5px;border-top-left-radius: 5px;border-top-right-radius: 5px;padding:5px;text-decoration: none;color:#333">Drag & Drop Page Layout Builder</h3><img src="<?php echo plugins_url('pricing-table/images/minimax.png'); ?>" /></a>
-   <a href="http://www.wpdownloadmanager.com/?ref=pricing-table" style="width:97%;overflow:hidden;margin:5px;background: #fafafa;border: 1px solid #ccc;display: block;float: left;text-align: center;-webkit-border-radius: 6px;-moz-border-radius: 6px;border-radius: 6px;" ><h3 style="margin: 0px;background: #ccc;-webkit-border-top-left-radius: 5px;-webkit-border-top-right-radius: 5px;-moz-border-radius-topleft: 5px;-moz-border-radius-topright: 5px;border-top-left-radius: 5px;border-top-right-radius: 5px;padding:5px;text-decoration: none;color:#333">WordPress Download Manager Pro</h3><img src="<?php echo plugins_url('pricing-table/images/wpdm.png'); ?>" /></a>
-   <a href="http://www.wpmarketplaceplugin.com/?ref=pricing-table" style="width:97%;overflow:hidden;margin:5px;background: #fafafa;border: 1px solid #ccc;display: block;float: left;text-align: center;-webkit-border-radius: 6px;-moz-border-radius: 6px;border-radius: 6px;" ><h3 style="margin: 0px;background: #ccc;-webkit-border-top-left-radius: 5px;-webkit-border-top-right-radius: 5px;-moz-border-radius-topleft: 5px;-moz-border-radius-topright: 5px;border-top-left-radius: 5px;border-top-right-radius: 5px;padding:5px;text-decoration: none;color:#333">WordPress Marketplace Plugin</h3><img vspace="12" src="<?php echo plugins_url('pricing-table/images/wpmp.png'); ?>" /></a>
-   <a href="http://wpeden.com/?ref=pricing-table" style="width:97%;overflow:hidden;margin:5px;background: #fafafa;border: 1px solid #ccc;display: block;float: left;text-align: center;-webkit-border-radius: 6px;-moz-border-radius: 6px;border-radius: 6px;" ><h3 style="margin: 0px;background: #ccc;-webkit-border-top-left-radius: 5px;-webkit-border-top-right-radius: 5px;-moz-border-radius-topleft: 5px;-moz-border-radius-topright: 5px;border-top-left-radius: 5px;border-top-right-radius: 5px;padding:5px;text-decoration: none;color:#333">WordPress Themes & Plugins Collection</h3><img src="<?php echo plugins_url('pricing-table/images/wpeden.png'); ?>" /></a>
-   <div style="clear: both;"></div>
-    <?php
-}
-
 function wppt_individual_features( $post ) {
-    global $pricingtable_plugin;     
-    include($pricingtable_plugin->plugin_dir."/tpls/metabox-feature-options.php");
+    global $pt_plugin;     
+    include($pt_plugin->plugin_dir."/tpls/metabox-feature-options.php");
 }
 
 function wppt_save_pricing_table( $post_id ) {
      
     if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) return;
     if ( !current_user_can( 'edit_post', $post_id ) ) return;
+    if(get_post_type()!='pricing-table') return;
+    //print_r($_POST['features_description']); 
+    //exit;
+    if(isset($_POST['features']))
+        update_post_meta($post_id,'pricing_table_for_post',$_POST['features']);
+    if(isset($_POST['features'])){
+        update_post_meta($post_id,'pricing_table_opt',$_POST['features']);
+        update_post_meta($post_id,'pricing_table_opt_description',$_POST['features_description']);
+        update_post_meta($post_id,'pricing_table_opt_feature',$_POST['featured']);
+        update_post_meta($post_id,'pricing_table_opt_feature_name',$_POST['feature_name']);
+        update_post_meta($post_id,'pricing_table_opt_feature_description',$_POST['feature_description']);
+        update_post_meta($post_id,'pricing_table_opt_package_name',$_POST['package_name']); 
 
-     
-    if($_POST['features'])
-    update_post_meta($post_id,'pricing_table_for_post',$_POST['features']);
-    if($_POST['features']){
-    update_post_meta($post_id,'pricing_table_opt',$_POST['features']);
-    update_post_meta($post_id,'pricing_table_opt_feature',$_POST['featured']); 
+    
+    update_post_meta($post_id,'alt_feature',$_POST['alt_feature']);
+    update_post_meta($post_id,'alt_price',$_POST['alt_price']);
+    update_post_meta($post_id,'alt_detail',$_POST['alt_detail']);
+
+    update_post_meta($post_id,'__wppt_returnurl',$_POST['__wppt_returnurl']);
+    update_post_meta($post_id,'__wppt_cancelurl',$_POST['__wppt_cancelurl']);
+    update_post_meta($post_id,'__wppt_currency_code',$_POST['__wppt_currency_code']);
+    update_post_meta($post_id,'__wppt_business',$_POST['__wppt_business']);
     }
-  
 }
 
  
