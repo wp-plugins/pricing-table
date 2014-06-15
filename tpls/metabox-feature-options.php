@@ -1,8 +1,8 @@
   <script type="text/javascript" src="<?php echo plugins_url(); ?>/pricing-table/js/admin/jquery.tablednd_0_5.js"></script>
  <script>   
   jQuery(document).ready(function() {
+
     // Initialise the table
-    
     jQuery("#pricetable").tableDnD({dragHandle: "dh"});
     
 });
@@ -11,14 +11,14 @@ jQuery("#pricetable tr").hover(function() {
     }, function() {
           jQuery(this.cells[0]).removeClass('showDragHandle');
     });
- jQuery('.deleterow').live('click', function() {   
+ jQuery('body').on('click', '.deleterow', function() {
     if(confirm("Are you sure you want to delete?")){
             
             jQuery("."+jQuery(this).attr('rel')).slideUp(function(){jQuery(this).remove();});
          
     }
  });
- jQuery('.deletecol').live('click', function() {   
+ jQuery('body').on('click','.deletecol', function() {
     if(confirm("Are you sure you want to delete?")){
             
             jQuery("."+jQuery(this).attr('rel')).remove();
@@ -26,7 +26,7 @@ jQuery("#pricetable tr").hover(function() {
     }
  });
  
- jQuery('.featured-package').live('click', function() {   
+ jQuery('body').on('click', '.featured-package', function() {
     var fid=jQuery(this).attr("id");
     var isf = jQuery('#'+fid).attr('src');
     jQuery('.featured-package').attr('src','<?php echo plugins_url(); ?>/pricing-table/images/unfeatured.png')
@@ -37,7 +37,7 @@ jQuery("#pricetable tr").hover(function() {
     }
  });
  
- jQuery('.featured-package-edit').live('click', function() {   
+ jQuery('body').on('click', '.featured-package-edit', function() {
     var sptd=jQuery(this).attr("rel");
     var ppname=trim(jQuery('#'+sptd).text());
      
@@ -54,7 +54,7 @@ jQuery("#pricetable tr").hover(function() {
  });
  
  
- jQuery('.feature-edit').live('click', function() {   
+ jQuery('body').on('click', '.feature-edit', function() {
     var sptd=jQuery(this).attr("rel");
     var ppname=trim(jQuery('#'+sptd).text());
      
@@ -70,7 +70,7 @@ jQuery("#pricetable tr").hover(function() {
    
  });
  
- jQuery('.feature-desc-edit').live('click', function() {   
+ jQuery('body').on('click', '.feature-desc-edit', function() {
     var sptd=jQuery(this).attr("rel");
     var ppname=trim(jQuery('#'+sptd).val());
      
