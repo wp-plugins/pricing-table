@@ -2,9 +2,9 @@
 /*
 Plugin Name: Pricing Table
 Plugin URI: http://wpeden.com/product/wordpress-pricing-table-plugin/
-Description: WordPress Plugin to creating colorful pricing tables
+Description: WordPress Plugin for creating colorful pricing tables
 Author: Shaon
-Version: 1.3.1
+Version: 1.3.2
 Author URI: http://wpeden.com/
 */
 

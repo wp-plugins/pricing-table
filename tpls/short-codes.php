@@ -50,7 +50,7 @@ Action
         foreach($shortcode as $key => $value){
             $i++;
          ?>
-         <tr id="<?php echo "row_".$i;?>"><td valign="top"><input size="15" type="text" name="code[<?php echo $key;?>]" value="<?php echo $code[$key];?>" /></td><td align="left"><input size="80" type="text" name="shortcode[<?php echo $key;?>]" value="<?php echo $value;?>" /></td><td><img class='deleterow' rel='<?php echo "row_".$i;?>' title='Delete this row' src='<?php echo plugins_url();?>/pricing-table/images/delete.png' /></td></tr>
+    <tr id="<?php echo "row_".$i;?>"><td valign="top"><input size="15" type="text" name="code[<?php echo $key;?>]" value="<?php echo $code[$key];?>" /></td><td align="left"><input size="60" style="max-width:100%" type="text" name="shortcode[<?php echo $key;?>]" value="<?php echo $value;?>" /></td><td><img class='deleterow' rel='<?php echo "row_".$i;?>' title='Delete this row' src='<?php echo plugins_url();?>/pricing-table/images/delete.png' /></td></tr>
          <?php   
         }
     }
@@ -82,7 +82,7 @@ Action
     
     jQuery('#addnew').live("click",function(){        
         var stcd="code_"+new Date().getTime();           
-         jQuery('#wp-shortcode-table tbody').append('<tr  id="'+stcd+'"class="'+stcd+'"><td valign="top"><input size="15" type="text" name="code['+stcd+']" value="" /></td><td align="left"><input size="80" type="text" name="shortcode['+stcd+']" value="" /></td><td align=center><img class="deleterow" rel="'+stcd+'" title="Delete this row" src="<?php echo plugins_url();?>/wp-tabular/images/delete.png" /></td></tr>');
+         jQuery('#wp-shortcode-table tbody').append('<tr  id="'+stcd+'"class="'+stcd+'"><td valign="top"><input size="15" type="text" name="code['+stcd+']" value="" /></td><td align="left"><input size="60" style="max-width:100%" type="text" name="shortcode['+stcd+']" value="" /></td><td align=center><img class="deleterow" rel="'+stcd+'" title="Delete this row" src="<?php echo plugins_url();?>/pricing-table/images/delete.png" /></td></tr>');
     });
     
     jQuery('.deleterow').live('click', function() {   
