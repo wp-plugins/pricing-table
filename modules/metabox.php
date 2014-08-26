@@ -16,8 +16,8 @@ function wppt_add_custom_box() {
 }
 
 function wppt_individual_features( $post ) {
-    global $pt_plugin;     
-    include($pt_plugin->plugin_dir."/tpls/metabox-feature-options.php");
+
+    include(WPPT_PLUGINDIR."/tpls/metabox-feature-options.php");
 }
 
 function wppt_save_pricing_table( $post_id ) {

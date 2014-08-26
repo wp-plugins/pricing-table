@@ -4,17 +4,17 @@ Plugin Name: Pricing Table
 Plugin URI: http://wpeden.com/product/wordpress-pricing-table-plugin/
 Description: WordPress Plugin for creating colorful pricing tables
 Author: Shaon
-Version: 1.3.2
+Version: 1.3.3
 Author URI: http://wpeden.com/
 */
 
 
 
-include(dirname(__FILE__)."/libs/class.plugin.php");
+include(dirname(__FILE__)."/modules/metabox.php");
+include(dirname(__FILE__)."/modules/wppt-free-mce-button.php");
 
-global $enque, $pt_plugin;
+global $enque;
 
-$pt_plugin = new ahm_plugin('pricing-table');
 
 $enque = 1;
 
@@ -161,11 +161,12 @@ function wppt_columns_struct( $columns ) {
 
 function wppt_column_obj( $column ) {
     global $post;
+    if($post->post_type=='pricing-table'){
     switch ( $column ) {
         case 'shortcode':
-            echo "<input type=text readonly=readonly value='[ahm-pricing-table id={$post->ID}]' size=25 style='font-weight:bold;text-align:Center;' onclick='this.select()' />";
+            echo "<input type=text readonly=readonly value='[ahm-pricing-table id={$post->ID}]' size=25 style=\"box-shadow:none;border:1px solid #ddd;text-align:Center;font-family:'Courier New';font-size:10pt;pading:5px 10px;\" onclick='this.select()' />";
             break;
-    }
+    }}
 }
 
 
@@ -194,19 +195,21 @@ if(is_admin()){
 }
 
 function wppt_admin_enqueue_scripts(){
-    global $pt_plugin;
     wp_enqueue_script("jquery");
     wp_enqueue_script("jquery-form");
-    $pt_plugin->load_scripts();
-    $pt_plugin->load_styles();
+    wp_enqueue_script('wppt-datatable', plugins_url('pricing-table/js/admin/dragtable.js'));
+    wp_enqueue_script('wppt-tablednd', plugins_url('pricing-table/js/admin/jquery.tablednd_0_5.js'));
+    wp_enqueue_style("wppt-my", plugins_url('pricing-table/css/admin/my.css'));
+    wp_enqueue_style("wppt-tablestyle", plugins_url('pricing-table/css/admin/tablestyle.css'));
 }
 
 function wppt_enqueue_scripts(){
-    global $pt_plugin, $enque;
+    global $enque;
     if($enque==1){
         wp_enqueue_script("jquery");
-        $pt_plugin->load_scripts();
-        $pt_plugin->load_styles();
+
+        wp_enqueue_script('wppt-tablednd', plugins_url('pricing-table/js/site/icon.js'));
+
         wp_enqueue_script("tiptipjs", plugins_url()."/pricing-table/js/site/jquery.tipTip.minified.js",array('jquery'));
         wp_enqueue_style("tiptipcss", plugins_url()."/pricing-table/css/site/tipTip.css");
     }
@@ -227,9 +230,6 @@ function wppt_tiptip_init(){
     <?php
     }
 }
-
-$pt_plugin->load_modules();
-
 
 function wppt_baseurl(){
     global $enque;

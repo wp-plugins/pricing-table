@@ -26,6 +26,7 @@ Use simple short-code `[ahm-pricing-table id=999 template=template_name]` (999=u
 * Translation ready
 * use [y] for tick icon and [n] for cross icon
 * Custom short-code support, create unlimited short-codes to use in table cell
+* Clone existing table to create new one just in a single click
 * Easy tinymce edit button to choose template and generate short-code
 
 
@@ -54,6 +55,9 @@ N/A
 
 
 == Changelog ==
+
+= 1.3.3 =
+* Fixed open basedir restriction issue
 
 = 1.3.2 =
 * Fixed issue with custom short-code
