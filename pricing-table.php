@@ -4,7 +4,7 @@ Plugin Name: Pricing Table
 Plugin URI: http://wpeden.com/product/wordpress-pricing-table-plugin/
 Description: WordPress Plugin for creating colorful pricing tables
 Author: Shaon
-Version: 1.3.3
+Version: 1.3.4
 Author URI: http://wpeden.com/
 */
 
@@ -123,9 +123,11 @@ function wppt_preview_table($content){
 
 function wppt_table($params){
     $pid = $params['id'];
+    if(isset($params['style']))
     $style = $params['style'];
     extract($params);
-    $template = $params['template']?$params['template']:'glossy';
+
+    $template = isset($params['template'])?$params['template']:'rock';
     $responsive = isset($params['responsive'])?'responsive':'';
     ob_start();
     include("table-templates/{$template}/price_table.php");
@@ -288,7 +290,7 @@ function wppt_clone(){
 
 add_action( 'wp', 'wppt_detect_shortcode' );
 
-register_activation_hook(__FILE__,'wppt_install');
+//register_activation_hook(__FILE__,'wppt_install');
 
 add_filter('post_row_actions', 'wppt_post_row_actions',10, 2);
 add_action('wp_head', 'wppt_baseurl');
@@ -302,3 +304,7 @@ add_action( 'manage_posts_custom_column', 'wppt_column_obj', 10, 1 );
 add_action('wp_ajax_wppt_save_shortcode', 'wppt_save_shortcode');
 add_action('wp_enqueue_scripts', 'wppt_enqueue_scripts');
 add_action('admin_enqueue_scripts', 'wppt_admin_enqueue_scripts');   
+
+
+
+        

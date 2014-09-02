@@ -56,6 +56,9 @@ N/A
 
 == Changelog ==
 
+= 1.3.4 =
+* Fixed short-code execution bug when template is not defined
+
 = 1.3.3 =
 * Fixed open basedir restriction issue
 

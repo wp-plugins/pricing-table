@@ -26,7 +26,7 @@
         <ul>
             
             <?php foreach($value as $key1=>$value1){
-                    if( strtolower($key1)!="buttonurl" && strtolower($key1)!="buttontext" && strtolower($key1)!="price"){
+                    if( strtolower($key1)!="buttonurl" && strtolower($key1)!="buttontext" && strtolower($key1)!="price" ){
                         if($data_des[$key][$key1]!=''){
                             $value1 = "<a class='wppttip' href='#' title='{$data_des[$key][$key1]}'>".$value1."</a>";
                         }
