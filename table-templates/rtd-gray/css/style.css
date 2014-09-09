@@ -30,13 +30,13 @@
         box-shadow: 20px 0 10px -10px rgba(0, 0, 0, .15), -20px 0 10px -10px rgba(0, 0, 0, .15);    
     }
 
-    #shaon-pricing-table .plan:nth-child(1) {
+    #shaon-pricing-table .plan:first-child {
         -moz-border-radius: 5px 0 0 5px;
         -webkit-border-radius: 5px 0 0 5px;
         border-radius: 5px 0 0 5px;        
     }
 
-    #shaon-pricing-table .plan:nth-child(<?php echo count($data);?>) {
+    #shaon-pricing-table .plan:last-child {
         -moz-border-radius: 0 5px 5px 0;
         -webkit-border-radius: 0 5px 5px 0;
         border-radius: 0 5px 5px 0;        
@@ -74,14 +74,14 @@
         border-radius: 5px 5px 0 0;         
     }
     
-    #shaon-pricing-table .plan:nth-child(1) h3 {
+    #shaon-pricing-table .plan:first-child h3 {
         -moz-border-radius: 5px 0 0 0;
         -webkit-border-radius: 5px 0 0 0;
         border-radius: 5px 0 0 0;       
     }
 
   
-    #shaon-pricing-table .plan:nth-child(<?php echo count($data);?>) h3 {
+    #shaon-pricing-table .plan:last-child h3 {
         -moz-border-radius: 0 5px 0 0;
         -webkit-border-radius: 0 5px 0 0;
         border-radius: 0 5px 0 0;       

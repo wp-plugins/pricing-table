@@ -56,6 +56,9 @@ N/A
 
 == Changelog ==
 
+= 1.3.5 =
+* Fixed minor css issue in rtd-gray template
+
 = 1.3.4 =
 * Fixed short-code execution bug when template is not defined
 

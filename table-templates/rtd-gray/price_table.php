@@ -17,9 +17,11 @@
 
 <div id="shaon-pricing-table" class="wppt-img-left" style="clear: both;display: block;">
  <?php
-    foreach($data as $key=> $value){
+    $num_of_plans = count($data);
+    $cnt = 0;
+    foreach($data as $key=> $value){ $cnt++;
     ?>
-    <div class="plan <?php echo $responsive; ?>" <?php if($featured==$package_name[$key]){?> id="most-popular"<?php } ?> >
+    <div class="plan <?php echo $responsive; ?>" <?php if($cnt==$num_of_plans) echo 'style="-moz-border-radius: 0 5px 5px 0; -webkit-border-radius: 0 5px 5px 0; border-radius: 0 5px 5px 0;"'; ?><?php if($featured==$package_name[$key]){?> id="most-popular"<?php } ?> >
    
         <h3><?php echo $package_name[$key];?><span><?php echo $value['Price']; ?></span></h3>
         <a class="signup" href="<?php echo $value['ButtonURL']?>"><?php echo $value['ButtonText']?></a>         
