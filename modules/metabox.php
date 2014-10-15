@@ -11,8 +11,7 @@
 
 /* Adds a box to the main column on the Post and Page edit screens */
 function wppt_add_custom_box() {
-    add_meta_box( 'pricing-table-feature-options', __( 'Packages/Features', 'wppt' ).' <div style="margin:5px 0;background: #eeeeee;padding:5px 10px;border-radius:2px"><a target="_blank" href="http://wpeden.com/product/wordpress-pricing-table-plugin/" style="text-decoration:none;font-size:12pt;font-weight:300" title="Link will open in new window">Get Pro for Unlimited Table Tamplates and More Options</a> <a target="_blank" href="http://wordpress.org/support/view/plugin-reviews/pricing-table?rate=5#postform" title="Link will open in new window" style="text-decoration:none;font-size:12pt;font-weight:300;float:right">A 5* rating at wp.org will be very inspiring :)</a></div>', 'wppt_individual_features', 'pricing-table', 'normal','core' );
-   
+    add_meta_box( 'pricing-table-feature-options', __( 'Packages/Features', 'wppt' ).' <div style="margin:5px 0;background: #D9EDF7;padding:5px 10px;border-radius:2px"><a target="_blank" href="http://wpeden.com/product/wordpress-pricing-table-plugin/" style="text-decoration:none;font-size:12pt;font-weight:300" title="Link will open in new window">Get Pro for Unlimited Table Tamplates and More Options</a> <a target="_blank" href="http://wordpress.org/support/view/plugin-reviews/pricing-table?rate=5#postform" title="Link will open in new window" style="text-decoration:none;font-size:12pt;font-weight:300;float:right">A 5* rating at wp.org will be very inspiring :)</a></div>', 'wppt_individual_features', 'pricing-table', 'normal','core' );
 }
 
 function wppt_individual_features( $post ) {

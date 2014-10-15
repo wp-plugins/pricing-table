@@ -56,6 +56,9 @@ N/A
 
 == Changelog ==
 
+= 1.3.6 =
+* Fixed list style issue in rtd-gray template
+
 = 1.3.5 =
 * Fixed minor css issue in rtd-gray template
 

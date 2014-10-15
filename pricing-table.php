@@ -4,7 +4,7 @@ Plugin Name: Pricing Table
 Plugin URI: http://wpeden.com/product/wordpress-pricing-table-plugin/
 Description: WordPress Plugin for creating colorful pricing tables
 Author: Shaon
-Version: 1.3.5
+Version: 1.3.6
 Author URI: http://wpeden.com/
 */
 
@@ -156,7 +156,7 @@ function wppt_table($params){
 
 
 function wppt_columns_struct( $columns ) {
-    $column_shorcode = array( 'shortcode' => 'Embed Code' );
+    $column_shorcode = array( 'shortcode' => 'Short-Code' );
     $columns = array_slice( $columns, 0, 2, true ) + $column_shorcode + array_slice( $columns, 2, NULL, true );
     return $columns;
 }
@@ -203,6 +203,24 @@ function wppt_admin_enqueue_scripts(){
     wp_enqueue_script('wppt-tablednd', plugins_url('pricing-table/js/admin/jquery.tablednd_0_5.js'));
     wp_enqueue_style("wppt-my", plugins_url('pricing-table/css/admin/my.css'));
     wp_enqueue_style("wppt-tablestyle", plugins_url('pricing-table/css/admin/tablestyle.css'));
+    
+    wp_enqueue_script("tiptipjs", plugins_url()."/pricing-table/js/site/jquery.tipTip.minified.js",array('jquery'));
+    wp_enqueue_style("tiptipcss", plugins_url()."/pricing-table/css/site/tipTip.css");
+}
+
+function admin_tiptip_init(){
+    ?>
+        <script language="JavaScript">
+            jQuery(function(){
+                jQuery(".feature-desc-edit").tipTip({defaultPosition:'bottom'});
+                jQuery(".featured-package").tipTip({defaultPosition:'bottom'});
+                jQuery(".deletecol").tipTip({defaultPosition:'bottom'});
+                jQuery(".featured-package-edit").tipTip({defaultPosition:'bottom'});
+                jQuery(".deleterow").tipTip({defaultPosition:'bottom'});
+                jQuery(".feature-edit").tipTip({defaultPosition:'bottom'});
+            });
+        </script>
+    <?php
 }
 
 function wppt_enqueue_scripts(){
@@ -303,7 +321,8 @@ add_filter( 'manage_edit-pricing-table_columns', 'wppt_columns_struct', 10, 1 );
 add_action( 'manage_posts_custom_column', 'wppt_column_obj', 10, 1 );
 add_action('wp_ajax_wppt_save_shortcode', 'wppt_save_shortcode');
 add_action('wp_enqueue_scripts', 'wppt_enqueue_scripts');
-add_action('admin_enqueue_scripts', 'wppt_admin_enqueue_scripts');   
+add_action('admin_enqueue_scripts', 'wppt_admin_enqueue_scripts'); 
+//add_filter('admin_footer','admin_tiptip_init');
 
 
 
