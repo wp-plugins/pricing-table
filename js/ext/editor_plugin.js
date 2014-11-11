@@ -6,7 +6,7 @@
         init : function(ed, url){            
             ed.addCommand('wppt_mcedonwloadmanager', function() {
                                 ed.windowManager.open({
-                                        title: 'Download Controller',
+                                        title: 'WordPress Pricing Table Plugin',
                                         file : 'admin.php?wppt_action=wppt_tinymce_button',
                                         height: 450,
                                         width:600,

@@ -56,6 +56,9 @@ N/A
 
 == Changelog ==
 
+= 1.3.7 =
+* Updated minor css in override template ( For small screens )
+
 = 1.3.6 =
 * Fixed list style issue in rtd-gray template
 

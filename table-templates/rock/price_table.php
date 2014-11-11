@@ -20,25 +20,19 @@ $currency_code = get_post_meta($pid, '__wppt_currency_code',true);
 $currency_code = $currency_code?$currency_code:'USD';
 $currency = isset($currency)?$currency:'$';
 
-  $paypal = '';
+$paypal = '';
 ?>
 
-
 <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro|Roboto|Open+Sans+Condensed:700,300,300italic' rel='stylesheet' type='text/css'>
-
-
 <link href="<?php echo plugins_url('pricing-table/table-templates/rock/css/bootstrap.css');?>" rel="stylesheet">
-
 <link href="<?php echo plugins_url('pricing-table/table-templates/rock/css/style.css');?>" rel="stylesheet">
 <link href="<?php echo plugins_url('pricing-table/table-templates/rock/css/ribbons/hang-ribbon.css');?>" rel="stylesheet">
-
 <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
-
 
 <div class="w3eden">
 	<div class="container-fluid top50">
     	<div class="row shaon-pricing-table skin-blue style-2" id="shaon-pricing-table">
-          <div class="col-md-12">
+            <div class="col-md-12">
             	<div class="row">
 
                     <?php
@@ -46,7 +40,7 @@ $currency = isset($currency)?$currency:'$';
                     $count=0;
                     $total=count($data);
                     foreach($data as $key=> $value){
-                    $count++;
+                        $count++;
                         if($count == 1)
                             $col_id = "top-li-first";
                         elseif($count < $total)
@@ -75,16 +69,14 @@ $currency = isset($currency)?$currency:'$';
                                     $data = array('##btntxt##' => $value['ButtonText'], '##price##' => $value['Price'], '##currency##' => 'USD', '##name##' => $package_name[$key], '##id##' => uniqid());
                                     $eo = $rc%2?'odd':'even';
                                     if( strtolower($key1)!="buttonurl" && strtolower($key1)!="buttontext" && strtolower($key1)!="price" && strtolower($key1)!="detail"){
-                                        //$rs = $rs==$zx?1:$zx;
                                         $fc++;
                                         $fft = $fc==1?'first-feature':'';
                                         if($rc)
-                                        $ftr = strtolower($key1)!='detail'?$feature_name[$key1]:'';
+                                            $ftr = strtolower($key1)!='detail'?$feature_name[$key1]:'';
                                         if($data_des[$key][$key1]=='')
                                             echo "<li class='feature {$fft} pricing-content-row-{$eo} {$rs} ".(strpos('--'.$value1,'[n]')?'text-danger':'')."'><label class='label label-".(strpos('--'.$value1,'[n]')?'danger':(strpos('--'.$value1,'[na]')?'warning':'success'))."'>".str_replace(array('[y]','[n]','[na]'), array('<i class="fa fa-check"></i>','<i class="fa fa-times"></i>','<i class="fa fa-warning"></i>'),$value1)."</label> &nbsp; <span class='ftr'>$ftr</span></li>";
                                         else
                                             echo "<li class='feature {$fft} pricing-content-row-{$eo} {$rs} ".(strpos('--'.$value1,'[n]')?'text-danger':'')."'><i class='fa fa-plus-circle pull-right wppttip' style='margin-top:2px;cursor:pointer;'  title='{$data_des[$key][$key1]}'></i><label class='label label-".(strpos('--'.$value1,'[n]')?'danger':(strpos('--'.$value1,'[na]')?'warning':'success'))."'>".str_replace(array('[y]','[n]','[na]'), array('<i class="fa fa-check"></i>','<i class="fa fa-times"></i>','<i class="fa fa-warning"></i>'),$value1)."</label> &nbsp; <span class='ftr'>$ftr</span></li>";
-
                                     }
 
                                     $rs = !isset($rs) || $rs == '' ? $scolor[$count-1].'-row-gray' : '';

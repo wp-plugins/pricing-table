@@ -18,14 +18,10 @@ echo "</pre>";
 ?>
 
 <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro|Roboto|Open+Sans+Condensed:700,300,300italic' rel='stylesheet' type='text/css'>
-
-    
-	<link href="<?php echo plugins_url('pricing-table/table-templates/override/css/bootstrap.css');?>" rel="stylesheet">
-    <link href="<?php echo plugins_url('pricing-table/table-templates/override/css/bootstrap-responsive.css');?>" rel="stylesheet">
-
-    <link href="<?php echo plugins_url('pricing-table/table-templates/override/style.css');?>" rel="stylesheet">
-
-    <link id="ptts" href="<?php echo plugins_url('pricing-table/table-templates/override/style'.$style.'.css');?>" rel="stylesheet">
+<link href="<?php echo plugins_url('pricing-table/table-templates/override/css/bootstrap.css');?>" rel="stylesheet">
+<link href="<?php echo plugins_url('pricing-table/table-templates/override/css/bootstrap-responsive.css');?>" rel="stylesheet">
+<link href="<?php echo plugins_url('pricing-table/table-templates/override/style.css');?>" rel="stylesheet">
+<link id="ptts" href="<?php echo plugins_url('pricing-table/table-templates/override/style'.$style.'.css');?>" rel="stylesheet">
 
 
 <div class="w3eden">
@@ -34,7 +30,7 @@ echo "</pre>";
     	<div class="row-fluid pricing-table" id="shaon-pricing-table1">
         	<div class="span2">
             	<ul class="pricing-title prc-title-list">
-                	<li class="title-hader-row-1"></li>
+                    <li class="title-hader-row-1"></li>
                     <li class="title-hader-bar"></li>
                     <li class="title-hader-row-2">
                         <h1><?php $pt = explode(" ",$pt->post_title); echo $pt[0]."<br/><span>{$pt[1]}</span>";?></h1>
@@ -56,8 +52,7 @@ echo "</pre>";
                                     echo "<li class='title-row {$ns}' title='{$feature_description[$k]}'><p>".$value1."</p></li>";
                             }
                         }
-                        $ns = $ns==''?'title-row-gray':'';
-
+                        $ns = $ns == '' ? 'title-row-gray' : '';
                     }
                     ?>
 
@@ -67,17 +62,15 @@ echo "</pre>";
             <div class="span10">
             	<div class="row-fluid">
                     <?php
-                    $scolor = array('free','free','free','free','free','free','free','free');
-                    $count=0;
-                    $total=count($data);
-                    foreach($data as $key=> $value){
-                    $count++;
+                    $count = 0;
+                    $total = count($data);
+                    foreach($data as $key => $value){
+                        $count++;
                         if($count == 1)
                             $col_id = "top-li-first";
                         elseif($count < $total)
                             $col_id = "";
                         else $col_id = "top-li-last";
-
                     ?>
                         <div class="span<?php echo intval(12/count($package_name)); ?>">
                             <div class="free<?php if($package_name[$key]==$featured) echo ' active'; ?>">

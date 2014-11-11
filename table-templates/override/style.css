@@ -1,50 +1,5 @@
 @charset "utf-8";
 /* CSS Document */
-.w3eden {
-    /*	free    */
-
-    /*
-  .free:hover li.footer-row {
-      height: 40px;
-
-      -webkit-border-bottom-right-radius: 5px;
-  -webkit-border-bottom-left-radius: 5px;
-  -moz-border-radius-bottomright: 5px;
-  -moz-border-radius-bottomleft: 5px;
-  border-bottom-right-radius: 5px;
-  border-bottom-left-radius: 5px;
-      }*/
-
-    /*.free:hover a.btn-free {
-      margin-top: -10px;
-      }*/
-
-    /*.free:hover li.footer-row.btn-free {
-      background: none;
-      border: none !important;
-      box-shadow: none !important;
-      text-shadow: none !important;
-      }
-      */
-
-    /*	End free ul    */
-
-    /*	dev    */
-
-    /*.active li.dev-row-gray p, .active li.dev-row-a a, .active li.footer-row {
-      background: none repeat scroll 0 0 #2F68A3 !important;
-      border: none !important;
-      box-shadow: none !important;
-      text-shadow: none !important;
-      } */
-
-    /*	End dev ul    */
-
-    /*bootstrap css edit */
-
-    /*.free-hader-row-1*/
-
-}
 
 .w3eden img,
 .w3eden * {
@@ -401,6 +356,10 @@
     }
     .w3eden .free {
         margin-top: 20px;
+    }
+    .w3eden .title-hader-row-1{
+        border-top-left-radius:5px;
+        border-top-right-radius: 5px;
     }
 }
 .w3eden .pricing-table .span3 {
