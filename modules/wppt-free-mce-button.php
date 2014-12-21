@@ -175,7 +175,6 @@ while (FALSE !== ($file = readdir($directory_list))){
    </div>
 
 
-    <input type="checkbox" id="respo" value="1" name="respo">    Fluid-Width
     <input type="submit" id="addtopost" class="button button-primary" name="addtopost" value="Insert into post" />
 </fieldset>   <br>
  
