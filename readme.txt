@@ -56,6 +56,9 @@ N/A
 
 == Changelog ==
 
+= 1.3.9 =
+* Updated Smooth Template. Fixed some css issues.
+
 = 1.3.8 =
 * WordPress 4.1 checked.
 * Removed unused field from tinymce short-code button

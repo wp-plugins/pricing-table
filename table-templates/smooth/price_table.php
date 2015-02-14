@@ -1,5 +1,4 @@
- 
- <?php
+<?php
  $data = get_post_meta($pid, 'pricing_table_opt',true);
  $featured=  get_post_meta($pid, 'pricing_table_opt_feature',true);
  $feature_description =  get_post_meta($pid, 'pricing_table_opt_feature_description',true);
@@ -14,7 +13,7 @@
  ?>
  <link rel="stylesheet" href="<?php echo plugins_url(); ?>/pricing-table/table-templates/smooth/css/minimal.css" type="text/css" />
   
-  <div id="shaon-pricing-table">  
+<div id="shaon-pricing-table">  
     <div class="minimal">
     
  <?php
@@ -28,16 +27,6 @@
         <ul>
             
             <?php foreach($value as $key1=>$value1){
-//                    if(strtolower($key1)=='detail')
-//                    echo "";
-//                    else if( strtolower($key1)!="button url" && strtolower($key1)!="button text" && strtolower($key1)!="price"){
-//                    $value1 = explode("|",$value1);
-//                    if($value1[1]!='')
-//                    echo "<li><b title='{$value1[1]}'>".$value1[0]."</b> $key1</li>";
-//                    else
-//                    echo "<li><b>".$value1[0]."</b> $key1</li>";
-//                    }
-
                 if( strtolower($key1)!="buttonurl" && strtolower($key1)!="buttontext" && strtolower($key1)!="price"){
                     if($data_des[$key][$key1]!=''){
                         $value1 = "<a class='wppttip' href='#' title='{$data_des[$key][$key1]}'>".$value1."</a>";
@@ -52,14 +41,14 @@
         </ul> 
         </div>  
         <div class="select">
-                <div>
+            <div>
                 <a class="pt-button" href="<?php echo $value['ButtonURL']?>"><span><?php echo $value['ButtonText']?></span></a>
-                </div>
+            </div>
         </div>       
-    </div >
+    </div>
   <?php } ?>
       
     </div>
-  </div>
+</div>
  <div style="clear:both"></div>
  

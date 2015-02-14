@@ -1,21 +1,4 @@
-/* Structure
--------------------------------------------------------------------*/
- 
 @import url(http://fonts.googleapis.com/css?family=Open+Sans);
-
-
-html {font-size: 100%;}
-
-body {
-	font-family: "Open Sans", arial, helvetica, sans-serif;
-	font-size: 12px;
-	line-height: 1.5;
-}
-
-a {text-decoration: none}
-
-/* Table
--------------------------------------------------------------------*/
 
 #shaon-pricing-table ul,
 #shaon-pricing-table h3,
@@ -48,7 +31,7 @@ a {text-decoration: none}
 
 /* specialized
 -------------------------------------------------------------------*/
-h4 {color: #fff; text-shadow: 0 1px 0 rgba(0,0,0,0.2)}
+.highlight h4 {color: #fff; text-shadow: 0 1px 0 rgba(0,0,0,0.2)}
 
 .interval {font-size: 11px;}
 
@@ -69,7 +52,7 @@ h4 {color: #fff; text-shadow: 0 1px 0 rgba(0,0,0,0.2)}
     -ms-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6c9e4a', endColorstr='#578d35',GradientType=0 );
     border-bottom: 1px solid #4a7c2d;
 }
- 
+
 
 .minimal .plan h4 {padding:0 0 10px}
 
@@ -98,10 +81,10 @@ h4 {color: #fff; text-shadow: 0 1px 0 rgba(0,0,0,0.2)}
     background: -ms-linear-gradient(top, #6c9e4a 0%,#578d35 100%);
     background: linear-gradient(top, #6c9e4a 0%,#578d35 100%);
     -ms-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6c9e4a', endColorstr='#578d35',GradientType=0 );
-     
+
     border-radius: 3px;
     -moz-border-radius: 3px;
-     
+
     color: #FFFFFF;
     display: block;
     font-weight: bold;
@@ -144,13 +127,13 @@ h4 {color: #fff; text-shadow: 0 1px 0 rgba(0,0,0,0.2)}
 .minimal .highlight {position: relative;}
 
 .minimal .featured {background: no-repeat scroll left top transparent;
-    display: block;
-    height: 58px;
-    position: absolute;
-    right: -2px;
-    text-indent: -9999em;
-    top: -1px;
-    width: 95px;
+                    display: block;
+                    height: 58px;
+                    position: absolute;
+                    right: -2px;
+                    text-indent: -9999em;
+                    top: -1px;
+                    width: 95px;
 }
 
 .minimal .featured {background-image: url("../images/bestvalue1.png")}
@@ -159,14 +142,14 @@ h4 {color: #fff; text-shadow: 0 1px 0 rgba(0,0,0,0.2)}
 .minimal .featured.f4 {background-image: url("../images/bestvalue4.png")}
 .minimal .featured.f5 {background-image: url("../images/bestvalue5.png")}
 
- 
-     
-    /* Landscape phone to portrait tablet */
-    @media (max-width: 800px) { 
-        .minimal .plan {width:45%; float: left; margin-left: 20px; }
-        .minimal .plan:nth-child(2n){ margin-left: 20px; }
-        .minimal .plan:nth-child(2n+1){ margin-left: 0; } 
-    }
-     
-    /* Landscape phones and down */
-    @media (max-width: 480px) { .minimal .plan {width:100%; float: none; margin-left: 0 !important;} }
+
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 800px) { 
+    .minimal .plan {width:45%; float: left; margin-left: 20px; }
+    .minimal .plan:nth-child(2n){ margin-left: 20px; }
+    .minimal .plan:nth-child(2n+1){ margin-left: 0; } 
+}
+
+/* Landscape phones and down */
+@media (max-width: 480px) { .minimal .plan {width:100%; float: none; margin-left: 0 !important;} }
