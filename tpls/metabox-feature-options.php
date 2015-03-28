@@ -1,111 +1,98 @@
-  <script type="text/javascript" src="<?php echo plugins_url(); ?>/pricing-table/js/admin/jquery.tablednd_0_5.js"></script>
- <script>   
-  jQuery(document).ready(function() {
-
+<script type="text/javascript" src="<?php echo plugins_url(); ?>/pricing-table/js/admin/jquery.tablednd_0_5.js"></script>
+<script>   
+    jQuery(document).ready(function() {
     // Initialise the table
-    jQuery("#pricetable").tableDnD({dragHandle: "dh"});
-    
-});
-jQuery("#pricetable tr").hover(function() {
-          jQuery(this.cells[0]).addClass('showDragHandle');
-    }, function() {
-          jQuery(this.cells[0]).removeClass('showDragHandle');
+    jQuery("#pricetable").tableDnD({dragHandle: "dh"});    
     });
- jQuery('body').on('click', '.deleterow', function() {
-    if(confirm("Are you sure you want to delete?")){
-            
-            jQuery("."+jQuery(this).attr('rel')).slideUp(function(){jQuery(this).remove();});
-         
-    }
- });
- jQuery('body').on('click','.deletecol', function() {
-    if(confirm("Are you sure you want to delete?")){
-            
-            jQuery("."+jQuery(this).attr('rel')).remove();
-         
-    }
- });
+    jQuery("#pricetable tr").hover(function() {
+        jQuery(this.cells[0]).addClass('showDragHandle');
+    }, function() {
+        jQuery(this.cells[0]).removeClass('showDragHandle');
+    });
+    jQuery('body').on('click', '.deleterow', function() {
+        if(confirm("Are you sure you want to delete?")){            
+            jQuery("."+jQuery(this).attr('rel')).slideUp(function(){jQuery(this).remove();});         
+            }
+    });
+    jQuery('body').on('click','.deletecol', function() {
+        if(confirm("Are you sure you want to delete?")){            
+            jQuery("."+jQuery(this).attr('rel')).remove();         
+        }
+    });
  
- jQuery('body').on('click', '.featured-package', function() {
-    var fid=jQuery(this).attr("id");
-    var isf = jQuery('#'+fid).attr('src');
-    jQuery('.featured-package').attr('src','<?php echo plugins_url(); ?>/pricing-table/images/unfeatured.png')
-    if(isf!="<?php echo plugins_url(); ?>/pricing-table/images/featured.png") {
-    jQuery('#'+fid).attr('src',"<?php echo plugins_url(); ?>/pricing-table/images/featured.png");
-    jQuery('#featured').val(jQuery('#'+fid).attr("rel"));} else {
-    jQuery('#featured').val('');    
-    }
- });
+    jQuery('body').on('click', '.featured-package', function() {
+        var fid=jQuery(this).attr("id");
+        var isf = jQuery('#'+fid).attr('src');
+        jQuery('.featured-package').attr('src','<?php echo plugins_url(); ?>/pricing-table/images/unfeatured.png');
+        if(isf!="<?php echo plugins_url(); ?>/pricing-table/images/featured.png") {
+            jQuery('#'+fid).attr('src',"<?php echo plugins_url(); ?>/pricing-table/images/featured.png");
+            jQuery('#featured').val(jQuery('#'+fid).attr("rel"));
+        } else {
+            jQuery('#featured').val('');    
+        }
+    });
  
- jQuery('body').on('click', '.featured-package-edit', function() {
-    var sptd=jQuery(this).attr("rel");
-    var ppname=trim(jQuery('#'+sptd).text());
+    jQuery('body').on('click', '.featured-package-edit', function() {
+        var sptd=jQuery(this).attr("rel");
+        var ppname=trim(jQuery('#'+sptd).text());
+
+        var pname=prompt("Edit Package Name:",ppname);
+        pname=trim(pname); 
+        while(pname.length==0 ){
+            pname=prompt("Edit Package Name");
+            pname=trim(pname);    
+        }
+        jQuery('#'+sptd).text(pname);
+        jQuery('#val_'+sptd.substr(2)).val(pname);   
+    });
+ 
+ 
+    jQuery('body').on('click', '.feature-edit', function() {
+        var sptd=jQuery(this).attr("rel");
+        var ppname=trim(jQuery('#'+sptd).text());
      
-    var pname=prompt("Edit Package Name:",ppname);
-     pname=trim(pname); 
-      while(pname.length==0 ){
-           pname=prompt("Edit Package Name");
-           pname=trim(pname);    
-      }
-    jQuery('#'+sptd).text(pname);
-    
-    jQuery('#val_'+sptd.substr(2)).val(pname);
-   
- });
+        var pname=prompt("Edit Feature Name:",ppname);
+        pname=trim(pname); 
+        while(pname.length==0 ){
+            pname=prompt("Edit Feature Name");
+            pname=trim(pname);    
+        }
+        jQuery('#'+sptd).text(pname);    
+        jQuery('#val_'+sptd.substr(2)).val(pname);   
+    });
  
- 
- jQuery('body').on('click', '.feature-edit', function() {
-    var sptd=jQuery(this).attr("rel");
-    var ppname=trim(jQuery('#'+sptd).text());
+    jQuery('body').on('click', '.feature-desc-edit', function() {
+        var sptd=jQuery(this).attr("rel");
+        var ppname=trim(jQuery('#'+sptd).val());
      
-    var pname=prompt("Edit Feature Name:",ppname);
-     pname=trim(pname); 
-      while(pname.length==0 ){
-           pname=prompt("Edit Feature Name");
-           pname=trim(pname);    
-      }
-    jQuery('#'+sptd).text(pname);
-    
-    jQuery('#val_'+sptd.substr(2)).val(pname);
-   
- });
- 
- jQuery('body').on('click', '.feature-desc-edit', function() {
-    var sptd=jQuery(this).attr("rel");
-    var ppname=trim(jQuery('#'+sptd).val());
-     
-    var pname=prompt("Edit Feature Description:",ppname);
-     pname=trim(pname); 
-      while(pname.length==0 ){
-           pname=prompt("Edit Feature Description");
-           pname=trim(pname);    
-      }
-    jQuery('#'+sptd).val(pname);
-    //alert(jQuery('#'+sptd).text(pname));
-    jQuery('#val_desc_'+sptd.substr(3)).val(pname);
-    
- });
+        var pname=prompt("Edit Feature Description:",ppname);
+        pname=trim(pname); 
+        while(pname.length==0 ){
+            pname=prompt("Edit Feature Description");
+            pname=trim(pname);    
+        }
+        jQuery('#'+sptd).val(pname);
+        //alert(jQuery('#'+sptd).text(pname));
+        jQuery('#val_desc_'+sptd.substr(3)).val(pname);    
+    });
  
  </script>
  <style>
-     #pricetable tr:nth-child(odd){
-         background: #f5f5f5;
-     }
-     </style>
+    #pricetable tr:nth-child(odd){
+        background: #f5f5f5;
+    }
+</style>
  
 <?php
     
     $data = get_post_meta($post->ID, 'pricing_table_opt',true); 
-   // print_r($data); 
     $data_des = get_post_meta($post->ID, 'pricing_table_opt_description',true); 
-    if(!is_array($data_des)) $data_des = array(); 
-   // print_r($data_des);
-    $featured=  get_post_meta($post->ID, 'pricing_table_opt_feature',true); 
-    $feature_name=  get_post_meta($post->ID, 'pricing_table_opt_feature_name',true);
-    $feature_description=  get_post_meta($post->ID, 'pricing_table_opt_feature_description',true);
-    $package_name=  get_post_meta($post->ID, 'pricing_table_opt_package_name',true); 
+    if(!is_array($data_des)) $data_des = array();
+    $featured = get_post_meta($post->ID, 'pricing_table_opt_feature',true); 
+    $feature_name = get_post_meta($post->ID, 'pricing_table_opt_feature_name',true);
+    $feature_description = get_post_meta($post->ID, 'pricing_table_opt_feature_description',true);
+    $package_name = get_post_meta($post->ID, 'pricing_table_opt_package_name',true); 
      
-    
 ?>
 
 <div style="width: 100%;float:left;margin-right: 25px;overflow: auto;">
@@ -145,18 +132,18 @@ jQuery("#pricetable tr").hover(function() {
     }
 ?>
    </tr>    
-     <?php
-   $fkeys=@array_keys($feature_name);
-    $cnt=@count($data[$pkeys[0]]);
+    <?php
+    $fkeys = @array_keys($feature_name);
+    $cnt = @count($data[$pkeys[0]]);
     if( is_array($fkeys) ){ 
     foreach($feature_name as $index1=> $value1){
-        //if($value1=="Detail")$value1="PackageDescription";
+
         $feature_key = str_replace(" ","",$value1);
         if(in_array($value1, array('Price','Detail','ButtonURL','ButtonText'))) $class='nodrag nodrop';
         else $class='';  
         echo "<tr class='{$index1} $class'>";
-        $t=0;
-        foreach($package_name as $index=> $value){
+        $t = 0;
+        foreach($package_name as $index => $value){
             $package_key=str_replace(" ","",$value);
             $t++;
             if($t==1){
@@ -168,7 +155,7 @@ jQuery("#pricetable tr").hover(function() {
                     echo '<img class="rdndHandler" src="'.plugins_url().'/pricing-table/images/updown.png" />';
                     echo '<img rel="sf'.$index1.'"  id="e'.$index1.'" class="feature-edit" title="click here to edit Feature Name" src="'. plugins_url().'/pricing-table/images/edit.png"> ';
                     echo '<img rel="sfd'.$index1.'"  id="ed'.$index1.'" class="feature-desc-edit" title="click here to edit Feature Description" src="'. plugins_url().'/pricing-table/images/edit-desc.png"> ';
-                    echo "<img src='". plugins_url()."/pricing-table/images/delete.png' class='deleterow' rel='{$index1}' title='Delete this row' />";
+                    echo "<img src='". plugins_url()."/pricing-table/images/delete.png' class='deleterow' rel='{$index1}' title='Delete this row' /><br/>";
                 }
                 echo ' <input type="hidden" name="feature_name['.$index1.']" id="val_'.$index1.'" value="'.$value1.'" />';
                 $tvs = !isset($feature_description[$index1])?"":$feature_description[$index1];
@@ -189,7 +176,7 @@ jQuery("#pricetable tr").hover(function() {
             echo  '<td class="'.$index.'"><input type="text" class="t" id="features['.$index.']['.$index1.']" name="features['.$index.']['.$index1.'] " value="'
             .$data[$index][$index1].'" >';
             if(!in_array($index1, array('Price','Detail','ButtonURL'))){
-            echo '<input class="d" type="text" id="features_description['.$index.']['.$index1.']" name="features_description['.$index.']['.$index1.'] " value="'.$data_des[$index][$index1].'" />';
+            echo '<input class="d" placeholder="Tooltip Text" type="text" id="features_description['.$index.']['.$index1.']" name="features_description['.$index.']['.$index1.'] " value="'.$data_des[$index][$index1].'" />';
             }
             echo '</td>';
         }
@@ -269,7 +256,7 @@ PayPal Account Email
 
 </table><br /><br />
 
- <table class="widefat">
+<!-- <table class="widefat">
      <thead>
      <tr>
          <th colspan="2">
@@ -301,9 +288,7 @@ PayPal Account Email
              <input size="80" type="text" name="alt_detail" id="alt_detail" value="<?php echo get_post_meta($post->ID, 'alt_detail',true);  ?>">
          </td>
      </tr>
-
-
- </table>
+ </table>-->
 
      <script language="JavaScript">   
       function trim(str) {
@@ -322,7 +307,7 @@ PayPal Account Email
                feat=trim(feat);    
           }
           var tmp_fid = "ftr_"+new Date().getTime();
-          $ftr_info = "<span id='sf"+tmp_fid+"'>"+feat+"</span><br/><input type='hidden' name='feature_name["+tmp_fid+"]' value='"+feat+"'/><input type=hidden id='val_desc_"+tmp_fid+"' class='d' name='feature_description["+tmp_fid+"]' value=''/>"; 
+          $ftr_info = "<span id='sf"+tmp_fid+"'>"+feat+"</span><br/><input type='hidden' name='feature_name["+tmp_fid+"]' value='"+feat+"'/><input type=hidden id='val_desc_"+tmp_fid+"' class='d' placeholder='Tooltip Text' name='feature_description["+tmp_fid+"]' value=''/>"; 
           
            jQuery('#pricetable tbody tr:last').clone(true).insertAfter('#pricetable tbody>tr:last');
               
@@ -372,7 +357,7 @@ PayPal Account Email
            });
            
              
-           jQuery('#pricetable tbody tr:last td:first').html('<img class="rdndHandler" src="<?php echo plugins_url();?>/pricing-table/images/updown.png" /><img rel="sf'+tmp_fid+'"  id="e'+tmp_fid+'" class="feature-edit" title="click here to edit Feature Name" src="<?php echo plugins_url();?>/pricing-table/images/edit.png"><img rel="val_desc_'+tmp_fid+'"  id="ed'+tmp_fid+'" class="feature-desc-edit" title="Click here to edit Feature Description" src="<?php echo plugins_url();?>/pricing-table/images/edit.png"><img src="<?php echo plugins_url();?>/pricing-table/images/delete.png" class="deleterow" title="Delete this row" />');
+           jQuery('#pricetable tbody tr:last td:first').html('<img class="rdndHandler" src="<?php echo plugins_url();?>/pricing-table/images/updown.png" /><img rel="sf'+tmp_fid+'"  id="e'+tmp_fid+'" class="feature-edit" title="click here to edit Feature Name" src="<?php echo plugins_url();?>/pricing-table/images/edit.png"><img rel="val_desc_'+tmp_fid+'"  id="ed'+tmp_fid+'" class="feature-desc-edit" title="Click here to edit Feature Description" src="<?php echo plugins_url();?>/pricing-table/images/edit-desc.png"><img src="<?php echo plugins_url();?>/pricing-table/images/delete.png" class="deleterow" title="Delete this row" /><br/>');
            jQuery('#pricetable tbody tr:last td:first').append($ftr_info); 
            jQuery('#pricetable tbody tr:last td:first').css("font-weight","bold"); 
            jQuery('#pricetable tbody tr:last td:first').attr("class",tmp_fid);
@@ -416,8 +401,7 @@ PayPal Account Email
                     jQuery(this).find('td:last').append('<input  name="'+htm+'" class="t" type="text" >'); 
                     if(jQuery.trim(rw) != "Price" && jQuery.trim(rw) != "Detail" && jQuery.trim(rw) != "ButtonURL"){
                          
-                        //jQuery(this).find('td:last').append('<input  name="'+htm_desc+'" class="t" type="text" ><input class="d" id="d_'+cid+'" name="'+htm_desc+'" type="hidden" >');                   
-                        jQuery(this).find('td:last').append('<br/><input  name="'+htm_desc+'" class="d" type="text" >');                   
+                        jQuery(this).find('td:last').append('<br/><input  name="'+htm_desc+'" class="d" placeholder="Tooltip Text" type="text" >');                   
                     }
                      cid++; 
                       

@@ -1,6 +1,8 @@
 <div class="wrap">
-<div class="icon32 icon32-posts-post" id="icon-edit"><br></div>
 <h2>How to use Pricing Table</h2>
+<div style="margin-top: 10px;">
+    <a class="ptpl" href="http://wpeden.com/product/wordpress-pricing-table-plugin-pro/" target="_blank">Check out Pricing Table <b><i>How To</i></b> videos here</a>
+</div>
 <style type="text/css">
 .tt {
     margin-left: 30px;
@@ -10,6 +12,18 @@
 }
 .tt ul{
     margin-left: 20px;
+}
+.ptpl{
+    border: 1px solid #F42156;
+    border-radius: 3px;
+    padding: 5px;
+    margin-top: 10px;
+    text-decoration: none;
+    color: #000;
+}
+.ptpl:hover{
+    background: #F42156;
+    color: #fff;
 }
 </style>
 <Br/>
@@ -22,7 +36,7 @@ Simply use the following short-code inside page or post content to display prici
 <br/>
 Replace: <strong>table_id</strong> with <a href='edit.php?post_type=pricing-table'>the id of table you created</a><br/>
 
-Replace: <strong>template_name</strong> with any of following available template name:<br/>
+Replace: <strong>template_name</strong> with any of following available templates name:<br/>
 
 <ul class="tt">
 <li>override</li>
@@ -50,32 +64,8 @@ Replace: <strong>template_name</strong> with any of following available template
 <li>style3</li>
 <li>style4-blue</li>
 <li>style4-gray</li>
-<li>light
-    <ul>
-    <li>Colors:</li>
-    <li>red</li>
-    <li>blue</li>
-    <li>green</li>
-    </ul>
-</li>
-<li>dark
-    <ul>
-    <li>Colors:</li>
-    <li>blue</li>
-    <li>bronze</li>
-    <li>brown</li>
-    <li>cyan</li>
-    <li>gold</li>
-    <li>green</li>
-    <li>grey</li>
-    <li>magenta</li>
-    <li>orange</li>
-    <li>purple</li>
-    <li>red</li>
-    <li>silver</li>
-    <li>yellow</li>
-    </ul>
-</li>
+<li>light</li>
+<li>dark</li>
 </ul>
 
     <b>OR you can just use custom tinyMCE button in WP Editor Tab to insert table short-code</b>
