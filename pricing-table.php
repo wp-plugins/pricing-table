@@ -4,7 +4,7 @@ Plugin Name: Pricing Table
 Plugin URI: http://wpeden.com/product/wordpress-pricing-table-plugin/
 Description: WordPress Plugin for creating colorful pricing tables
 Author: Shaon
-Version: 1.4.0
+Version: 1.4.1
 Author URI: http://wpeden.com/
 */
 
@@ -181,8 +181,19 @@ function wppt_shortcodes(){
     include(dirname(__FILE__)."/tpls/short-codes.php");
 }
 function wppt_save_shortcode(){
-    update_option('_wppt_shortcode', $_POST['shortcode']);
-    update_option('_wppt_code', $_POST['code']);
+    $sc = array();
+    $sc = $_POST['shortcode'];
+    foreach ($sc as $key=>$value) {
+        $sc[$key] = stripslashes($value);
+    }
+    $c = array();
+    $c = $_POST['code'];
+    foreach ($c as $key=>$value) {
+        $c[$key] = stripslashes($value);
+    }
+    
+    update_option('_wppt_shortcode', $sc);
+    update_option('_wppt_code', $c);
 }
 
 function wppt_menu(){
