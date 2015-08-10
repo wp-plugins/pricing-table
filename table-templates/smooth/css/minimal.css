@@ -1,0 +1,155 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+
+#shaon-pricing-table ul,
+#shaon-pricing-table h3,
+#shaon-pricing-table h4,
+#shaon-pricing-table li{
+    padding:0px;
+    margin:0px;
+    list-style: none;
+}
+
+.minimal { margin: 20px auto 0; }
+.minimal .plan {width:205px; float: left; margin-left: 20px; margin-bottom: 20px;}
+.minimal .plan:first-child {margin-left: 0}
+
+.minimal .plan h3 {font-size: 16px; text-align: center; color: #fff; line-height: 45px !important; height: 45px !important; }
+.minmal .plan h3 {background: #5e923c}
+
+.minimal .plan li:nth-child(2n) {background: #fafafa !important;}
+
+.minimal .plan li {line-height: 3.8em !important;}
+.select, .plan li {text-align: center}
+
+.minimal .plan h3{border-radius: 4px 4px 0 0}
+.minimal .plan .select {border-radius: 0 0 4px 4px}
+
+.minimal .select {background: #e7e7e7; height: 78px; border: 1px solid #c8c8c8}
+.minimal .select div {padding-top: 18px; text-shadow: 0 1px 0px #fff;}
+
+.minimal .features ul {border-left: 1px solid #e5e5e5; border-right: 1px solid #e5e5e5}
+
+/* specialized
+-------------------------------------------------------------------*/
+.highlight h4 {color: #fff; text-shadow: 0 1px 0 rgba(0,0,0,0.2)}
+
+.interval {font-size: 11px;}
+
+.amount, .interval {display: block; text-align: center}
+.amount {font-size: 40px; }
+.amount span {vertical-align: super; font-size: 20px}
+
+/* Top
+-------------------------------------------------------------------*/
+.minimal .p1 h3{
+    background: #6c9e4a;
+    background: -moz-linear-gradient(top, #6c9e4a 0%, #578d35 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#6c9e4a), color-stop(100%,#578d35));
+    background: -webkit-linear-gradient(top, #6c9e4a 0%,#578d35 100%);
+    background: -o-linear-gradient(top, #6c9e4a 0%,#578d35 100%);
+    background: -ms-linear-gradient(top, #6c9e4a 0%,#578d35 100%);
+    background: linear-gradient(top, #6c9e4a 0%,#578d35 100%);
+    -ms-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6c9e4a', endColorstr='#578d35',GradientType=0 );
+    border-bottom: 1px solid #4a7c2d;
+}
+
+
+.minimal .plan h4 {padding:0 0 10px}
+
+.minimal .p1 h4 {background: #8bb371; box-shadow: 0 1px 1px #9ABE82 inset;}
+.minimal .p2 h4 {background: #6179ab; box-shadow: 0 1px 1px #738ab6 inset;}
+.minimal .p3 h4 {background: #d26529; box-shadow: 0 1px 1px #d8773b inset;}
+.minimal .p4 h4 {background: #a06d3c; box-shadow: 0 1px 1px #ad7f4f inset;}
+.minimal .p5 h4 {background: #9DA03C;box-shadow: 0 1px 1px #9DA360 inset;}
+.minimal .p6 h4 {background: #6B658F;box-shadow: 0 1px 1px #3E3574 inset;}
+.minimal .p7 h4 {background: #4AAD59;box-shadow: 0 1px 1px #47BC59 inset;}
+.minimal .p8 h4 {background: #BA4B4B; box-shadow: 0 1px 1px #CF5858 inset;}
+.minimal .p9 h4 {background: #63A3AE; box-shadow: 0 1px 1px #79B2DA inset;}
+.minimal .p10 h4 {background: #9BAD6A; box-shadow: 0 1px 1px #99C44C inset;}
+
+
+/* Buttons
+-------------------------------------------------------------------*/
+
+.minimal .pt-button {
+    margin:0px auto !important;
+    background: #6c9e4a;
+    background: -moz-linear-gradient(top, #6c9e4a 0%, #578d35 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#6c9e4a), color-stop(100%,#578d35));
+    background: -webkit-linear-gradient(top, #6c9e4a 0%,#578d35 100%);
+    background: -o-linear-gradient(top, #6c9e4a 0%,#578d35 100%);
+    background: -ms-linear-gradient(top, #6c9e4a 0%,#578d35 100%);
+    background: linear-gradient(top, #6c9e4a 0%,#578d35 100%);
+    -ms-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6c9e4a', endColorstr='#578d35',GradientType=0 );
+
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+
+    color: #FFFFFF;
+    display: block;
+    font-weight: bold;
+    line-height: 43px;
+    margin: 10px auto 0;
+    width: 131px;
+    text-shadow: 0 -1px 0 #4f8926
+}
+
+.minimal .pt-button:hover {
+    background: #4f9345; /* Old browsers */
+    background: -moz-linear-gradient(top,  #4f9345 0%, #1f7714 99%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#4f9345), color-stop(99%,#1f7714)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #4f9345 0%,#1f7714 99%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #4f9345 0%,#1f7714 99%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #4f9345 0%,#1f7714 99%); /* IE10+ */
+    background: linear-gradient(to bottom,  #4f9345 0%,#1f7714 99%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4f9345', endColorstr='#1f7714',GradientType=0 ); /* IE6-9 */
+
+}
+.minimal .pt-button:active {
+    border: 1px solid #8e6e07;
+    box-shadow: 0 1px 2px #af8609 inset;
+    background: #be920a;
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2JlOTIwYSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM5ZjYxMDUiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+    background: -moz-linear-gradient(top, #be920a 0%, #9f6105 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#be920a), color-stop(100%,#9f6105));
+    background: -webkit-linear-gradient(top, #be920a 0%,#9f6105 100%);
+    background: -o-linear-gradient(top, #be920a 0%,#9f6105 100%);
+    background: -ms-linear-gradient(top, #be920a 0%,#9f6105 100%);
+    background: linear-gradient(top, #be920a 0%,#9f6105 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#be920a', endColorstr='#9f6105',GradientType=0 );
+}
+
+
+/* Highlight
+-------------------------------------------------------------------*/
+.minimal .highlight h3 {margin-top: -15px;padding: 15px 0 0;}
+
+.minimal .highlight {position: relative;}
+
+.minimal .featured {background: no-repeat scroll left top transparent;
+                    display: block;
+                    height: 58px;
+                    position: absolute;
+                    right: -2px;
+                    text-indent: -9999em;
+                    top: -1px;
+                    width: 95px;
+}
+
+.minimal .featured {background-image: url("../images/bestvalue1.png")}
+.minimal .featured.f2 {background-image: url("../images/bestvalue2.png")}
+.minimal .featured.f3 {background-image: url("../images/bestvalue3.png")}
+.minimal .featured.f4 {background-image: url("../images/bestvalue4.png")}
+.minimal .featured.f5 {background-image: url("../images/bestvalue5.png")}
+
+
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 800px) { 
+    .minimal .plan {width:45%; float: left; margin-left: 20px; }
+    .minimal .plan:nth-child(2n){ margin-left: 20px; }
+    .minimal .plan:nth-child(2n+1){ margin-left: 0; } 
+}
+
+/* Landscape phones and down */
+@media (max-width: 480px) { .minimal .plan {width:100%; float: none; margin-left: 0 !important;} }

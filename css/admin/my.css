@@ -1,0 +1,34 @@
+.deletecol{
+    /*background: url("../../images/delete.png")   no-repeat right top  ;*/
+    cursor: pointer;
+    width: 16px;
+    height: 16px;
+    float: right;
+    margin:0px 3px 0px 0px !important;
+    /*vertical-align: top;*/
+   
+}
+
+ 
+.featured-package{
+    cursor:pointer;
+    float:right;
+     margin:0px 3px 0px 0px !important;
+}
+.featured-package-edit{
+   cursor:pointer;
+    float:right; 
+     margin:0px 3px 0px 0px !important;
+}
+ 
+.rdndHandler,.deleterow,.feature-edit,.feature-desc-edit{
+   cursor:pointer;
+   float:left;
+   position: relative;
+   margin-right: 3px;
+   margin-top: -2px;
+    
+}
+.rdndHandler{
+    cursor: move;
+}

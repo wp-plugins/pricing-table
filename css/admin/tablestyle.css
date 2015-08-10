@@ -1,0 +1,58 @@
+#pricetable td{
+    padding:7px;
+    border-right:1px solid #ffffff;
+    border-left:1px solid #dddddd;
+    max-width: 200px;
+} 
+
+.afr,
+.apcl{
+    vertical-align: middle;
+    border:1px dashed #ccc;
+    padding:7px;
+} 
+
+.afr:hover,
+.apcl:hover{
+    vertical-align: middle;
+    border:1px dashed #999;
+    padding:7px;
+} 
+
+
+  .add-feature{
+      background: url(table-images/addr.png) 3px center no-repeat;
+    
+    font-size: 12px;
+    
+    vertical-align: middle;
+    margin-top: -2px;
+    float: left;
+    width: 123px;
+    display: block;
+    font-weight: bold; 
+    padding-left: 25px;
+    text-decoration: none;
+ }
+ 
+ 
+ .add-package{
+    background: url(table-images/add.png) 3px 12px no-repeat;
+    
+    cursor: pointer;
+    font-size: 12px;
+    text-decoration: none;
+    font-weight: normal;
+    padding-left: 15px;
+    
+    margin-left: -2px;
+    float: left;
+    width: 118px;
+    display: block;
+    height: 48px;
+    line-height: 48px;
+    text-align: center;
+    font-weight: bold;
+ }
+ 
+ 
