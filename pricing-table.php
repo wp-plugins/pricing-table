@@ -2,9 +2,9 @@
 /*
 Plugin Name: Pricing Table
 Plugin URI: http://wpeden.com/product/wordpress-pricing-table-plugin/
-Description: WordPress Plugin for creating colorful pricing tables
+Description: WordPress Plugin for creating colorful pricing tables.
 Author: Shaon
-Version: 1.4.1
+Version: 1.4.2
 Author URI: http://wpeden.com/
 */
 
@@ -197,52 +197,52 @@ function wppt_save_shortcode(){
 }
 
 function wppt_menu(){
-    add_submenu_page('edit.php?post_type=pricing-table', 'Short Codes', 'Short Codes', 'administrator', 'short-codes', 'wppt_shortcodes');
+    add_submenu_page('edit.php?post_type=pricing-table', 'Shortcodes', 'Shortcodes', 'administrator', 'short-codes', 'wppt_shortcodes');
     add_submenu_page('edit.php?post_type=pricing-table', 'Help', 'Help', 'administrator', 'help', 'wppt_help');
 
 }
-
 
 if(is_admin()){
     add_action("admin_menu","wppt_menu");
 }
 
 function wppt_admin_enqueue_scripts(){
-    wp_enqueue_script("jquery");
-    wp_enqueue_script("jquery-form");
-    wp_enqueue_script('wppt-datatable', plugins_url('pricing-table/js/admin/dragtable.js'));
-    wp_enqueue_script('wppt-tablednd', plugins_url('pricing-table/js/admin/jquery.tablednd_0_5.js'));
-    wp_enqueue_style("wppt-my", plugins_url('pricing-table/css/admin/my.css'));
-    wp_enqueue_style("wppt-tablestyle", plugins_url('pricing-table/css/admin/tablestyle.css'));
+    wp_enqueue_script('jquery');
+    wp_enqueue_script('jquery-form');
+    wp_enqueue_script('wppt-dragtable', plugins_url('pricing-table/js/admin/dragtable.js'));
+    wp_enqueue_script('wppt-tablednd', plugins_url('pricing-table/js/admin/jquery.tablednd_0_5.js'));    
+    wp_enqueue_script('wppt-tiptipjs', plugins_url().'/pricing-table/js/site/jquery.tipTip.minified.js',array('jquery'));
     
-    wp_enqueue_script("tiptipjs", plugins_url()."/pricing-table/js/site/jquery.tipTip.minified.js",array('jquery'));
-    wp_enqueue_style("tiptipcss", plugins_url()."/pricing-table/css/site/tipTip.css");
+    wp_enqueue_style('wppt-admin', plugins_url('pricing-table/css/admin/wppt.admin.css'));    
+    wp_enqueue_style('tiptipcss', plugins_url().'/pricing-table/css/site/tipTip.css');
 }
 
 function admin_tiptip_init(){
     ?>
-        <script language="JavaScript">
+        <script>
             jQuery(function(){
-                jQuery(".feature-desc-edit").tipTip({defaultPosition:'bottom'});
-                jQuery(".featured-package").tipTip({defaultPosition:'bottom'});
-                jQuery(".deletecol").tipTip({defaultPosition:'bottom'});
-                jQuery(".featured-package-edit").tipTip({defaultPosition:'bottom'});
-                jQuery(".deleterow").tipTip({defaultPosition:'bottom'});
-                jQuery(".feature-edit").tipTip({defaultPosition:'bottom'});
+                jQuery(".feature-desc-edit").tipTip({defaultPosition:'top'});
+                jQuery(".featured-package").tipTip({defaultPosition:'top'});
+                jQuery(".deletecol").tipTip({defaultPosition:'top'});
+                jQuery(".featured-package-edit").tipTip({defaultPosition:'top'});
+                jQuery(".deleterow").tipTip({defaultPosition:'top'});
+                jQuery(".feature-edit").tipTip({defaultPosition:'top'});
+                jQuery(".rdndHandler").tipTip({defaultPosition:'top'});
+                jQuery(".dragPricingCol").tipTip({defaultPosition:'top'});
             });
         </script>
     <?php
 }
+add_action('admin_footer','admin_tiptip_init');
 
 function wppt_enqueue_scripts(){
     global $enque;
-    if($enque==1){
-        wp_enqueue_script("jquery");
-
-        wp_enqueue_script('wppt-tablednd', plugins_url('pricing-table/js/site/icon.js'));
-
-        wp_enqueue_script("tiptipjs", plugins_url()."/pricing-table/js/site/jquery.tipTip.minified.js",array('jquery'));
-        wp_enqueue_style("tiptipcss", plugins_url()."/pricing-table/css/site/tipTip.css");
+    
+    if($enque == 1){
+        wp_enqueue_script('jquery');
+        wp_enqueue_script('wppt-icon', plugins_url('pricing-table/js/site/icon.js'));
+        wp_enqueue_script('tiptipjs', plugins_url().'/pricing-table/js/site/jquery.tipTip.minified.js',array('jquery'));
+        wp_enqueue_style('tiptipcss', plugins_url().'/pricing-table/css/site/tipTip.css');
     }
 }
 
@@ -252,7 +252,7 @@ function wppt_tiptip_init(){
 
     if($enque==1){
         ?>
-        <script language="JavaScript">
+        <script>
             jQuery(function(){
                 jQuery(".wppttip").tipTip({defaultPosition:'bottom'});
             });
@@ -265,9 +265,9 @@ function wppt_tiptip_init(){
 function wppt_baseurl(){
     global $enque;
 
-    if($enque==1){
+    if($enque == 1){
         ?>
-        <script language="JavaScript">
+        <script>
             var wppt_url = "<?php echo plugins_url('/pricing-table/'); ?>";
         </script>
     <?php
@@ -275,21 +275,19 @@ function wppt_baseurl(){
 }
 
 
-function wppt_detect_shortcode()
-{
+function wppt_detect_shortcode(){
     global $post, $enque;
+    
     $pattern = get_shortcode_regex();
     if(!is_object($post) || is_admin()) return;
-    if (   preg_match_all( '/'. $pattern .'/s', $post->post_content, $matches )
-        && array_key_exists( 2, $matches )
-        && in_array( 'ahm-pricing-table', $matches[2] ) )
-    {
+    
+    if( preg_match_all( '/'. $pattern .'/s', $post->post_content, $matches ) && array_key_exists( 2, $matches ) && in_array( 'ahm-pricing-table', $matches[2] ) ){
         $enque = 1;
     }
 }
 
 function wppt_post_row_actions($actions, $post){
-    if($post->post_type=='pricing-table')
+    if($post->post_type == 'pricing-table')
         $actions['clone'] = "<a style='color:#2D873F' href='".admin_url()."?task=wpptclone&clone={$post->ID}'>Clone</a>";
     return $actions;
 }
@@ -317,24 +315,18 @@ function wppt_clone(){
 
 }
 
+add_shortcode('ahm-pricing-table','wppt_table');
+
 add_action( 'wp', 'wppt_detect_shortcode' );
-
-//register_activation_hook(__FILE__,'wppt_install');
-
-add_filter('post_row_actions', 'wppt_post_row_actions',10, 2);
 add_action('wp_head', 'wppt_baseurl');
 add_action('wp_footer', 'wppt_tiptip_init');
 add_action('init', 'wppt_clone');
 add_action('init', 'wppt_custom_init');
-add_shortcode("ahm-pricing-table",'wppt_table');
-add_filter("the_content",'wppt_preview_table');
-add_filter( 'manage_edit-pricing-table_columns', 'wppt_columns_struct', 10, 1 );
-add_action( 'manage_posts_custom_column', 'wppt_column_obj', 10, 1 );
+
+add_filter('post_row_actions', 'wppt_post_row_actions',10, 2);
+add_filter('the_content','wppt_preview_table');
+add_filter('manage_edit-pricing-table_columns', 'wppt_columns_struct', 10, 1);
+add_action('manage_posts_custom_column', 'wppt_column_obj', 10, 1);
 add_action('wp_ajax_wppt_save_shortcode', 'wppt_save_shortcode');
 add_action('wp_enqueue_scripts', 'wppt_enqueue_scripts');
-add_action('admin_enqueue_scripts', 'wppt_admin_enqueue_scripts'); 
-//add_filter('admin_footer','admin_tiptip_init');
-
-
-
-        
+add_action('admin_enqueue_scripts', 'wppt_admin_enqueue_scripts');

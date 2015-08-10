@@ -3,16 +3,17 @@ Contributors: codename065, shahriar0822
 Donate link: http://wpeden.com 
 Tags: pricing table, price table, special offer, discount offer, offer, page, posts, post, widget, plugins, plugin
 Requires at least: 3.4
-Tested up to: 4.2.2
+Tested up to: 4.2.4
 License: GPL
 
-WordPress Pricing Table plugin will help you to generate pricing table in the easiest and dynamic way
+WordPress Pricing Table plugin will help you to create pricing table in the easiest and dynamic way
 
 == Description ==
 
-WordPress Pricing Table plugin will help the admin to publish pricing table on WordPress page or post content.
-WordPress Pricing Table plugin packed with all features you will ever need to build a pricing or features table for your products or services in the easiest way. 
-Use simple short-code `[ahm-pricing-table id=999 template=template_name]` (999=use any table id here and replace template with valid template names "rock" or "gray" ) inside page or post content to embed pricing table. Anyhow there are also a tinymce toolbar button with post editor, you can use it to generate short-code easily.
+WordPress Pricing Table plugin will help you to publish pricing table on WordPress page or post content.
+WordPress Pricing Table packed with all features you will ever need to build a pricing or features table for your products or services in the easiest way. 
+
+* Use short-code `[ahm-pricing-table id=table_id template=template_name]` (table_id = use any table id here and replace template with valid template names "rock" or "smooth" ) inside page or post content to embed pricing table. Anyhow there are also a tinymce toolbar button with post editor, you can use it to generate short-code easily.
  
 
 = Features =
@@ -55,6 +56,10 @@ N/A
 
 
 == Changelog ==
+
+= 1.4.2 =
+* Fixed php waring in shortcode page. 
+* Fixed an issue related to data not beinng saved when adding a new column in previouly created table
 
 = 1.4.1 =
 * Fixed some issues related to custom shortcodes

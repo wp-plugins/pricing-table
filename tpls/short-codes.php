@@ -4,9 +4,10 @@
     $shortcode = get_option("_wppt_shortcode");
     $code = get_option("_wppt_code");
     
-    foreach ($shortcode as $key=>$value) {
-        $shortcode[$key] = htmlspecialchars($value);
-    }
+    if(!empty($shortcode))
+        foreach ($shortcode as $key => $value) {
+            $shortcode[$key] = htmlspecialchars($value);
+        }
 ?>
 
 <style type="text/css">
@@ -46,12 +47,24 @@
         padding-top: 10px;
         padding-bottom: 10px
     }
+    input[type="text"]{
+        box-shadow: none;
+    }
+    .sc-note{
+        padding:10px; 
+        margin-bottom: 10px;
+        border-radius: 0px;
+        background: #F1F1F1;
+        font-size: 15px;
+        line-height: 25px;
+        border: 1px dashed #ccc;
+    }
 </style>
 
 <div class="wrap">
-    <h2>ShortCode Generator</h2> <br>
-    <b>"Shortcode" will be replaced by "Shortcode Value" while rendering table at frontend. Use image url or any text for shortcode value.</b>
+    <h2>Shortcode Generator</h2>    
     <div style="clear: both;"></div>
+    
     <form action="" method="post" id="wptb" style="float: left;width:500px;">
         <input type="hidden" name="action" value="wppt_save_shortcode">    
         <div style="margin-top: 10px;"></div>        
@@ -64,9 +77,9 @@
             <table id="wp-shortcode-table" class="wp-list-table widefat fixed posts" cellpadding="4" width="100%" cellspacing="15">
                 <thead>
                     <tr>
-                        <th width="150">Shortcode</th>
-                        <th>Shortcode Value</th>
-                        <th width="70">Action</th>
+                        <th width="150"><b>Shortcode</b></th>
+                        <th><b>Shortcode Value</b></th>
+                        <th width="70"><b>Action</b></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -89,9 +102,14 @@
                 </tbody>
             </table>
             <br/>
-            <div style="border:1px solid #18BC9C;padding: 5px;margin-bottom: 10px;border-radius: 3px;background: #18bc9c;font-size: 15px;">
-                <?php echo "An Example of Shortcode is <b style='color:#fff;'>[img]</b> and related Shortcode value <b style='color:#fff;'>".htmlspecialchars('<img src="http://mysite.com/img.png">')."</b>";?>
+            
+            <div class="sc-note">
+                <img src="<?php echo plugins_url('pricing-table/images/edit-desc.gif')?>"> <b>Shortcode</b> will be replaced by <b>Shortcode Value</b> while rendering table at front-end. Use <b>Image URL</b> or <b>any text</b> for shortcode value.
             </div>
+            <div class="sc-note">
+                <img src="<?php echo plugins_url('pricing-table/images/edit-desc.gif')?>"> You can use shortcode to insert image into table. Just put the image url in <b>Shortcode Value</b> and define a <b>Shortcode</b> for it.
+            </div>
+            
             <input class="button" type="button" name="addnew" id="addnew" value="ADD NEW SHORTCODE">
             <br clear="all">
         </div>

@@ -1,21 +1,9 @@
 <?php
-/* Define the custom box */
-
-
-
-// backwards compatible (before WP 3.0)
-// add_action( 'admin_init', 'myplugin_add_custom_box', 1 );
-
-/* Do something with the data entered */
-
-
-/* Adds a box to the main column on the Post and Page edit screens */
 function wppt_add_custom_box() {
-    add_meta_box( 'pricing-table-feature-options', __( 'Packages/Features', 'wppt' ).' <div style="margin:5px 0;background: #18BC9C;padding:5px 10px;border-radius:2px"><a target="_blank" href="http://wpeden.com/product/wordpress-pricing-table-plugin/" style="text-decoration:none;font-size:13pt;font-weight:300;color:#fff;" title="Link will open in new window">Get Pro for Unlimited Table Tamplates and More Options</a> <a target="_blank" href="http://wordpress.org/support/view/plugin-reviews/pricing-table?rate=5#postform" title="Link will open in new window" style="text-decoration:none;font-size:13pt;font-weight:300;float:right;color:#fff;">A 5* rating at wp.org will be very inspiring :)</a></div>', 'wppt_individual_features', 'pricing-table', 'normal','core' );
+    add_meta_box( 'pricing-table-feature-options', __( 'Packages/Features', 'wppt' ), 'wppt_individual_features', 'pricing-table', 'normal','core' );
 }
 
 function wppt_individual_features( $post ) {
-
     include(WPPT_PLUGINDIR."/tpls/metabox-feature-options.php");
 }
 
@@ -48,6 +36,81 @@ function wppt_save_pricing_table( $post_id ) {
     }
 }
 
- 
+function wppt_info_metabox_html($post){
+    ?>
+    <style>
+        .wppt-info{
+            text-align: center;
+        }
+        .wppt-btn{            
+            border-width: 3px;
+            border-radius: 3px;
+            border-style: solid;           
+            color: #fff;
+            font-size: 12px;
+            font-weight: 700;
+            padding: 8px 16px;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: all 0.2s ease 0s;
+            margin: 20px 0px;
+        }
+        .btn-gopro{
+            background: #f1c40f;
+            border-color: #f1c40f #f1c40f #f39c12;
+        }
+        .btn-gopro:hover{
+            border-color: #f1c40f;
+        }
+        .btn-rate{
+            background: #1bcbaa;
+            border-color: #1bcbaa #1bcbaa #16a085;
+        }
+        .btn-rate:hover{
+            border-color: #1bcbaa;
+        }
+        .btn-suprt{
+            background: #34495e;
+            border-color: #34495e #34495e #2c3e50;
+        }
+        .btn-suprt:hover{
+            border-color: #34495e;
+        }
+        .wppt-btn:hover{
+            color: #fff;
+        }
+        .wppt-mb-p{
+            font-size: 15px;
+        }
+    </style>
+    <div class="wppt-info">
+        <p class="wppt-mb-p">Get Pro Version for Unlimited Table Templates and More Options.</p>
+        <div style="margin: 20px 0px;">
+            <a class="wppt-btn btn-gopro" target="_blank" href="http://wpeden.com/product/wordpress-pricing-table-plugin">Upgrade To Premium</a>
+        </div>
+        <p class="wppt-mb-p">If you like WordPress Pricing Table please leave us a <b style="color: #E6B800;">★★★★★</b> rating. <b>THANKS</b> in advance!</p>
+        <div style="margin: 20px 0px;">
+            <a class="wppt-btn btn-rate" target="_blank" href="http://wordpress.org/support/view/plugin-reviews/pricing-table?rate=5#postform">Rate Now</a>       
+        </div>
+        <p class="wppt-mb-p">Need Help? We are happy to answer any question you might have.</p>
+        <div style="margin: 20px 0px;">
+            <a class="wppt-btn btn-suprt" target="_blank" href="http://wpeden.com/forums/forum/general-questions/">Create a Topic</a>       
+        </div>
+    </div>
+    
+    <?php
+}
+
+function wppt_info_metabox() {
+    add_meta_box( 'pricing-table-info-metabox',
+                  'Pricing Table Quick Links', 
+                  'wppt_info_metabox_html', 
+                  'pricing-table', 
+                  'side',
+                  'default' 
+                );
+}
+add_action( 'add_meta_boxes', 'wppt_info_metabox');
+
 add_action( 'add_meta_boxes', 'wppt_add_custom_box');
 add_action( 'save_post', 'wppt_save_pricing_table' );  

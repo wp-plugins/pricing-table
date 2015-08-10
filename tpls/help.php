@@ -4,15 +4,9 @@
     <a class="ptpl" href="http://wpeden.com/product/wordpress-pricing-table-plugin-pro/" target="_blank">Check out Pricing Table <b><i>How To</i></b> videos here</a>
 </div>
 <style type="text/css">
-.tt {
-    margin-left: 30px;
-} 
-.tt li{ 
-    list-style: square;
-}
-.tt ul{
-    margin-left: 20px;
-}
+.tt {margin-left: 30px;} 
+.tt li{list-style: square;}
+.tt ul{margin-left: 20px;}
 .ptpl{
     border: 1px solid #F42156;
     border-radius: 3px;
@@ -26,7 +20,7 @@
     color: #fff;
 }
 </style>
-<Br/>
+<br/>
 
 Simply use the following short-code inside page or post content to display pricing table:
 <br/>

@@ -1,5 +1,4 @@
 @import url("http://fonts.googleapis.com/css?family=Pathway+Gothic+One|Roboto+Slab");
-
 #shaon-pricing-table h1,
 #shaon-pricing-table h2,
 #shaon-pricing-table h3,
@@ -8,10 +7,7 @@
     padding:0px;
     margin:0px;
     line-height: normal;
-    
 }
-
-
 #shaon-pricing-table1 img,
 #shaon-pricing-table img{
     background: transparent !important;
@@ -23,7 +19,6 @@
 #shaon-pricing-table a{
    text-decoration: none !important; 
 }
-
 #tiptip_holder {
 	display: none;
 	position: absolute;
@@ -217,9 +212,4 @@
         width: 100% !important;
 
     }
-}
-
-/* Medium devices (desktops, 992px and up) */
-@media (max-width: 992px) {
-
 }
